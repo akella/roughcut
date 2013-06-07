@@ -1,0 +1,30 @@
+.topper .topper__logo { font: 0/0 a; text-shadow: none; color: transparent; }
+
+* { margin: 0; padding: 0; -webkit-text-size-adjust: none; }
+
+body { background: #333; font-family: "Lucida Sans", "Myriad Pro",sans-serif; font-weight: normal; font-size: 12px; line-height: 1.4; overflow: hidden; }
+
+@font-face { font-family: 'cpmono'; src: url("fonts/cpmono_v07_plain-webfont.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+a img, fieldset { border: none; }
+
+.icon-online, .icon-offline { height: 8px; width: 8px; border-radius: 8px; background: #8fc547; display: inline-block; margin-left: 3px; }
+
+.icon-offline { background: #898989; }
+
+.topper .topper__logo { font: 0/0 a; text-shadow: none; color: transparent; }
+
+.topper { overflow: hidden; width: 100%; background-color: #212121; border-bottom: 1px solid #000; height: 40px; line-height: 40px; color: #777; }
+.topper a { text-decoration: none; text-shadow: 0 1px 0 #000; color: #777; }
+.topper a:hover { color: #2f669f; }
+.topper.topper_withlogo { height: 33px; line-height: 33px; border-style: none; }
+.topper .topper__logo { float: left; background: url('../img/queue-s00208e3dc8.png') 0 0 no-repeat; width: 100px; height: 20px; margin-left: 10px; margin-top: 6px; margin-right: 29px; cursor: pointer; }
+
+.topper__nav { float: left; margin-left: 15px; }
+.topper__nav li { display: inline; margin-right: 8px; }
+
+.profile { float: right; margin-right: 17px; }
+.profile .profile__user, .profile .profile__logout { display: inline-block; }
+.profile .profile__user { font-family: 'LucidaSans-Demi', Arial, "Helvetica CY", "Nimbus Sans L", sans-serif; margin-right: 5px; }
+.profile .profile__user a { color: #fff; }
+.profile .profile__user a:hover { color: #2f669f; }

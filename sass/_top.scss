@@ -1,0 +1,63 @@
+@import 'lib/base';
+//topper
+.topper{
+	overflow: hidden;
+	width: 100%;
+	background-color: #212121;
+	border-bottom: 1px solid #000;
+	height: 40px;
+	line-height: 40px;
+	color: #777;
+	a{
+		text-decoration: none;
+		text-shadow: 0 1px 0 #000;
+		color: #777;
+		&:hover{
+			color: #2f669f;
+		}
+	}
+	&.topper_withlogo{
+		height: 33px;
+		line-height: 33px;
+		border-style: none;
+	}
+	.topper__logo{
+		float: left;
+		@extend %hide-text;
+		@include sized-sprite($q, sony);
+		margin-left: 10px;
+		margin-top: 6px;
+		margin-right: 29px;
+		cursor: pointer;
+	}
+}
+
+
+//topper__nav
+.topper__nav{
+	float: left;
+	margin-left: 15px;
+	li{
+		display: inline;
+		margin-right: 8px;
+	}
+}
+//profile
+.profile{
+	float: right;
+	margin-right: 17px;
+	.profile__user,
+	.profile__logout{
+		display: inline-block;
+	}
+	.profile__user{
+		font-family: 'LucidaSans-Demi', Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+		margin-right: 5px;
+		a{
+			color: #fff;
+			&:hover{
+				color: #2f669f;
+			}
+		}
+	}
+}
