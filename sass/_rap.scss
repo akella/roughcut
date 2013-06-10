@@ -1,0 +1,1078 @@
+
+// toolbar
+.toolbar{
+	height: 44px;
+	padding: 8px 0 0 10px;
+	@include ipad{
+		padding-top: 4px;
+	}
+	@include box-sizing(border-box);
+
+	@each $i in pencil,line,rect,round,arrow,crop,commenti{
+		.toolbar__#{$i}{
+			display: inline-block;
+			cursor: pointer;
+			vertical-align: middle;
+			margin-right: 3px;
+			@include ipad{
+				margin-right: 20px;
+			}
+			@include sized-sprite($icons, #{$i});
+			&:hover,&.is-active{
+				@include sized-sprite($icons, #{$i}_h); 
+			}
+		}
+	}
+	.toolbar__sep{
+		height: 32px;
+		display: inline-block;
+		border-right: 1px solid rgba(#000,0.2);
+		box-shadow:1px 0 0 rgba(#fff,0.2);
+		vertical-align: middle;
+		margin-left: 10px;
+	}
+	.toolbar__brushes{
+		height: 28px;
+		width: 49px;
+		display: inline-block;
+		@include box-sizing(border-box);
+		border: 1px solid #444;
+		background: #363636;
+		box-shadow: 1px 1px 3px rgba(#000,0.6);
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 17px;
+		position: relative;
+		cursor: pointer;
+
+		@include ipad{
+			margin-left: 30px;
+			margin-right: 20px;
+		}
+		.icon-drop{
+			position: absolute;
+			right: 7px;
+			top: 12px;
+			@include sized-sprite($icons, arr-down);
+			display: inline-block;
+		}
+		.toolbar__brushicon{
+			
+		}
+	}
+	.toolbar__colors{
+		@extend .toolbar__brushes;
+		@include ipad{
+			margin-right: 0;
+		}
+	}
+	.toolbar__drop{
+		z-index: -10;
+		position: absolute;
+		top: 27px - 5px;
+		width: 88px;
+		right: -2px;
+		border: 1px solid #000;
+		border-radius: 2px;
+		background: #333;
+		min-height: 50px;
+		padding: 8px 6px;
+		-webkit-transition:all .2s;
+		opacity: 0;
+		@include box-sizing(border-box);
+		&.is-visible{
+			opacity: 1;
+			top: 27px;
+			z-index: 10;
+		}
+	}
+	.toolbar__color{
+		height: 16px;
+		display: block;
+		margin-bottom: 14px;
+		@include box-sizing(border-box);
+		&:last-child{
+			margin-bottom: 0;
+		}
+		&:hover{
+			border: 1px solid #000;
+		}
+		&.is-active{
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			left: 9px;
+			top: 5px;
+			&:hover{
+				border: none;
+			}
+		}
+	}
+	.toolbar__brush{
+		@extend .toolbar__color;
+		&:hover{
+			border: none;
+			background-color: rgba(#fff,0.3);
+		}
+		&.is-active:hover{
+			background-color: transparent;
+		}
+	}
+	$i: 1;
+	@while $i < 7 {
+		.toolbar__brush#{$i} {
+			@include sized-sprite($icons, brush#{$i});
+		}
+		$i: $i + 1;
+	}
+}
+
+// right panel
+.conversation{
+	padding-left: 10px;
+	box-shadow:inset 0 -40px 40px -40px rgba(#000,1);
+	border-bottom: 1px solid rgba(#fff,.2);
+	.comment{
+		padding: 13px 0;
+	}
+	&.conversation_noborder{
+		border: none;
+	}
+}
+// header for all conversations
+.conversation-meta{
+	border-bottom: 1px solid rgba(#fff,.2);
+	@extend %clr;
+	background: rgba(#000,0.5);
+	height: 38px;
+	line-height: 38px;
+	@include ipad{
+		height: 43px;
+		line-height: 43px;
+// 		height: 42px;
+// 		line-height: 42px;
+// 		position: absolute;
+// 		right: 0;
+// 		top: 0;
+// 		width: 300px;
+	}
+	.is-hasnew{
+		position: relative;
+		&:before{
+			position: absolute;
+			content: ' ';
+			width: 30%;
+			height: 100%;
+			right: 0;
+			top: 0;
+			z-index: 0;
+			@include background-image(linear-gradient(left, rgba(#517b22, 0), rgba(#517b22, .8) 30%));
+		}
+		.conversation-meta__comments{
+			color: #fff;
+		}
+	}
+	.conversation-meta__drop{
+		position: absolute;
+		top: 38px;
+		left: 0;
+		background: url(../img/noise.jpg) repeat 0 0;
+		width: 100%;
+		z-index: 200;
+		
+		border-bottom: 1px solid #000;
+		box-shadow:0 25px 25px -25px rgba(#000,1);
+		&.is-hidden{
+			display: none;
+		}
+	}
+	.conversation-meta__drop-item{
+		@extend %clr;
+		cursor: pointer;
+		&:nth-child(even){
+			background: rgba(#000,.2);
+		}
+		.icon-arrow{
+			opacity: 0;
+		}
+	}
+	.conversation-meta__addnew{
+		cursor: pointer;
+	}
+	.conversation-meta__visibleto{
+		display: block;
+		font-size: 11px;
+		line-height: 1;
+		margin-top: -10px;
+		margin-left: 28px;
+		padding-bottom: 3px;
+		color: #777;
+		text-transform: uppercase;
+		width: 220px;
+		position: relative;
+		a{
+			color: #ccc;
+			text-decoration: none;
+			text-transform: none;
+			margin-left: 2px;
+		}
+		.conversation-meta__visibletobg{
+			position: absolute;
+			bottom: 0;
+			left: -42px;
+			width: 367px;
+			background: #151515;
+			height: 30px;
+			z-index: 2;
+			border-bottom: 1px solid #434343;
+			display: none;
+		}
+		.conversation-meta__visibletocontent{
+			position: relative;
+			z-index: 3;
+		}
+	}
+	.conversation-meta__createnew{
+		height: 34px;
+		line-height: 34px;
+		text-decoration: underline;
+		cursor: pointer;
+		padding-left: 17px;
+		color: #ccc;
+		border-top: 1px solid rgba(#fff,.2);
+		i{
+			@include sized-sprite($icons, createnew);
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 5px;
+		}
+	}
+	.conversation-meta__status{
+		font-size: 12px;
+		color: #ccc;
+		margin-left: 14px;
+		height: 38px;
+		line-height: 38px;
+		float: left;
+		overflow: hidden;
+		&:hover{
+			overflow: visible;
+			.conversation-meta__visibletobg{
+				display: block;
+			}
+		}
+		&.is-hiddenvisibleto{
+			overflow: hidden;
+		}
+		i{
+			display: inline-block;
+			@include sized-sprite($icons, public);
+			margin-right: 5px;
+			vertical-align: middle;
+			position: relative;
+			top: -2px;
+		}
+		&.is-private{
+			i{
+				@include sized-sprite($icons, private);
+			}
+		}
+		@include ipad{
+			height: 42px;
+			line-height: 42px;
+		}
+	}
+	.conversation-meta__comments{
+		margin-right: 16px;
+		height: 38px;
+		line-height: 38px;
+		display: inline-block;
+		float: right;
+		color: #707070;
+		font-size: 12px;
+		cursor: pointer;
+		position: relative;
+		z-index: 2;
+		.icon-comments{
+			@include sized-sprite($icons, smallcomment);
+			display: inline-block;
+			margin-right: 2px;
+			vertical-align: middle;
+		}
+		i.icon-arrow{
+			display: inline-block;
+			@include sized-sprite($icons, arr-down);
+			margin-left: 8px;
+			vertical-align: middle;
+		}
+		&.is-up{
+			i.icon-arrow{
+				@include sized-sprite($icons, arr-up);
+			}
+		}
+	}
+	.addconv{
+		padding: 10px;
+		line-height: 1;
+		position: relative;
+		z-index: 30;
+		.addconv__input{
+			@extend %input;
+			padding-top: 0;
+		}
+		.addconv__users{
+			margin: 9px 0 11px;
+			.addconv__userslabel{
+				color: #777;
+				text-transform: uppercase;
+			}
+			.addconv__user{
+				color: #ccc;
+				display: inline-block;
+				margin-left: 6px;
+				i{
+					display: inline-block;
+					vertical-align: middle;
+					@include sized-sprite($icons, x);
+					margin-right: 3px;
+					cursor: pointer;
+				}
+			}
+		}
+		.addconv__addmore{
+			color: #777;
+			cursor: pointer;
+			position: relative;
+			display: inline-block;
+			margin-left: 15px;
+			i{
+				display: inline-block;
+				@include sized-sprite($icons, plus);
+				vertical-align: middle;
+				margin-right: 1px;
+			}
+			.addconv__addmoredrop{
+				@extend %smalldrop;
+			}
+		}
+		.addconv__cancel{
+			vertical-align: middle;
+			color: #777;
+		}
+		.addconv__submit{
+			@extend %button;
+			border-radius: 4px;
+			margin-right: 10px;
+			i{
+				@include sized-sprite($icons, createnew);
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+
+//meta header for all comments
+.conversations{
+	overflow: auto;
+}
+.comments{
+	.comments__meta{
+		border-top: 1px solid rgba(#fff,.2);
+		background: rgba(#000,0.3);
+		font-size: 11px;
+		@extend %clr;
+		@include ipad{font-size: 13px;}
+	}
+	.comments__sort{
+		float: right;
+		color: #ccc;
+		margin-right: 15px;
+		height: 19px;
+		line-height: 19px;
+		cursor: pointer;
+		position: relative;
+		z-index: 50;
+		@include ipad{height: 29px;line-height:29px;}
+		i{
+			display: inline-block;
+			@include sized-sprite($icons, arr-down);
+			margin-left: 8px;
+			vertical-align: middle;
+		}
+		&.is-up{
+			i{
+				@include sized-sprite($icons, arr-up);
+			}
+		}
+		&:hover{
+			color: #fff;
+		}
+		.comments__sortways{
+			@extend %smalldrop;
+			top: 20px;
+		}
+	}
+	.comments__update{
+		float: left;
+		color: #fff;
+		padding-left: 7px;
+		height: 18px;
+		padding-top: 1px;
+		line-height: 19px;
+		cursor: pointer;
+		vertical-align: middle;
+		padding-right: 20px;
+		text-shadow: 0 1px 2px rgba(#000,0.6);
+		@include ipad{line-height: 29px;height:29px}
+		i{
+			display: inline-block;
+			margin-right: 6px;
+			@include sized-sprite($icons, update);
+			position: relative;
+			top: 2px;
+		}
+		&.is-active{
+			@include background-image(linear-gradient(left, #517b22 70%, rgba(#517b22, 0)));
+		}
+	}
+}
+
+// bottom timeline
+.comment{
+	font-size: 13px;
+	color: #aaaaaa;
+	line-height: 1.3;
+	position: relative;
+	&.comment_tab{
+		margin-left: 38px;
+		border-top: 1px solid rgba(#fff,.2);
+		box-shadow:0 -1px 0 rgba(#000,0.5);
+		@include ipad{
+			margin-left: 0;
+		}
+		&.is-new{
+			&:before{
+				left: -48px;
+			}
+		}
+	}
+	&.is-new{
+		&:before{
+			position: absolute;
+			height: 100%;
+			top: 0;
+			left: -10px;
+			width: 2px;
+			background: #45661F;
+			content:' ';
+		}
+	}
+	.comment__actionshare{
+		@include ipad{
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			display: inline-block;
+			@include sized-sprite($icons, ipad-link);
+// 			opacity: .4;
+		}
+		&:hover{
+			@include ipad{opacity: 1;}
+		}
+	}
+	.comment__actionedit{
+		@include ipad{
+			display: inline-block;
+			@include sized-sprite($icons, ipad-edit);
+			margin-left: 5px;
+// 			opacity: .4;
+		}
+		&:hover{
+			@include ipad{opacity: 1;}
+		}
+	}
+	.comment__frame{
+		font-size: 11px;
+		color: #777;
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 3px;
+	}
+	.comment__published{
+		color: #5e5e5e;
+		font-size: 11px;
+	}
+	.comment__meta{
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 3px;
+	}
+	.comment__av{
+		float: left;
+		margin-right: 10px;
+		img{
+			box-shadow:1px 1px 3px rgba(#000,0.6);
+			display: block;
+			margin-bottom: 4px;
+		}
+	}
+	.comment__content{
+		@extend %clr;
+		margin-right: 10px;
+		font-size: 13px;
+		p{
+			overflow: hidden;
+		}
+		a{
+			color: #ccc;
+			text-decoration: underline;
+		}
+	}
+	&.comment_edit .comment__action{
+		right: 13px;
+		opacity: 1;
+	}
+	.comment__action{
+		position: absolute;
+		right: 13px - 10px;
+		top: 10px;
+		font-size: 11px;
+		-webkit-transition:all .2s;
+		opacity: 0;
+		@include ipad{
+			display: none;
+		}
+		a{
+			color: #999;
+			text-decoration: none;
+			padding-right: 20px;
+			position: relative;
+			white-space:nowrap;
+			text-align: right;
+			display: block;
+			margin-bottom: 3px;
+			i{
+				position: absolute;
+				right: 0;
+				top: -1px;
+				display: inline-block;
+			}
+		}
+		.comment__actionshare{
+			i{
+				@include sized-sprite($icons, share);
+				opacity: .4;
+			}
+			&.is-active{
+				i{
+					opacity: 1;
+				}
+			}
+		}
+		.comment__actionedit{
+			i{
+				@include sized-sprite($icons, edit);
+				opacity: .4;
+			}
+			&.is-active{
+				i{
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&:hover{
+		.comment__action{
+			opacity: 1;
+			right: 13px;
+		}
+	}
+	.comment__thumb{
+		float: left;
+		margin-right: 10px;
+		border: 1px solid #333;
+		img{
+			display: block;
+		}
+	}
+	.comment__author{
+		color: #ccc;
+		font-size: 11px;
+		vertical-align: middle;
+	}
+	&.comment_add{
+		overflow: hidden;
+		padding-right: 10px;
+		padding-bottom: 11px;
+		.comment__av{
+			img{
+				margin-bottom: 0;
+			}
+			@include ipad{
+				margin-right: -2px;
+				position: relative;
+				z-index: 3;
+			}
+		}
+		.comment__addcomment{
+			float: right;
+			margin-left: 10px;
+			@extend %button-alt;
+			border-radius: 3px;
+			position: relative;
+			top: 2px;
+			i{
+				display: inline-block;
+				position: relative;
+				top: 3px;
+				@include sized-sprite($icons, addcomment);
+			}
+		}
+		.comment__input{
+			overflow: hidden;
+			input,textarea{
+				@extend %input;
+			}
+		}
+
+	}
+	.comment__like{
+		text-decoration: underline;
+		display: inline-block;
+		padding-left: 20px;
+		position: relative;
+		cursor: pointer;
+		margin-top: 2px;
+		i{
+			@include sized-sprite($icons,like);
+			
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			top: 1px;
+		}
+	}
+	
+}
+.commentedit{
+	.commentedit__input{
+		@extend %input;
+		
+	}
+	.commentedit__save{
+		@extend %button;
+		margin-right: 5px;
+		i{
+			margin-right: 5px;
+			display: inline-block;
+			vertical-align: middle;
+			@include sized-sprite($icons, savecomment);
+		}
+	}
+	.commentedit__cancel{
+		display: inline-block;
+		color: #ccc;
+		text-decoration: underline;
+		cursor: pointer;
+		font-size: 11px;
+	}
+	.commentedit__delete{
+		float: right;
+		font-size: 10px;
+		color: #6d6d6d;
+		text-decoration: underline;
+		cursor: pointer;
+		position: relative;
+		line-height: 1;
+		margin-top: 10px;
+		&:before{
+			content: ' ';
+			position: absolute;
+			left: -10px;
+			top: 1px;
+			@include sized-sprite($icons, x);
+		}
+	}
+}
+.timeline{
+	position: relative;
+	margin-bottom: 12px;
+	.timeline__progress{
+		position: absolute;
+		right: 0;
+		top: 0px;
+		height: 100%;
+		background: rgba(#000,0.6);
+		z-index: 100;
+		font-size: 20px;
+		text-indent: 20px;
+		text-shadow:1px 1px 1px #000;
+		color: #ccc;
+		line-height: 57px;
+		vertical-align: middle;
+	}
+	.timeline__comment{
+		position: absolute;
+		bottom: 63px;
+		background: #ffcb00;
+		color: #000;
+		font-family: "cpmono", monospace;
+		font-size: 8px;
+		cursor: pointer;
+		@include sized-sprite($icons, comment);
+		background-image: none;
+		@include ipad{
+			@include sized-sprite($icons, ipad-comment);
+			font-size: 18px;
+		}
+		&.is-private, .is-private &, .is-allprivate &{
+			@include sized-sprite($icons, commentprivate);
+			.timeline__commentbg{
+				@include sized-sprite($icons, commentprivate);
+			}
+			&.timeline__comment_multiple{
+				&:before{
+					@include sized-sprite($icons, commentprivate);
+				}
+			}
+			.timeline__commenttext{
+				border-color: #dedede;
+			}
+		}
+		.timeline__commenttext{
+			position: absolute;
+			bottom: 4px - 10px;
+			@include ipad{
+				bottom: 7px - 10px;
+			}
+			z-index: 10;
+			left: 0;
+			width: 266px;
+			border: 2px solid #ffcb00;
+			background: url(../img/noise.jpg) repeat 0 0;
+			padding: 7px 10px;
+			font-family: "Lucida sans",sans-serif;
+			opacity: 0;
+			z-index: -1;
+			overflow: hidden;
+			-webkit-transition: all .3s;
+			max-height: 200px;
+			overflow: auto;
+			&.is-visible{
+				z-index: 10;
+				opacity: 1;
+				bottom: 4px;
+				@include ipad{
+					bottom: 7px ;
+				}
+			}
+		}
+		.timeline__commentbg{
+			@include sized-sprite($icons, comment);
+			@include ipad{
+				@include sized-sprite($icons, ipad-comment);
+				padding-top: 4px;
+			}
+			@include box-sizing(border-box);
+			line-height: 14px;
+			padding-right: 4px;
+			text-align: right;
+			color: #252525;
+			position: relative;
+			z-index: 2;
+		}
+		&:after{
+			content:' ';
+			position: absolute;
+			height: 63px;
+			bottom: -63px;
+			left: 4px;
+			border-left: 1px solid rgba(#ffcb00,0.4);
+		}
+		&.timeline__comment_multiple{
+			&:before{
+				content:' ';
+				position: absolute;
+				z-index: 1;
+				top: -2px;
+				right: -2px;
+				@include sized-sprite($icons, comment);
+				height: 11px;
+				@include ipad{
+					@include sized-sprite($icons, ipad-comment);
+					top: -3px;
+					right: -3px;
+				}
+			}
+			.comment{
+				border-bottom: 1px solid rgba(#fff,.2);
+				padding: 4px 10px;
+				margin: 0 -10px;
+				&:last-child{
+					border: none;
+				}
+			}
+		}
+		&.timeline__comment_upper{
+			bottom: 63px + 14px;
+			@include ipad{
+				bottom: 63px + 14px + 20px;
+			}
+			&:after{
+				content:' ';
+				position: absolute;
+				height: 63px + 14px;
+				bottom: -63px - 14px;
+				@include ipad{
+					height: 63px + 14px + 20px;
+					bottom: -63px - 14px - 20px;
+				}
+				left: 4px;
+				border-left: 1px solid rgba(#ffcb00,0.4);
+			}
+		}
+		
+	}
+	.timeline__track{
+		height: 3px;
+		background: #555;
+		margin-bottom: 1px;
+	}
+	.timeline__trackcurrent{
+		position: relative;
+		height: 3px;
+		background: #c2c2c2;
+	}
+	.timeline__trackred{
+		height: 56px + 3px + 1px;
+		border-left: 1px solid #c40011;
+		background:  rgba(black,.3);
+		position: absolute;
+		right: -3px;
+		cursor: pointer;
+		width: 3px;
+		.is-nosound &{
+			height: 56px + 3px + 1px - 28px;
+		}
+	}
+
+}
+.timecode{
+	float: left;
+	margin: 0 100px 0 14px;
+	color: #777;
+	@include ipad{
+		margin: 0 10px;
+	}
+	.timecode__label{
+		font-size: 11px;
+		text-transform: uppercase;
+	}
+	.timecode__value{
+		font-size: 25px;
+		font-family: "cpmono",monospace;
+		line-height: 1;
+	}
+	&.timecode__frame{
+		margin-left: -30px;
+		@include ipad{
+			margin-left: 10px;
+		}
+	}
+	.is-tapetimecode &.timecode_tape,
+	.is-standardtimecode &.timecode_standard,
+	.is-frametimecode &.timecode_frame,{
+		.timecode__value{
+			color: #ccc;
+		}
+	}
+}
+.controls{
+	font-size: 0;
+	padding-top: 13px;
+	float: left;
+	@include ipad{
+		margin-left: 20px;
+	}
+	.controls__play,.controls__back, .controls__forw,.controls__pause{
+		@extend %button;
+		width: 46px;
+		padding: 0;
+		text-align: center;
+		margin-left: 1px;
+		i{
+			display: inline-block;
+			position: relative;
+			top: 3px;
+			opacity: .7;
+		}
+	}
+	.controls__pause{
+		width: 66px;
+		i{
+			@include sized-sprite($icons, control_play);
+		}
+	}
+	.controls__play{
+		width: 66px;
+		i{
+			@include sized-sprite($icons, control_playgo);
+		}
+	}
+	.controls__back{
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+		i{
+			@include sized-sprite($icons, control_back);
+		}
+	}
+	.controls__forw{
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+		i{
+			@include sized-sprite($icons, control_forw);
+		}
+	}
+}
+// right panel
+.likes{
+	padding-top: 13px;
+	float: right;
+	font-size: 0;
+	margin-right: 20px;
+	@include ipad{
+		margin-left: 10px;
+	}
+	.likes__like, .likes__dislike{
+		@extend %button;
+		margin-left: 1px;
+		i{
+			display: inline-block;
+			margin-right: 5px;
+			vertical-align: middle;
+			position: relative;
+			top: -2px;
+		}
+	}
+	.likes__like{
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+		i{
+			@include sized-sprite($icons, like);
+		}
+	}
+	.likes__dislike{
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+		i{
+			@include sized-sprite($icons, dislike);
+		}
+	}
+}
+.volume{
+	width: 198px;
+	float: left;
+	margin-left: 20px;
+	@include ipad{
+		display: none;
+	}
+	input{
+		display: inline-block;
+		border: 1px solid #444;
+		background: #000;
+		border-radius: 20px;
+		height: 4px;
+		-webkit-appearance:none;
+		vertical-align: middle;
+		width: 160px;
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			border-radius: 10px;
+			background-position: 50%;
+			width: 10px;
+			height: 10px;
+			border: 1px solid rgba(#888,.7);
+			box-shadow:1px 1px 3px rgba(#000,0.8);
+			@include background-image(linear-gradient(bottom, #626262 0%, #0e0e0e 100%));
+			cursor: pointer;
+		}
+	}
+	.volume__more{
+		display: inline-block;
+		vertical-align: middle;
+		@include sized-sprite($icons, volume__more);
+		cursor: pointer;
+	}
+	.volume__less{
+		display: inline-block;
+		vertical-align: middle;
+		@include sized-sprite($icons, volume__less);
+		cursor: pointer;
+	}
+	.volume__label{
+		font-size: 11px;
+		text-transform: uppercase;
+		color: #777;
+		padding-bottom: 3px;
+	}
+}
+
+// video panel
+.videoholder{
+	img{
+		display: block;
+		width: 100%;
+	}
+}
+.video-edit{
+	text-align: center;
+	position: absolute;
+	right: 6px;
+	top: 10px;
+	width: 57px;
+	@include ipad{
+		width: 400px;
+		text-align: right;
+	}
+	.video-edit__fullscreen{
+		display: block;
+		margin: auto;
+		margin-bottom: 14px;
+		@include sized-sprite($icons, fullscreen);
+		cursor: pointer;
+		@include ipad{
+			float: right;
+			margin-left: 15px;
+			margin-top: 1px;
+		}
+	}
+	.video-edit__wipe,.video-edit__undo{
+		@extend %button-alt;
+		display: block;
+		text-align: left;
+		padding-left:6px;
+		margin-bottom: 3px;
+		border-radius: 3px;
+		white-space:nowrap;
+		padding-right: 0;
+		@include ipad{
+			float: right;
+			padding-right:10px;
+			
+			margin-left: 15px;
+		}
+		i{
+			display: inline-block;
+			margin-right: 3px;
+		}
+	}
+	.video-edit__wipe i{
+		@include sized-sprite($icons, wipe);
+	}
+	.video-edit__undo i{
+		@include sized-sprite($icons, undo);
+	}
+}

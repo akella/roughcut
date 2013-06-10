@@ -1,0 +1,237 @@
+.body-waveform{
+	overflow: auto;
+}
+.waveform{
+	height: 240px;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #3D3D3D;
+	box-shadow:0 0 10px rgba(#000, .6);
+	background: #000;
+	margin-bottom: 20px;
+	.conversation-meta{
+		position: absolute;
+		left: 29%;
+		width: 260px;
+		bottom: 4px;
+		background: transparent;
+		border-style: none;
+		z-index: 200;
+	}
+	.waveform__waveform{
+		width: 100%;
+		display: block;
+		opacity: 1;
+// 		debub only
+		position: absolute;
+		left: 0;
+		top: 31px;
+	}
+	.timeline{
+		top: 100px;
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+	.waveform__title{
+		position: absolute;
+		top: 6px;
+		left: 10px;
+		color: #777777;
+		font-size: 11px;
+		text-decoration: none;
+	}
+	.waveform__zoom{
+		position: absolute;
+		bottom: 15px;
+		left: 16px;
+		i{
+			@include s(zoom);
+			vertical-align: middle;
+			display: inline-block;
+			margin-right: 5px;
+			position: relative;
+			top: -2px;
+		}
+		input{
+			vertical-align: middle;
+		}
+	}
+	.waveform__meta{
+		position: absolute;
+		right: 10px;
+		top: 6px;
+		color: #AAAAAA;
+		font-size: 11px;
+		span{
+			margin-left: 1em;
+		}
+	}
+	.waveform__video{
+		position: absolute;
+		right: 55px;
+		bottom: 10px;
+		@extend %button;
+		border-radius: 3px;
+		i{
+			@include s(waveformvideo);
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 4px;
+			position: relative;
+			top: -2px;
+		}
+	}
+	.track{
+		height: 5px;
+		width: 100%;
+		position: absolute;
+		top: 100px;
+		left: 0;
+		background: #8C8C8C;
+		@include background-image(linear-gradient(#9F9F9F, #393939));
+		z-index: 10;
+		.track__current{
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 5px;
+			display: block;
+			background: #858585;
+			@include background-image(linear-gradient(#D1D1D1, #858585));
+			z-index: 20;
+			&:before{
+				position: absolute;
+				right: 0;
+				height: 5px;
+				width: 1px;
+				background: #D5D5D5;
+				z-index: 1000;
+				content: ' ';
+			}
+		}
+		.track__filmstrip{
+			position: absolute;
+			top: 6px;
+			left: 0;
+			width: 100%;
+			//debug debug
+			img{
+				width: 100%;
+				height: 26px;
+				display: block;
+			}
+		}
+		.track__redthing{
+			border-left: 1px solid #C8010F;
+			background: rgba(#000, .3);
+			width: 10px;
+			margin-right: -10px;
+			height: 1000px;
+			position: absolute;
+			right: 0;
+			top: -200px;
+			cursor: pointer;
+			z-index: 100;
+		}
+	}
+}
+.waveform__comments{
+// 	margin-left: 29%;
+// 	margin-right: 15%;
+// 	float: left;
+// 	width: 100% - 29% - 15% - 3%;
+	.conversation{
+		box-shadow: inset 0 -10px 10px -10px rgba(#000, .3);
+		padding-left: 0;
+		.comment__input textarea, .commentedit__input{
+			background: rgba(#fff, .1) !important;
+		}
+	}
+	.comment_add{
+		padding: 8px 0;
+	}
+	.comment__waveform{
+		position: absolute;
+		right: 0px;
+		top: 13px;
+		width: 336px;
+		.comment__waveformtime{
+			font-size: 11px;
+			color: #A0A2A4;
+			position: absolute;
+			right: 3px;
+			top: 3px;
+		}
+		.comment__waveformwaveform{
+			width: 100%;
+			display: block;
+			height: 37px;
+		}
+		.comment__waveformpp{
+			@extend %button;
+			width: 27px;
+			height: 22px;
+			padding: 0;
+			border-radius: 3px;
+			position: absolute;
+			top: 8px;
+			i{
+				display: inline-block;
+				@include s(control_playgo);
+				position: absolute;
+				top: 4px;
+				left: 10px;
+			}
+			&.is-playing{
+				i{
+					@include s(control_play);
+					top: 3px;
+					left: 8px;
+				}
+			}
+		}
+	}
+}
+.waveform__comments{
+	float: left;
+	width: 100% - 29% - 15% - 3%;
+}
+.waveform__player{
+	float: left;
+	width: 26%;
+	@include box-sizing(border-box);
+	padding-left: 15px;
+}
+.waveform__likes{
+	float: right;
+	width: 14%;
+}
+.addreply{
+	@extend %button;
+	text-decoration: none;
+	i{
+		display: inline-block;
+		position: relative;
+		top: 3px;
+		@include sized-sprite($icons, addcomment);
+		margin-right: 5px;
+	}
+}
+.waveform__player{
+	.controls{
+		margin-bottom: 16px;
+	}
+	.timecode{
+		display: block;
+		float: none;
+		margin: 16px 0;
+		.timecode__label{
+			font-size: 12px;
+		}
+		.timecode__value{
+			font-size: 18px;
+		}
+	}
+}

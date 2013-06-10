@@ -76,7 +76,7 @@ a{
 	padding: 0 10px;
 	border: 1px solid #000;
 	cursor: pointer;
-	@include background-image(linear-gradient(bottom, #717171 0%, #282828 100%));
+	@include background-image(linear-gradient(bottom, #282828 0%, #717171 100%));
 	&:hover{
 		@include background-image(linear-gradient(bottom, darken(#717171,10%) 0%, darken(#282828,10%) 100%));
 	}
