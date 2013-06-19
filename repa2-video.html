@@ -6,8 +6,10 @@
 	<title>Template</title>
 	<meta name="viewport" content="width=device-width"/>
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
+		<script src="js/jquery.js"></script>
+		<script src="js/common.js"></script>
 </head>
-<body class="body-waveform">
+<body class="body-waveform is-timecode_tape is-private is-viewrange">
 <!-- BEGIN topper -->
 <div class="topper topper_withlogo">
 	<h1 class="topper__logo">Sony</h1>
@@ -33,7 +35,9 @@
 <!-- END topper -->
 
 <!-- BEGIN  waveform-->
-<div class="waveform">
+<div class="waveform is-lefthidden is-righthidden">
+	<div class="waveform__leftrange" style="left:10%"><i></i></div>
+	<div class="waveform__rightrange" style="left:90%"><i></i></div>
 	<div class="waveform__title">
 		blablablasladalda dadad adasd adadasd asdas d.mp3
 	</div>
@@ -52,17 +56,25 @@
 	<!-- BEGIN  timeline-->
 	<div class="timeline">
 		<div class="timeline__track">
-			<div class="timeline__trackcurrent" style="width:60%"><div class="timeline__trackred"></div></div>
+			<div class="timeline__trackcurrent" style="width:60%">
+				<div class="timeline__trackred"></div>
+				<div class="timeline__zoom"></div>
+			</div>
 		</div>
-		<div class="timeline__comment timeline__comment_multiple" style="left:20%">
-			<div class="timeline__commentbg">1</div>
+		<div class="timeline__comment timeline__comment_multiple is-private is-active" style="left:57%">
+			<div class="timeline__commentbg">&&</div>
 			<div class="timeline__commenttext">
 				<!-- begin comment -->
 				<div class="comment">
 					<a href="#" class="comment__actionshare"><i></i></a>
 					<div class="comment__meta">
 						<div class="comment__av"><img src="img/av.png" alt=""></div>
-						<span class="comment__author">Rainbow Dash</span> <i class="icon-offline"></i> <div class="comment__frame">on Frame 4235</div>
+						<span class="comment__author">Rainbow Dash</span> <i class="icon-offline"></i> 
+						<div class="comment__frame">
+							
+						on frame1122
+						
+						</div>
 						<div class="comment__published">Feb 8, 2013 15:38 <a href="#" class="comment__actionedit"><i></i></a></div>
 					</div>
 					<div class="comment__content">
@@ -101,7 +113,7 @@
 			</div>
 		</div>
 
-		<div class="timeline__comment timeline__comment_multiple" style="left:51%"><div class="timeline__commentbg">10</div></div>
+		<div class="timeline__comment timeline__comment_multiple is-hasnewcomments" style="left:51%"><div class="timeline__commentbg">10</div></div>
 		<div class="timeline__comment timeline__comment_multiple timeline__comment_upper" style="left:50%"><div class="timeline__commentbg">10</div></div>
 		
 		<div class="timeline__framestrack">
@@ -128,7 +140,8 @@
 		<div class="conversation-meta__comments">
 			 <i class="icon-comments"></i>13 500 <i class="icon-arrow"></i>
 		</div>
-		<div class="conversation-meta__drop is-hidden">
+		<!-- is-hidden -->
+		<div class="conversation-meta__drop">
 			
 			<!-- form -->
 			<div class="conversation-meta__form addconv">
@@ -191,11 +204,13 @@
 		<div class="controls__play controls__pause"><i></i></div>
 		<div class="controls__pause"><i></i></div>
 		<div class="controls__forw"><i></i></div>
+		<div class="controls__range"><i></i>Range</div>
 	</div>
+	
 	
 	<div class="timecode timecode_standard">
 		<div class="timecode__label">standard timecode</div>
-		<div class="timecode__value">04:01:32.140</div>
+		<input value="04:01:32.140" class="timecode__value" type="text">
 	</div>
 	<div class="timecode timecode_tape">
 		<div class="timecode__label">Tape  timecode</div>
@@ -203,6 +218,10 @@
 	</div>
 	<div class="timecode timecode__frame">
 		<div class="timecode__label">Frame Number</div>
+		<div class="timecode__value">4235</div>
+	</div>
+	<div class="timecode timecode__sample">
+		<div class="timecode__label">Sample Number</div>
 		<div class="timecode__value">4235</div>
 	</div>
 	
@@ -226,7 +245,8 @@
 		
 		<div class="comments__meta">
 			<div class="comments__update is-active"><i></i>10 new comments</div>
-			<div class="comments__sort is-up">Arrange by Frame<i></i></div>
+			<div class="comments__sort is-up">Arrange by Frame<i></i>
+			<select name="" id=""><option value="">sort by what</option></select></div>
 		</div>
 		<!-- BEGIN  conversation-->
 		<div class="conversations">
@@ -242,12 +262,19 @@
 				</div>
 				<div class="comment__meta">
 					<div class="comment__av"><img src="img/av.png" alt=""></div>
-					<span class="comment__author">Rainbow Dash</span> <i class="icon-offline"></i> <div class="comment__frame">on Frame 4235</div>
+					<span class="comment__author">Rainbow Dash</span> <i class="icon-offline"></i> <div class="comment__frame">
+						<div class="is-timecode_sampleVIEW"> on sample 42351111</div>
+						<div class="is-timecode_standartVIEW">on standart 42351111</div>
+						<div class="is-timecode_frameVIEW">on Frame 42351111</div>
+						<div class="is-timecode_tapeVIEW">on tapetimecode 42351111</div>
+						
+					</div>
 					<div class="comment__published">Feb 8, 2013 15:38</div>
 				</div>
 				<div class="comment__content">
 					<div class="comment__thumb"><img src="img/thumb.jpg" alt=""></div>
 					<p>I actually like almost anything. <br>I just think it needs to be cooler. Yeah, the better! The cooler!</p>
+					<div class="icon-like"></div> Like
 				</div>
 			</div>
 			<!-- end comment -->
@@ -266,7 +293,7 @@
 		<div class="conversation">
 			
 			<!-- begin comment -->
-			<div class="comment">
+			<div class="comment is-canedit">
 				<div class="comment__meta">
 					<div class="comment__av"><img src="img/av.png" alt=""></div>
 					<span class="comment__author">Rainbow Dash</span> <i class="icon-offline"></i> <div class="comment__frame">on Frame 4235</div>
@@ -283,6 +310,29 @@
 			<!-- end comment -->
 			
 			<!-- begin comment -->
+			<div class="comment comment_tab comment_edit">
+				<div class="comment__meta">
+					<div class="comment__av"><img src="img/av.png" alt=""></div>
+					<span class="comment__author">Rainbow Dash</span> <i class="icon-online"></i> <div class="comment__frame">on Frame 4235</div>
+					<div class="comment__published">Feb 8, 2013 15:38</div>
+				</div>
+				<div class="comment__content">
+					<div class="commentedit">
+						<textarea name="" class="commentedit__input" id="" cols="30" rows="10">Content of the comment</textarea>
+						<div class="commentedit__delete">Delete comment</div>
+						<div class="commentedit__save"><i></i>Save comment</div>
+						<div class="commentedit__cancel">Cancel</div>
+						
+					</div>
+				</div>
+				<div class="comment__action">
+					<a href="#" class="comment__actionshare">Share<i></i></a>
+					<a href="#" class="comment__actionedit is-active">Edit or Delete<i></i></a>
+				</div>
+			</div>
+			<!-- end comment -->
+			
+			<!-- begin comment -->
 			<div class="comment comment_tab">
 				<div class="comment__meta">
 					<div class="comment__av"><img src="img/av.png" alt=""></div>
@@ -291,6 +341,7 @@
 				</div>
 				<div class="comment__content">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore consequatur dicta neque sequi debitis molestias ducimus sunt voluptas quisquam expedita accusamus consequuntur tempore facilis enim est eaque explicabo. Delectus at.</p>
+					<div class="comment__liked"><div class="icon-like"></div> Like</div>
 				</div>
 				<div class="comment__action">
 					<a href="#" class="comment__actionshare">Share<i></i></a>
@@ -307,6 +358,7 @@
 				</div>
 				<div class="comment__content">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro repellat aperiam dolorem dolor minima maxime aliquid eligendi quae velit ut assumenda excepturi ex animi cumque labore quia iusto laborum corporis.</p>
+					<div class="comment__liked"><div class="icon-dislike"></div> Dislike</div>
 				</div>
 				<div class="comment__action">
 					<a href="#" class="comment__actionshare">Share<i></i></a>
