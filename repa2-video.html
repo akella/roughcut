@@ -9,7 +9,7 @@
 		<script src="js/jquery.js"></script>
 		<script src="js/common.js"></script>
 </head>
-<body class="body-waveform is-timecode_tape is-private is-viewrange">
+<body class="body-waveform is-timecode_tape is-private is-viewrange is-hasnovideoatall">
 <!-- BEGIN topper -->
 <div class="topper topper_withlogo">
 	<h1 class="topper__logo">Sony</h1>
@@ -34,8 +34,14 @@
 </div>
 <!-- END topper -->
 
+<!-- BEGIN  videoplayer-->
+<div class="videoplayer">
+	<img src="http://placekitten.com/400/400" width="400" height="400" alt="">
+</div>
+<!-- END videoplayer-->
 <!-- BEGIN  waveform-->
 <div class="waveform is-lefthidden is-righthidden">
+<div class="waveform__wrap">
 	<div class="waveform__leftrange" style="left:10%"><i></i></div>
 	<div class="waveform__rightrange" style="left:90%"><i></i></div>
 	<div class="waveform__title">
@@ -134,7 +140,14 @@
 	
 	
 	
-	<!-- BEGIN  conversation-->
+	
+	
+</div>
+<!-- end wrap -->
+
+
+
+<!-- BEGIN  conversation-->
 	<div class="conversation-meta ">
 		<div class="conversation-meta__status conversation-meta__addnew is-private"><i></i>Private conversation</div>
 		<div class="conversation-meta__comments">
@@ -161,6 +174,8 @@
 				<div class="addconv__submit"><i></i>Create the conversation</div> <a href="#" class="addconv__cancel">Cancel</a>
 			</div>
 			<!-- form -->
+			<!-- begin conversation-meta__drop-wrap -->
+			<div class="conversation-meta__drop-wrap">
 			<!-- item -->
 			<div class="conversation-meta__drop-item is-hasnew">
 				<div class="conversation-meta__status conversation-meta__addnew is-private"><i></i>Choose a conversation or add new</div>
@@ -187,13 +202,14 @@
 				</div>
 			</div>
 			<!-- item -->
+			</div>
+			<!-- end conversation-meta__drop-wrap -->
 			<div class="conversation-meta__createnew">
 				<i></i>Create new conversation
 			</div>
 		</div>
 	</div>
 	<!-- END conversation-->
-	
 	
 </div>
 <!-- END waveform-->
@@ -218,7 +234,7 @@
 	</div>
 	<div class="timecode timecode__frame">
 		<div class="timecode__label">Frame Number</div>
-		<div class="timecode__value">4235</div>
+		<div class="timecode__value">N/A</div>
 	</div>
 	<div class="timecode timecode__sample">
 		<div class="timecode__label">Sample Number</div>
@@ -259,6 +275,7 @@
 					<div class="comment__waveformpp is-paused is-playing"><i></i></div>
 					<img class="comment__waveformwaveform" src="img/smallwaveform.png" alt="">
 					<div class="comment__waveformtime">0:10</div>
+					<div class="comment__waveformtrack"></div>
 				</div>
 				<div class="comment__meta">
 					<div class="comment__av"><img src="img/av.png" alt=""></div>
@@ -382,6 +399,7 @@
 				</div>
 			</div>
 			<!-- end comment -->
+			<div class="markallread">Mark all comments as read</div>
 
 			
 		</div>

@@ -186,6 +186,10 @@
 			display: none;
 		}
 	}
+	.conversation-meta__drop-wrap{
+		max-height: 100px;
+		overflow: auto;
+	}
 	.conversation-meta__drop-item{
 		@extend %clr;
 		cursor: pointer;
@@ -266,7 +270,7 @@
 		}
 		i{
 			display: inline-block;
-			@include sized-sprite($icons, public);
+			@include sized-sprite($icons, private);
 			margin-right: 5px;
 			vertical-align: middle;
 			position: relative;
@@ -274,7 +278,7 @@
 		}
 		&.is-private{
 			i{
-				@include sized-sprite($icons, private);
+				@include sized-sprite($icons, public);
 			}
 		}
 		@include ipad{
@@ -885,7 +889,9 @@
 		background: #c2c2c2;
 	}
 	.timeline__trackred{
-		height: 56px + 3px + 1px;
+		height: 100%;
+		top: -200px;
+		height: 1000px;
 		border-left: 1px solid #c40011;
 		background:  rgba(black,.3);
 		position: absolute;
@@ -894,6 +900,15 @@
 		width: 3px;
 		.is-nosound &{
 			height: 56px + 3px + 1px - 28px;
+		}
+		&:before{
+			content: ' ';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 1000px;
+			background: rgba(#000, .2);
+			height: 100%;
 		}
 	}
 
@@ -935,6 +950,7 @@
 			color: #ccc;
 		}
 	}
+
 }
 
 .controls{

@@ -10,11 +10,18 @@
 	box-shadow:0 0 10px rgba(#000, .6);
 	background: #000;
 	margin-bottom: 20px;
+	.waveform__wrap{
+		overflow: hidden;
+		height: 240px;
+		width: 100%;
+		position: relative;
+	}
 	&:before, &:after{
 		position: absolute;
 		content: ' ';
 		height: 100%;
 		right: 0;
+		top: 0;
 		width: 50px;
 		z-index: 20;
 	}
@@ -30,6 +37,7 @@
 		position: absolute;
 		left: 29%;
 		width: 260px;
+		width: 355px;
 		bottom: 4px;
 		background: transparent;
 		border-style: none;
@@ -44,6 +52,7 @@
 		z-index: 10;
 		display: none;
 		background: #353535;
+		cursor: move;
 		.is-viewrange &{
 			display: block;
 		}
@@ -109,6 +118,11 @@
 			right: -20px;
 			top: -6px;
 			cursor: move;
+			@include transition(all .3s ease-in-out);
+			.is-visiblevideo &{
+				height: 44px;
+				@include transition(all .3s ease-in-out);
+			}
 		}
 	}
 	.waveform__title{
@@ -215,6 +229,15 @@
 			top: -200px;
 			cursor: pointer;
 			z-index: 100;
+			&:before{
+				content: ' ';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 1000px;
+				background: rgba(#000, .1);
+				height: 100%;
+			}
 		}
 		.track__zoom{
 			
@@ -245,12 +268,29 @@ textarea{
 		right: 0px;
 		top: 13px;
 		width: 336px;
+		overflow: hidden;
 		.comment__waveformtime{
 			font-size: 11px;
 			color: #A0A2A4;
 			position: absolute;
 			right: 3px;
 			top: 3px;
+		}
+		.comment__waveformtrack{
+			position: absolute;
+			left: 20%;
+			top: 0;
+			height: 100%;
+			border-right: 1px solid rgba(#fff, .7);
+			&:before{
+				content: ' ';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 1000px;
+				background: rgba(#000, .3);
+				height: 100%;
+			}
 		}
 		.comment__waveformwaveform{
 			width: 100%;
@@ -389,6 +429,13 @@ textarea{
 		}
 	}
 }
+.markallread{
+	@extend %button;
+	display: block;
+	text-align: center;
+	border-radius: 4px;
+	margin: 15px 0;
+}
 .is-timecode_sampleVIEW, .is-timecode_standartVIEW,
 .is-timecode_frameVIEW, .is-timecode_tapeVIEW{
 	display: none;
@@ -402,3 +449,40 @@ textarea{
 {
 	display: block;
 }
+
+
+// video player
+.is-hasnovideoatall{
+	.timecode__frame{
+		opacity: .3;
+	}
+	.waveform__video{
+		display: none;
+	}
+	.timeline__framestrack{
+		display: none;
+	}
+}
+.videoplayer{
+	height: 0;
+	overflow: hidden;
+	text-align: center;
+	background: #000;
+	@include transition(all .3s ease-in-out);
+	.is-visiblevideo &{
+		display: block;
+		height: 400px;
+		overflow: hidden;
+		@include transition(all .3s ease-in-out);
+	}
+}
+
+
+
+
+
+
+
+
+
+
