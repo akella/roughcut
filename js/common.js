@@ -6,4 +6,7 @@ $(document).ready(function() {
 	$('.waveform__video').click(function (e) {
 		$('body').toggleClass('is-visiblevideo')
 	});
+	$('.rough').click(function (e) {
+		$('.rough').toggleClass('is-withleft is-withright')
+	});
 });

@@ -1,0 +1,466 @@
+html,body{
+	height: 100%;
+	position: relative;
+}
+$width: 322px;
+$bottom: 260px;
+// layout
+.rough{
+	position: absolute;
+	bottom: 0;
+	top: 33px;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	background: #212121;
+	.rough__left{
+		position: absolute;
+		left: -($width);
+		top: 0;
+		bottom: $bottom;
+		width: $width;
+		background: #333333;
+		@include transition(all .3s ease-in-out);
+		border-right: 1px solid #464646;
+		box-shadow: 10px 0 10px rgba(#000, .2);
+		overflow: auto;
+	}
+	.rough__right{
+		position: absolute;
+		right: -($width);
+		width: $width;
+		bottom: $bottom;
+		top: 0;
+		background: #333333;
+		@include transition(all .3s ease-in-out);
+		border-left: 1px solid #464646;
+		box-shadow: -10px 0 10px rgba(#000, .2);
+		overflow: auto;
+	}
+	.rough__content{
+		position: absolute;
+		bottom: $bottom;
+		top: 0;
+		left: 0;
+		right: 0;
+		overflow: hidden;
+		background: #212121;
+
+		@include transition(all .3s ease-in-out);
+	}
+	&.is-withleft{
+		left: 0;
+		.rough__left{
+			left: 0;
+		}
+		.rough__content{
+			left: 0;
+		}
+		.rough__content{
+			left: $width;
+		}
+	}
+	&.is-withright{
+		.rough__right{
+			right: 0;
+		}
+		.rough__content{
+			right: $width;
+		}
+	}
+
+}
+
+
+// for debug only
+.rough__content img{
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+}
+
+
+// files
+// ===========================
+.rough__left{
+	padding: 10px;
+	@include box-sizing(border-box);
+}
+.searchbox{
+	padding: 0 0 15px 0;
+	width: 100%;
+	@include box-sizing(border-box);
+	input{
+		width: 100%;
+		display: block;
+		box-shadow: inset 0 3px 3px rgba(#000, .6);
+		border: 1px solid #000;
+	}
+}
+
+.rfiles{
+	.rfiles__head{
+		font-size: 11px;
+		text-transform: uppercase;
+		color: #aaaaaa;
+		font-weight: normal;
+		margin-bottom: 10px;
+		i{
+			@include s(fileicon);
+			vertical-align: middle;
+			margin-right: 6px;
+			display: inline-block;
+			position: relative;
+			top: -2px;
+		}
+	}
+	.rfiles__nav{
+		float: right;
+		width: 190px;
+		text-align: right;
+		a{
+			color: #777777;
+			font-size: 12px;
+			text-decoration: underline;
+			margin-right: 6px;
+			vertical-align: middle;
+		}
+		.rfiles__viewlist, .rfiles__viewgrid{
+			display: inline-block;
+			border: 1px solid #202020;
+			@include background-image(linear-gradient( #484848, #2E2E2E));
+			vertical-align: middle;
+			width: 33px;
+			height: 16px;
+			padding-top: 2px;
+			text-align: center;
+			cursor: pointer;
+			&.is-active, &:hover{
+				@include background-image(linear-gradient( #2E2E2E, #484848));
+			}
+			i{
+				display: inline-block;
+			}
+		}
+		.rfiles__viewgrid{
+			border-left: none;
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+			i{
+				@include s(viewgrid);
+				position: relative;
+				top: -1px;
+			}
+		}
+		.rfiles__viewlist{
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+			i{
+				@include s(viewlist);
+			}
+		}
+	}
+}
+.rfile{
+	border-bottom: 1px solid #424242;
+	padding-bottom: 13px;
+	margin-top: 13px;
+	.rfile__pic{
+		margin-bottom: 6px;
+		img{
+			display: block;
+		}
+	}
+	.rfile__title{
+		overflow: hidden;
+		-ms-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		color: #fbfbfb;
+		font-size: 11px;
+		white-space:nowrap;
+	}
+	.rfile__length{
+		float: right;
+		font-size: 11px;
+		color: #cccccc;
+	}
+	.rfile__meta{
+		font-size: 11px;
+		margin-top: 2px;
+		color: #999;
+		span{
+			margin-right: 10px;
+		}
+	}
+}
+
+// cut lists
+// ===========================
+.rough__right{
+	padding: 10px;
+	@include box-sizing(border-box);
+}
+.icon-mycut{
+	display: inline-block;
+	@include s(mycut);
+	margin-right: 5px;
+	position: relative;
+	top: 2px;
+}
+.icon-sharedcut{
+	display: inline-block;
+	@include s(sharedcut);
+	margin-right: 3px;
+	position: relative;
+	top: 2px;
+}
+.cutlist{
+	border-bottom: 2px solid #484848;
+	margin-bottom: 7px;
+	position: relative;
+	.cutlist__header{
+		font-size: 11px;
+		color: #aaa;
+		font-weight: normal;
+		text-transform: uppercase;
+		margin-bottom: 8px;
+	}
+	.cutlist__toggle{
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: inline-block;
+		@include s(cutmin);
+		top: 5px;
+		cursor: pointer;
+	}
+}
+.cut{
+	margin-bottom: 18px;
+	.cut__title{
+		font-size: 16px;
+		font-weight: normal;
+		color: #ffffff;
+		margin-bottom: 15px;
+		text-shadow: 0 1px 0 black;
+		-webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.4) 70%)
+	}
+	.cut__pics{
+		position: relative;
+		height: 73px;
+		margin-right: -10px;
+		img{
+			position: absolute;
+			left: 0;
+			top: 0;
+			box-shadow:0 0 6px rgba(#000, 1);
+			display: block;
+			z-index: 10;
+		}
+		img+ img{
+			@include transform(rotate(3deg));
+			z-index: 9;
+		}
+		img+img+img{
+			z-index: 8;
+			@include transform(rotate(-4deg));
+			left: -4px;
+		}
+	}
+	.cut__created{
+		text-align: right;
+		color: #777;
+		font-size: 11px;
+		display: block;
+		padding-left: 30%;
+		margin-top: 7px;
+	}
+}
+
+
+// outside of columns stuff
+// ===========================
+.filename{
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px solid #464646;
+	background: #2D2D2D;
+	.filename__title{
+		color: #777;
+		font-size: 12px;
+		display: inline-block;
+	}
+	.filename__label{
+		font-size: 11px;
+		text-transform: uppercase;
+		color: #777;
+		background: #000000;
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+		line-height: 1;
+		display: inline-block;
+		padding: 3px 3px 4px 5px;
+		cursor: pointer;
+		i{
+			@include s(filenamei);
+			display: inline-block;
+			margin-right: 3px;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* global timeline
+---------------------------------------- */
+
+.rough__bottom{
+	height: 260px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+}
+.panel_navigation{
+	overflow:hidden;
+	}
+.globalTimeline{
+	width:100%;
+	border-bottom:1px solid #464646;
+	}
+.globalTimeline__track{
+	height:3px;
+	width:100%;
+	background:#555;
+	}
+	.globalTimeline__currenttime{
+		display:block;
+		background:#c2c2c2;
+		height:100%;
+		position:relative;
+		}
+	.globalTimeline__theredthing{
+		position:absolute;
+		top:0;
+		z-index:100;
+		right:-11px;
+		height:40px;
+		width:10px;
+		border-left:1px solid #cf0808;
+		cursor:pointer;
+		background: rgba(#000, .3)
+		}
+		.globalTimeline__theredthing:hover{
+			background:rgba(255,0,0,0.3);
+			}
+	.globalTimeline__filmstrip{
+		margin:7px 9px 5px 9px;
+		}
+		.globalTimeline__filmstrip img{
+			display:block;
+			width:100%;
+			height:28px;
+			}
+	.globalTimeline__range{
+		height:26px;
+		border:5px solid yellow;
+		border-radius:4px;
+		position:absolute;
+		top:6px;
+		right:0;
+		margin-right:-50%;
+		-webkit-border-image: url(../img/range.png) 7 / 7px repeat repeat;
+		border-image: url(../img/range.png) 7 / 7px repeat repeat;
+		cursor:move;
+		}
+		.globalTimeline__range:before{
+			content:' ';
+			width:12px;
+			height:10px;
+			left:50%;
+			bottom:-13px;
+			margin-left:-6px;
+			background:url(../img/range-arr.png) no-repeat 0 0;
+			position:absolute;
+			}	
+.globalTimeline__zoom{
+	margin-left:10px;
+	position:relative;
+	top:-4px;
+	z-index:1000;
+	}
+.globalTimeline__zoomicon{
+	width:8px;
+	height:8px;
+	vertical-align:middle;
+	display:inline-block;
+	background:url(../img/zoom.png) no-repeat 0 0;
+	}
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	position: relative;
+	top: -1px;
+	z-index: 1;
+	width: 11px;
+	height: 11px;
+	border-radius: 40px;
+	border:1px solid #838383;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#525252), color-stop(100%,#000000));
+	}
+
+/* localTimeline
+---------------------------------------- */
+.localTimeline{
+	display:block;
+	width:100%;
+	position:relative;
+	overflow: hidden;
+	}
+.localTimeline img{
+	width:100%;
+	display:block;
+	}
+.localTimeline__filmstrip{
+	width:100%;
+	}
+	.localTimeline__theredthing{
+		position:absolute;
+		left:400px;
+		border-left:1px solid #cf0808;
+		background:rgba(0,0,0,.4);
+		width:2px;
+		height:1000px;
+		z-index:1000;
+		cursor:move;
+		}
+.wraptimecodes{
+	position: relative;
+	padding-top: 9px;
+	.volume{
+		float: right;
+		position: absolute;
+		right: 0;
+		top: 10px;
+	}
+	.controls{
+		display: inline-block;
+		vertical-align: top;
+	}
+}
