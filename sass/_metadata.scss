@@ -1,0 +1,244 @@
+.metadata{
+	box-shadow: inset 0 10px 10px -10px rgba(#000, .7);
+	background: url(../img/noisedark.png) repeat 0 0 ;
+	height: 100%;
+	position: absolute;
+	top: 33px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	.metadata__nav{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 213px;
+		height: 100%;
+		padding: 10px;
+		@include box-sizing(border-box);
+		background:  url(../img/noisedark.png);
+		box-shadow: inset 0 10px 10px -10px rgba(#000, .7);
+		border-right: 3px solid #000000;
+		position: absolute;
+		.metadata__navscrollthumb{
+			position: absolute;
+			right: -3px;
+			height: 100px;
+			background: #616161;
+			width: 3px;
+			cursor: pointer;
+		}
+		h2{
+			-webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.4) 70%);
+			color: #ffffff;
+			font-size: 24px;
+			font-weight: normal;
+		}
+		.metadata__back{
+			font-size: 13px;
+			color: #777;
+			i{
+				display: inline-block;
+				@include s(leftarr);
+				margin-right: 6px;
+			}
+			a{
+				color: #777;
+				text-decoration: underline;
+			}
+		}
+		.metadata__save{
+			@extend %button;
+			border-radius: 3px;
+			margin-top: 20px;
+			display: block;
+			padding-left: 11px;
+			i{
+				display: inline-block;
+				margin-right: 10px;
+				@include s(checked1);
+				position: relative;
+				top: 1px;
+			}
+		}
+		.metadata__saveas{
+			@extend %button;
+			border-radius: 3px;
+			margin-top: 20px;
+			display: block;
+			padding-left: 11px;
+			i{
+				display: inline-block;
+				margin-right: 10px;
+				@include s(saveasxml);
+			}
+
+		}
+	}
+	.metanav{
+		margin: 16px -10px;
+		list-style: none;
+		border-top: 1px solid rgba(#fff, .1);
+		box-shadow:0 -1px 0 #000;
+		li{
+			border-bottom: 1px solid #000000;
+			box-shadow: 0 1px 0 rgba(#fff, .1);
+			position: relative;
+		}
+		a{
+			padding: 10px 10px 10px 37px;
+			font-size: 10px;
+			text-transform: uppercase;
+			color: #ccc;
+			display: block;
+			text-decoration: none;
+			&:hover{
+				background: rgba(#fff, .05);
+			}
+			i{
+				display: inline-block;
+				position: absolute;
+				left: 8px;
+				top: 10px;
+			}
+		}
+		@each $s in pack, sour, text, vide, audi, note{
+			.metanav__#{$s} i{
+				@include s(i-#{$s});
+			}
+		}
+		.metanav__note i{
+			top: 7px;
+		}
+		.metanav__audi i{
+			top: 8px;
+		}
+		.metanav__vide i{
+			top: 8px;
+		}
+	}
+	.metaform{
+		overflow: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+		left: 213px;
+		bottom: 0;
+		padding-top: 10px;
+		padding-left: 18px;
+	}
+}
+@each $s in pack, sour, text, vide, audi, note{
+	.icon__#{$s}{
+		@include s(i-#{$s});
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		top: -2px;
+		margin-right: 4px;
+	}
+}
+.metaform{
+	.metaform__title{
+		margin-bottom: 24px;
+	}
+	fieldset{
+		margin-bottom: 30px;
+		h3{
+			font-weight: normal;
+			font-size: 10px;
+			text-transform: uppercase;
+			color: #777;
+			margin-bottom: 12px;
+			span{
+				text-transform: none;
+			}
+			b{
+				font-weight: normal;
+				margin-right: 10px;
+			}
+		}
+	}
+	.metaform__field{
+		margin-left: -18px;
+		padding: 4px 0px  4px 18px;
+		width: 681px;
+		@extend %clr;
+		&:nth-of-type(even){
+			//background: rgba(#000, .2);
+			@include background-image(linear-gradient(left, rgba(0,0,0,.3) 0%,rgba(0,0,0,0) 55%));
+		}
+
+		select{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			-webkit-appearance: none;
+			opacity: 0;
+			z-index: 2;
+		}
+	}
+	.metaform__label{
+		float: left;
+		width: 200px;
+		color: #aaaaaa;
+		height: 28px;
+		line-height: 28px;
+		
+	}
+	.metaform__input{
+		width: 480px;
+		float: left;
+		input, textarea{
+			width: 100%;
+			height: 28px;
+			@include box-sizing(border-box);
+			border: 1px solid #363636;
+			background: url(../img/icons/inputnoise.png) repeat 0 0;
+			padding: 4px;
+			box-shadow: inset 1px 1px 3px rgba(#000, .4);
+			color: #fff;
+			&:focus{
+				border: 1px solid #777;
+			}
+		}
+		textarea{
+			height: 100px;
+			margin-top: -10px;
+		}
+		&.metaform__input_selectbig{
+			width: auto;
+			height: auto;
+			float: none;
+		}
+	}
+	.metaform__input_select{
+		position: relative;
+		i{
+			display: inline-block;
+			@include s(arrowdown);
+			position: absolute;
+			right: 10px;
+			top: 12px;
+		}
+		&.metaform__input_selectbig{
+			i{
+				@include s(arrowdownbig);
+				top: 4px;
+			}
+			input{
+				font-size: 18px;
+				height: 35px;
+				width: 100%;
+			}
+		}
+	}
+	.metaform__field_textarea .metaform__input{
+		width: 100%;
+		textarea{
+		
+		}
+	}
+}
