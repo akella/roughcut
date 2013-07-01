@@ -13,8 +13,7 @@ body { background: #333; font-family: "Lucida Sans", "Myriad Pro",sans-serif; fo
 a img, fieldset { border: none; }
 
 .comment.comment_add .comment__addcomment, .video-edit .video-edit__wipe, .video-edit .video-edit__undo, .conversation-meta .addconv .addconv__submit, .commentedit .commentedit__save, .controls .controls__play, .controls .controls__back, .controls .controls__forw, .controls .controls__pause, .controls .controls__range, .likes .likes__like, .likes .likes__dislike, .waveform .waveform__video, .waveform__comments .comment__waveform .comment__waveform, .addreply, .markallread, .metadata .metadata__nav .metadata__save, .metadata .metadata__nav .metadata__saveas { color: #cbcbcb; font-size: 12px; text-shadow: 0 -1px 1px black; height: 23px; line-height: 24px; display: inline-block; padding: 0 10px; border: 1px solid #000; cursor: pointer; background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #282828), color-stop(100%, #717171)); background-image: -webkit-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: -moz-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: -o-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: -ms-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: linear-gradient(bottom, #282828 0%, #717171 100%); }
-.comment.comment_add .comment__addcomment:hover, .video-edit .video-edit__wipe:hover, .video-edit .video-edit__undo:hover, .conversation-meta .addconv .addconv__submit:hover, .commentedit .commentedit__save:hover, .controls .controls__play:hover, .controls .controls__back:hover, .controls .controls__forw:hover, .controls .controls__pause:hover, .controls .controls__range:hover, .likes .likes__like:hover, .likes .likes__dislike:hover, .waveform .waveform__video:hover, .waveform__comments .comment__waveform .comment__waveform:hover, .addreply:hover, .markallread:hover, .metadata .metadata__nav .metadata__save:hover, .metadata .metadata__nav .metadata__saveas:hover { background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #585858), color-stop(100%, #0e0e0e)); background-image: -webkit-linear-gradient(bottom, #585858 0%, #0e0e0e 100%); background-image: -moz-linear-gradient(bottom, #585858 0%, #0e0e0e 100%); background-image: -o-linear-gradient(bottom, #585858 0%, #0e0e0e 100%); background-image: -ms-linear-gradient(bottom, #585858 0%, #0e0e0e 100%); background-image: linear-gradient(bottom, #585858 0%, #0e0e0e 100%); }
-.comment.comment_add .comment__addcomment:active, .video-edit .video-edit__wipe:active, .video-edit .video-edit__undo:active, .conversation-meta .addconv .addconv__submit:active, .commentedit .commentedit__save:active, .controls .controls__play:active, .controls .controls__back:active, .controls .controls__forw:active, .controls .controls__pause:active, .controls .controls__range:active, .likes .likes__like:active, .likes .likes__dislike:active, .waveform .waveform__video:active, .waveform__comments .comment__waveform .comment__waveform:active, .addreply:active, .markallread:active, .metadata .metadata__nav .metadata__save:active, .metadata .metadata__nav .metadata__saveas:active { background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #282828), color-stop(100%, #717171)); background-image: -webkit-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: -moz-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: -o-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: -ms-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: linear-gradient(bottom, #282828 0%, #717171 100%); }
+.comment.comment_add .comment__addcomment:active, .video-edit .video-edit__wipe:active, .video-edit .video-edit__undo:active, .conversation-meta .addconv .addconv__submit:active, .commentedit .commentedit__save:active, .controls .controls__play:active, .controls .controls__back:active, .controls .controls__forw:active, .controls .controls__pause:active, .controls .controls__range:active, .likes .likes__like:active, .likes .likes__dislike:active, .waveform .waveform__video:active, .waveform__comments .comment__waveform .comment__waveform:active, .addreply:active, .markallread:active, .metadata .metadata__nav .metadata__save:active, .metadata .metadata__nav .metadata__saveas:active { background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #585858), color-stop(100%, #0e0e0e)); background-image: -webkit-linear-gradient(bottom, #585858 0%, #0e0e0e 100%); background-image: -moz-linear-gradient(bottom, #585858 0%, #0e0e0e 100%); background-image: -o-linear-gradient(bottom, #585858 0%, #0e0e0e 100%); background-image: -ms-linear-gradient(bottom, #585858 0%, #0e0e0e 100%); background-image: linear-gradient(bottom, #585858 0%, #0e0e0e 100%); }
 
 .comment.comment_add .comment__addcomment, .video-edit .video-edit__wipe, .video-edit .video-edit__undo { background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #282828), color-stop(100%, #717171)); background-image: -webkit-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: -moz-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: -o-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: -ms-linear-gradient(bottom, #282828 0%, #717171 100%); background-image: linear-gradient(bottom, #282828 0%, #717171 100%); }
 .comment.comment_add .comment__addcomment:hover, .video-edit .video-edit__wipe:hover, .video-edit .video-edit__undo:hover { background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #0e0e0e), color-stop(100%, #585858)); background-image: -webkit-linear-gradient(bottom, #0e0e0e 0%, #585858 100%); background-image: -moz-linear-gradient(bottom, #0e0e0e 0%, #585858 100%); background-image: -o-linear-gradient(bottom, #0e0e0e 0%, #585858 100%); background-image: -ms-linear-gradient(bottom, #0e0e0e 0%, #585858 100%); background-image: linear-gradient(bottom, #0e0e0e 0%, #585858 100%); }
@@ -149,6 +148,9 @@ input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 10p
 
 .conversations { overflow: auto; }
 
+.is-fixed .comments { padding-top: 60px; }
+.comments .comments__top { background: #333333; height: 60px; }
+.is-fixed .comments .comments__top { position: fixed; z-index: 900; top: 260px; left: 28%; right: 20%; margin-left: -15px; }
 .comments .comments__meta { border-top: 1px solid rgba(255, 255, 255, 0.2); background: rgba(0, 0, 0, 0.3); font-size: 11px; }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 1) { .comments .comments__meta { font-size: 13px; } }
 .comments .comments__sort { float: right; color: #ccc; margin-right: 15px; height: 19px; line-height: 19px; cursor: pointer; position: relative; z-index: 50; }
@@ -307,7 +309,10 @@ input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 10p
 
 .body-waveform { overflow: auto; }
 
-.waveform { height: 240px; position: relative; width: 100%; border-bottom: 1px solid #3D3D3D; box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); background: #000; margin-bottom: 20px; }
+.is-fixed .waveform__comments { padding-top: 240px; }
+
+.waveform { height: 240px; position: relative; width: 100%; border-bottom: 1px solid #3D3D3D; box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); background: #000; margin-bottom: 20px; z-index: 1000; }
+.is-fixed .waveform { position: fixed; top: 0; left: 0; width: 100%; }
 .waveform .waveform__wrap { overflow: hidden; height: 240px; width: 100%; position: relative; }
 .waveform:before, .waveform:after { position: absolute; content: ' '; height: 100%; right: 0; top: 0; width: 50px; z-index: 20; }
 .waveform.is-lefthidden:before { right: auto; left: 0; background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0.9)), color-stop(100%, rgba(0, 0, 0, 0))); background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)); background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)); background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)); background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)); background-image: linear-gradient(left, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)); }
@@ -368,9 +373,12 @@ textarea { resize: vertical; }
 
 .waveform__comments { float: left; width: 53%; }
 
-.waveform__player { float: left; width: 26%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding-left: 15px; }
+.waveform__playerwrap { float: left; width: 26%; min-height: 50px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding-left: 15px; }
+
+.is-fixed .waveform__player { position: fixed; top: 260px; left: 15px; }
 
 .waveform__likes { float: right; width: 14%; }
+.is-fixed .waveform__likes { position: fixed; right: 0; top: 260px; }
 
 .icon-like { background: url('../img/icons-s29b7223329.png') 0 -1059px no-repeat; width: 10px; height: 13px; display: inline-block; margin-right: 3px; vertical-align: middle; }
 

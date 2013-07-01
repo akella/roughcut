@@ -1,20 +1,32 @@
 .body-waveform{
 	overflow: auto;
 }
+.is-fixed{
+	.waveform__comments{
+		padding-top: 240px;
+	}
+}
 .waveform{
 	height: 240px;
 	position: relative;
 	width: 100%;
-	
 	border-bottom: 1px solid #3D3D3D;
 	box-shadow:0 0 10px rgba(#000, .6);
 	background: #000;
 	margin-bottom: 20px;
+	z-index: 1000;
+	.is-fixed &{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
 	.waveform__wrap{
 		overflow: hidden;
 		height: 240px;
 		width: 100%;
 		position: relative;
+
 	}
 	&:before, &:after{
 		position: absolute;
@@ -380,15 +392,28 @@ textarea{
 	float: left;
 	width: 100% - 29% - 15% - 3%;
 }
-.waveform__player{
+.waveform__playerwrap{
 	float: left;
 	width: 26%;
+	min-height: 50px;
 	@include box-sizing(border-box);
 	padding-left: 15px;
+}
+.waveform__player{
+	.is-fixed &{
+		position: fixed;
+		top: 260px;
+		left: 15px;
+	}
 }
 .waveform__likes{
 	float: right;
 	width: 14%;
+	.is-fixed &{
+		position: fixed;
+		right: 0;
+		top: 260px;
+	}
 }
 .icon-like{
 	@include sized-sprite($icons,like);

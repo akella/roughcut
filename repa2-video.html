@@ -9,7 +9,7 @@
 		<script src="js/jquery.js"></script>
 		<script src="js/common.js"></script>
 </head>
-<body class="body-waveform is-timecode_tape is-private is-viewrange is-hasnovideoatall">
+<body class="is-fixed body-waveform is-timecode_tape is-private is-viewrange is-hasnovideoatall">
 <!-- BEGIN topper -->
 <div class="topper topper_withlogo">
 	<h1 class="topper__logo">Sony</h1>
@@ -214,11 +214,12 @@
 </div>
 <!-- END waveform-->
 
+<div class="waveform__playerwrap">
 <div class="waveform__player">
 	<div class="controls">
 		<div class="controls__back"><i></i></div>
 		<div class="controls__play controls__pause"><i></i></div>
-		<div class="controls__pause"><i></i></div>
+		<!-- <div class="controls__pause"><i></i></div> -->
 		<div class="controls__forw"><i></i></div>
 		<div class="controls__range"><i></i>Range</div>
 	</div>
@@ -242,10 +243,14 @@
 	</div>
 	
 </div>
+</div>
 
 <div class="waveform__comments">
 	<!-- BEGIN comments -->
 	<div class="comments">
+		
+		<!-- BEGIN AREA TO FIX -->
+		<div class="comments__top">
 		<!-- BEGIN  conversation-->
 		<div class="conversation conversation_noborder">
 			<!-- BEGIN  comment comment_tab-->
@@ -265,6 +270,10 @@
 			<select name="" id=""><option value="">sort by what</option></select></div>
 		</div>
 		<!-- BEGIN  conversation-->
+		</div>
+		<!-- area to fix on top of comments -->
+		
+		
 		<div class="conversations">
 		<!-- BEGIN  conversation-->
 		<div class="conversation">

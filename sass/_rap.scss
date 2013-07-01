@@ -383,6 +383,22 @@
 	overflow: auto;
 }
 .comments{
+	.is-fixed &{
+		padding-top: 60px;
+	}
+	.comments__top{
+		background: #333333;
+		height: 60px;
+		.is-fixed &{
+			position: fixed;
+			z-index: 900;
+			top: 260px;
+			left: 28%;
+// 			padding-left: 15px;
+			right: 20%;
+			margin-left: -15px;
+		}
+	}
 	.comments__meta{
 		border-top: 1px solid rgba(#fff,.2);
 		background: rgba(#000,0.3);

@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function() {
 	$('.timeline__comment').click(function (e) {
 		$(this).children('.timeline__commenttext').toggleClass('is-visible');
@@ -8,5 +11,13 @@ $(document).ready(function() {
 	});
 	$('.rough').click(function (e) {
 		$('.rough').toggleClass('is-withleft is-withright')
+	});
+	waveformWrapper = document.querySelector(".waveform .waveform__wrap");
+	window.addEventListener("scroll", function() {
+	    if (waveformWrapper.parentElement.getPosition().y < 0) {
+	        waveformWrapper.classList.add("is-fixed");
+	    } else {
+	        waveformWrapper.classList.remove("is-fixed");
+	    };
 	});
 });
