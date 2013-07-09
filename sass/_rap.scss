@@ -1032,6 +1032,22 @@
 			top: 1px;
 		}
 	}
+	.controls__addtocutlist{
+		@extend %button;
+		border-radius: 3px;
+		margin-left: 20px;
+		line-height: 1px;
+		vertical-align: middle;
+		position: relative;
+		top: -1px;
+		I{
+			@include sized-sprite($icons, addtocutlist);
+			display: inline-block;
+			margin-right: 3px;
+			position: relative;
+			top: 1px;
+		}
+	}
 	.controls__looprange{
 		display: block;
 		text-align: center;
