@@ -311,6 +311,36 @@ $bottom: 260px;
 		padding-left: 30%;
 		margin-top: 7px;
 	}
+	.cut__icons{
+		font-size: 11px;
+		color: #acacac;
+		text-shadow: 0 -1px 1px rgba(#000, .4);
+		margin: -10px 0 20px;
+		div{
+			display: inline-block;
+			cursor: pointer;
+			margin-right: 14px;
+		}
+		i{
+			display: inline-block;
+			margin-right: 4px;
+		}
+	}
+	.cut__play{
+		i{
+			@include s(cutplay);
+		}
+	}
+	.cut__share{
+		i{
+			@include s(cutshare);
+		}
+	}
+	.cut__export{
+		i{
+			@include s(cutexport);
+		}
+	}
 }
 
 
@@ -503,3 +533,6 @@ input[type="range"]::-webkit-slider-thumb {
 		vertical-align: top;
 	}
 }
+
+
+
