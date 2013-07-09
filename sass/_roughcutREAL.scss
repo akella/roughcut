@@ -30,6 +30,9 @@ $bottom: 260px;
 			display: inline-block;
 			vertical-align: middle;
 			cursor: pointer;
+			&.is-active{
+				@include transform(rotate(180deg));
+			}
 		}
 	}
 	.rough__left{
@@ -339,6 +342,9 @@ $bottom: 260px;
 			@include s(filenamei);
 			display: inline-block;
 			margin-right: 3px;
+			&.is-active{
+				@include transform(rotate(180deg));
+			}
 		}
 	}
 
