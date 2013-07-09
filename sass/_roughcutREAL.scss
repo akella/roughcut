@@ -257,6 +257,15 @@ $bottom: 260px;
 		@include s(cutmin);
 		top: 5px;
 		cursor: pointer;
+		opacity: .5;
+		margin-top: 3px;
+		&.is-active{
+			@include s(cutplus);
+			margin-top: 0;
+		}
+		&:hover{
+			opacity: 1;
+		}
 	}
 }
 .cut{
