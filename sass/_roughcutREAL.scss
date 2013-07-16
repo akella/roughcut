@@ -69,6 +69,19 @@ $bottom: 260px;
 		background: #212121;
 
 		@include transition(all .3s ease-in-out);
+		.rough__contentv{
+			height: 100%;
+			width: 100%;
+			display: table;
+			img{
+				
+			}
+		}
+		.rough__contentv1{
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+		}
 	}
 	&.is-withleft{
 		left: 0;
