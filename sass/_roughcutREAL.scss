@@ -3,8 +3,12 @@ html,body{
 	position: relative;
 }
 $width: 322px;
-$bottom: 260px;
+$bottom: 272px;
 // layout
+.icon-info{
+	@include s(infoicon);
+	display: inline-block;
+}
 .rough{
 	position: absolute;
 	bottom: 0;
@@ -261,8 +265,11 @@ $bottom: 260px;
 	margin-top: 13px;
 	.rfile__pic{
 		margin-bottom: 6px;
+
 		img{
 			display: block;
+			-webkit-mask-image: url('../img/mask.png');
+			-webkit-mask-repeat: no-repeat;
 		}
 	}
 	.rfile__title, .rfile__filename{
@@ -282,13 +289,22 @@ $bottom: 260px;
 		font-size: 11px;
 		margin-top: 2px;
 		color: #999;
+		padding-left: 19px;
+		position: relative;
+		&:before{
+			content: ' ';
+			@include s(infoicon);
+			position: absolute;
+			left: 0;
+			top: 1px;
+		}
 		span{
 			margin-right: 10px;
 		}
 	}
 	&.rfile_alt{
 		.rfile__length{
-			color: #fff;
+			color: #ccc;
 		}
 		.rfile__title{
 			color: #fff;
@@ -523,7 +539,7 @@ $bottom: 260px;
 ---------------------------------------- */
 
 .rough__bottom{
-	height: 260px;
+	height: $bottom;
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -645,16 +661,6 @@ input[type="range"]::-webkit-slider-thumb {
 .wraptimecodes{
 	position: relative;
 	padding-top: 9px;
-	.volume{
-		float: right;
-		position: absolute;
-		right: 0;
-		top: 10px;
-	}
-	.controls{
-		display: inline-block;
-		vertical-align: top;
-	}
 }
 
 

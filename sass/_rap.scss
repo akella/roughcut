@@ -929,9 +929,17 @@
 	}
 
 }
+.timecodes{
+	display: block;
+	padding-top: 9px;
+	margin-left: 12px;
+}
 .timecode{
-	float: left;
-	margin: 0 100px 0 14px;
+	//float: left;
+	display: inline-block;
+	//margin: 0 100px 0 14px;
+	margin-right: 24px;
+	
 	color: #777;
 	@include ipad{
 		margin: 0 10px;
@@ -941,7 +949,7 @@
 		text-transform: uppercase;
 	}
 	.timecode__value{
-		font-size: 25px;
+		font-size: 18px;
 		font-family: "cpmono",monospace;
 		line-height: 1;
 		padding: 0;
@@ -953,7 +961,7 @@
 		}
 	}
 	&.timecode__frame{
-		margin-left: -30px;
+		//margin-left: -30px;
 		@include ipad{
 			margin-left: 10px;
 		}
@@ -971,8 +979,9 @@
 
 .controls{
 	font-size: 0;
-	padding-top: 13px;
+	//padding-top: 13px;
 	float: left;
+	padding-left: 10px;
 	float: none;
 	@include ipad{
 		margin-left: 20px;
@@ -986,7 +995,7 @@
 		i{
 			display: inline-block;
 			position: relative;
-			top: 3px;
+			top: 2px;
 			opacity: .7;
 		}
 	}
@@ -1019,42 +1028,78 @@
 	.controls__range{
 		@extend %button;
 		border-radius: 3px;
-		margin-left: 20px;
 		line-height: 1;
 		vertical-align: middle;
 		position: relative;
 		top: -1px;
 		i{
-			@include sized-sprite($icons, rangeicon);
+			@include sized-sprite($icons, rangeicon); 
 			display: inline-block;
-			margin-right: 3px;
+			margin-right: 5px;
 			position: relative;
-			top: 1px;
+			top: 3px;
+		}
+	}
+	.controls__rangeback{
+		@extend %button;
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+		vertical-align: middle;
+		line-height: 1;
+		position: relative;
+		top: -1px;
+		width: 43px;
+		text-align: center;
+		padding: 0;
+		i{
+			display: inline-block;
+			@include sized-sprite($icons, rangeback); 
+			position: relative;
+			top: 3px;
+		}
+
+	}
+	.controls__rangeforw{
+		@extend %button;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+		position: relative;
+		top: -1px;
+		vertical-align: middle;
+		width: 43px;
+		text-align: center;
+		padding: 0;
+		i{
+			display: inline-block;
+			@include sized-sprite($icons, rangeforw); 
+			position: relative;
+			top: 2px;
 		}
 	}
 	.controls__addtocutlist{
 		@extend %button;
 		border-radius: 3px;
-		margin-left: 20px;
+		margin-left: 45px;
 		line-height: 1px;
 		vertical-align: middle;
 		position: relative;
 		top: -1px;
+		line-height: 22px;
 		I{
 			@include sized-sprite($icons, addtocutlist);
 			display: inline-block;
-			margin-right: 3px;
+			margin-right: 5px;
 			position: relative;
 			top: 1px;
 		}
 	}
 	.controls__looprange{
-		display: block;
+		display: inline-block;
 		text-align: center;
 		padding-top: 3px;
 		font-size: 12px;
 		color: #ccc;
-		margin-left: -40px;
+		margin-left: 10px;
 		input{
 			margin-right: 3px;
 
@@ -1136,8 +1181,9 @@
 }
 .volume{
 	width: 198px;
-	float: left;
 	margin-left: 20px;
+	display: inline-block;
+	margin-right: 45px;
 	@include ipad{
 		display: none;
 	}
@@ -1167,12 +1213,14 @@
 		vertical-align: middle;
 		@include sized-sprite($icons, volume__more);
 		cursor: pointer;
+		margin-left: 4px;
 	}
 	.volume__less{
 		display: inline-block;
 		vertical-align: middle;
 		@include sized-sprite($icons, volume__less);
 		cursor: pointer;
+		margin-right: 4px;
 	}
 	.volume__label{
 		font-size: 11px;

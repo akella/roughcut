@@ -68,21 +68,25 @@ a{
 }
 %button{
 	color: #cbcbcb;
+	color: #8F8F8F;
 	font-size: 12px;
-	@include text-shadow(0 -1px 1px #000);
+	//@include text-shadow(0 -1px 1px #000);
 	height: 23px;
 	line-height: 24px;
 	display: inline-block;
 	padding: 0 10px;
 	border: 1px solid #000;
 	cursor: pointer;
-	@include background-image(linear-gradient(bottom, #282828 0%, #717171 100%));
+	@include background-image(linear-gradient(top, #424242 0%, #3B3B3B 15%, #343434 85%,  #282828 100%)); 
 	&:hover{
 		//@include background-image(linear-gradient(bottom, darken(#717171,10%) 0%, darken(#282828,10%) 100%));
 	}
-	&:active{
-		@include background-image(linear-gradient(bottom, darken(#717171,10%) 0%, darken(#282828,10%) 100%));
+	&:active, &.is-pressed{
+		//@include background-image(linear-gradient(bottom, darken(#717171,10%) 0%, darken(#282828,10%) 100%));
 		//@include background-image(linear-gradient(bottom, #282828 0%, #717171 100%));
+		@include background-image(linear-gradient(bottom, #424242 0%, #3B3B3B 15%, #292929 85%,  #1A1A1A 100%)); 
+		color: #606060;
+		text-shadow: none;
 	}
 }
 %button-alt{
