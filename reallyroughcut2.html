@@ -125,9 +125,17 @@
 		<div class="searchbox">
 			<input type="search" name="whatever" id="whatever">
 		</div>
+		<div class="cutnav">
+			<div class="cutnav__nav">
+				<div class="cutnav__viewlist "><i></i></div><div class="cutnav__viewgrid is-active"><i></i></div>
+			</div>
+			<div class="cutnav__back"><i></i>Back</div>
+			
+			
+		</div>
 		
-		<div class="sublist">
-			<div class="sublist__back"><i></i>Back to the list </div>
+		<div class="sublist is-active">
+			
 			<h3 class="sublist__title">Breaking bad <a href="#" class="icon-info"></a></h3>
 			<input type="text" value="Breaking bad" class="sublist__title">
 				
@@ -143,6 +151,7 @@
 				</div>
 				<div class="rfile__length">37:12.23</div>
 				<div class="rfile__title">Some title</div>
+				<input type="text" value="Some title" class="rfile__title">
 				<div class="rfile__meta">
 					<span>16×9</span>    <span>2.40</span>    <span>23.98 FPS</span>
 				</div>
@@ -184,9 +193,25 @@
 	</div>
 	<!-- END rough__right-->
 	
-	<!-- BEGIN  rough__bottom-->
 	<!-- filmstrip timeline goes here -->
 	<div class="rough__bottom">
+		
+		<!-- BEGIN local timeline -->
+		<div class="localTimeline">
+			<div class="localTimeline__theredthing"></div>
+			<div class="localTimeline__filmstrip">
+				<img src="img/filmstriplocal.jpg" style="height:80px" alt="" />
+			</div>
+			<div class="localTimeline__waveform">
+				<img src="img/waves.png" alt="">
+			</div>
+			<!-- <div class="localTimeline__audio">
+				<img src="img/audio.jpg" style="height:40px" alt="" />
+			</div> -->
+			
+		</div>
+		<!-- END local timeline -->
+		
 		<!-- BEGIN GLobal timeline -->
 		<div class="globalTimeline">
 			<div class="globalTimeline__track">
@@ -198,28 +223,17 @@
 			<div class="globalTimeline__filmstrip">
 				<img src="img/filmstrip2.jpg" height="28" alt="" />
 			</div>
-			<div class="globalTimeline__zoom">
-				<div class="globalTimeline__zoomicon"></div>
-				<input type="range" min="100" max="200" id="range" />
-			</div>
 		</div>
 		<!-- END global timeline -->
-		<!-- BEGIN local timeline -->
-		<div class="localTimeline">
-			<div class="localTimeline__theredthing"></div>
-			<div class="localTimeline__filmstrip">
-				<img src="img/filmstriplocal.jpg" style="height:80px" alt="" />
-			</div>
-			<div class="localTimeline__audio">
-				<img src="img/audio.jpg" style="height:40px" alt="" />
-			</div>
-			
-		</div>
-		<!-- END local timeline -->
 		
 		<div class="wraptimecodes">
 		
-		
+			<div class="globalTimeline__zoom">
+				<div class="globalTimeline__zoomicon"></div>
+				<input type="range" min="100" max="200" id="range" />
+				<div class="globalTimeline__zoomicon1"></div>
+				<div class="globalTimeline__zoomaction"><span>Zoom to Range</span></div>
+			</div>
 		<div class="controls">
 			<div class="controls__back"><i></i></div>
 			<div class="controls__play controls__pause"><i></i></div>
@@ -243,18 +257,18 @@
 		</div>
 		
 		<div class="timecodes">
-		<div class="timecode timecode_standard">
-			<div class="timecode__label">standard timecode</div>
-			<div class="timecode__value">04:01:32.140</div>
-		</div>
-		<div class="timecode timecode_tape">
-			<div class="timecode__label">Tape  timecode</div>
-			<div class="timecode__value">04:01:32.140</div>
-		</div>
-		<div class="timecode timecode__frame">
-			<div class="timecode__label">Frame Number</div>
-			<div class="timecode__value">4235</div>
-		</div>
+			<div class="timecode timecode_standard">
+				<div class="timecode__label">standard timecode</div>
+				<div class="timecode__value">04:01:32.140</div>
+			</div>
+			<div class="timecode timecode_tape">
+				<div class="timecode__label">Tape  timecode</div>
+				<div class="timecode__value">04:01:32.140</div>
+			</div>
+			<div class="timecode timecode__frame">
+				<div class="timecode__label">Frame Number</div>
+				<div class="timecode__value">4235</div>
+			</div>
 		</div>
 		
 		</div>
