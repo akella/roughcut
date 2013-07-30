@@ -285,6 +285,9 @@ $bottom: 222px;
 				.rfile__pic{
 					@include s(rvideo);
 					-webkit-mask-box-image:none;
+					&:before, &:after{
+						display: none;
+					}
 				}
 				&:hover{
 					.rfile__pic{
@@ -295,7 +298,10 @@ $bottom: 222px;
 			&.is-audiofile{
 				.rfile__pic{
 					@include s(raudio);
-					-webkit-mask-box-image:none;
+					-webkit-mask-box-image: none;
+					&:before, &:after{
+						display: none;
+					}
 				}
 				&:hover{
 					.rfile__pic{
@@ -316,7 +322,7 @@ $bottom: 222px;
 		display: inline-block;
 		&:before{
 			content: ' ';
-			-webkit-mask-box-image: url(../img/mask2.png) 0 3 0 3 repeat;
+			-webkit-mask-box-image: url(../img/mask5.png) 0 3 0 3 repeat;
 			position: absolute;
 
 			top: -1px;
@@ -349,7 +355,7 @@ $bottom: 222px;
 			display: block;
 			border: none;
 			outline:none;
-			-webkit-mask-box-image: url(../img/mask2.png) 0 3 0 3 repeat;
+			-webkit-mask-box-image: url(../img/mask5.png) 0 3 0 3 repeat;
 		}
 	}
 	&.is-active{
