@@ -10,7 +10,8 @@ $(document).ready(function() {
 		$('body').toggleClass('is-visiblevideo')
 	});
 	$('.rough').click(function (e) {
-		$('.rough').toggleClass('is-withleft is-withright')
+		//$('.rough').toggleClass('is-withleft is-withright')
+		$('.rough').toggleClass('is-fullscreencutlist');
 	});
 	waveformWrapper = document.querySelector(".waveform .waveform__wrap");
 	window.addEventListener("scroll", function() {

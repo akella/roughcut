@@ -8,6 +8,9 @@
 	height: 40px;
 	line-height: 40px;
 	color: #777;
+	box-shadow:0 4px 4px rgba(#000, .3);
+	position: relative;
+	z-index: 10;
 	a{
 		text-decoration: none;
 		text-shadow: 0 1px 0 #000;

@@ -110,6 +110,48 @@ $bottom: 222px;
 			right: $width;
 		}
 	}
+	.rough__togglevideocontrols{
+		opacity: 1;
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		margin-left: -50px;
+		background: #000000;
+		border-top-left-radius:4px;
+		border-top-right-radius:4px;
+		height: 20px;
+		line-height: 20px;
+		font-size: 11px;
+		color: #999;
+		@include transform(translate(0, 20px));
+		padding: 0 5px;
+		cursor: pointer;
+		i{
+			@include s(arr-up);
+			margin-right: 5px;
+			display: inline-block;
+			position: relative;
+			top: -1px;
+		}
+	}
+	&.is-fullscreencutlist{
+		.rough__right{
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			@include transition(all .3s ease-in);
+		}
+		.rough__bottom{
+			@include transform(translate(0, $bottom));
+			@include transition(all .3s ease-in-out);
+		}
+		.rough__togglevideocontrols{
+			@include transition(all .3s ease-in-out);
+			@include transition-delay(.4s);
+			opacity: 1;
+			@include transform(translate(0, 0));
+		}
+	}
 
 }
 
@@ -265,6 +307,7 @@ $bottom: 222px;
 	border-bottom: 1px solid #424242;
 	padding-bottom: 13px;
 	margin-top: 13px;
+	
 	.rfile__pic{
 		margin-bottom: 6px;
 
@@ -326,12 +369,44 @@ $bottom: 222px;
 			color: #999999;
 		}
 		.rfile__pic{
-			margin-right: -10px;
+			//margin-right: -10px;
 			height: 40px;
 			img{
 				box-shadow:0 0 4px rgba(#000, .3);
 				display: block;
 				width: 100%;
+			}
+		}
+	}
+	.is-fullscreencutlist &{
+		display: inline-block;
+		padding: 0;
+		border-style: none;
+		margin-bottom: 8px;
+		margin-right: 10px;
+		cursor: pointer;
+		position: relative;
+		.rfile__title, .rfile__length, .rfile__meta, .rfile__filename{
+			display: none;
+		}
+		.rfile__pic{
+			box-shadow:0 0 6px rgba(#000, 1);
+		}
+		&:hover{
+			.rfile__length{
+				display: block;
+				position: absolute;
+				bottom: -13px;
+				left: 0;
+				padding-left: 19px;
+				&:before{
+					@include s(infoicon);
+					position: absolute;
+					left: 0;
+					top: 1px;
+					display: inline-block;
+					content: ' ';
+				}
 			}
 		}
 	}
@@ -459,12 +534,29 @@ $bottom: 222px;
 	.cut__icons{
 		margin-bottom: 0;
 	}
+	.is-fullscreencutlist &{
+		.sublist__title{
+			display: inline-block;
+			margin-bottom: 0;
+		}
+		.sublist__header{
+			padding-bottom: 3px;
+			border-bottom: 1px solid #484848;
+		}
+		.cut__icons{
+			display: inline-block;
+			margin-left: 10px;
+			position: relative;
+			top: -1px;
+		}
+	}
 }
 // cut lists
 // ===========================
 .rough__right{
 	padding: 10px;
-	@include box-sizing(border-box);
+	padding-top: 0;
+	@include box-sizing(border-box); 
 }
 .icon-mycut{
 	display: inline-block;
