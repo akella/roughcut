@@ -126,6 +126,7 @@ $bottom: 222px;
 		@include transform(translate(0, 20px));
 		padding: 0 5px;
 		cursor: pointer;
+		z-index: 300;
 		i{
 			@include s(arr-up);
 			margin-right: 5px;
