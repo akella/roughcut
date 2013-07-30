@@ -3,7 +3,7 @@ html,body{
 	position: relative;
 }
 $width: 322px;
-$bottom: 272px;
+$bottom: 222px;
 // layout
 .icon-info{
 	@include s(infoicon);
@@ -270,6 +270,7 @@ $bottom: 272px;
 			display: block;
 			-webkit-mask-image: url('../img/mask.png');
 			-webkit-mask-repeat: no-repeat;
+			border: 1px solid yellow;
 		}
 	}
 	.rfile__title, .rfile__filename{
@@ -277,7 +278,7 @@ $bottom: 272px;
 		-ms-text-overflow: ellipsis;
 		text-overflow: ellipsis;
 		color: #fbfbfb;
-		font-size: 11px;
+		font-size: 11px; 
 		white-space:nowrap;
 	}
 	.rfile__length{
@@ -544,19 +545,25 @@ $bottom: 272px;
 	bottom: 0;
 	right: 0;
 	left: 0;
-	width: 100%;
+	width: 100%; 
 }
 .panel_navigation{
 	overflow:hidden;
 	}
 .globalTimeline{
-	width:100%;
+	width: auto;
+	margin: 0 10px;
 	border-bottom:1px solid #464646;
+	position: relative;
+	z-index: 2000;
+	margin-top: 7px;
 	}
 .globalTimeline__track{
 	height:3px;
 	width:100%;
 	background:#555;
+	position: absolute;
+	bottom: 0;
 	}
 	.globalTimeline__currenttime{
 		display:block;
@@ -566,10 +573,10 @@ $bottom: 272px;
 		}
 	.globalTimeline__theredthing{
 		position:absolute;
-		top:0;
+		bottom:0;
 		z-index:100;
 		right:-11px;
-		height:40px;
+		height:42px;
 		width:10px;
 		border-left:1px solid #cf0808;
 		cursor:pointer;
@@ -579,7 +586,7 @@ $bottom: 272px;
 			background:rgba(255,0,0,0.3);
 			}
 	.globalTimeline__filmstrip{
-		margin:7px 9px 5px 9px;
+		margin:7px 0px 11px 0px;
 		}
 		.globalTimeline__filmstrip img{
 			display:block;
@@ -591,7 +598,7 @@ $bottom: 272px;
 		border:5px solid yellow;
 		border-radius:4px;
 		position:absolute;
-		top:6px;
+		bottom:6px;
 		right:0;
 		margin-right:-50%;
 		-webkit-border-image: url(../img/range.png) 7 / 7px repeat repeat;
@@ -603,9 +610,9 @@ $bottom: 272px;
 			width:12px;
 			height:10px;
 			left:50%;
-			bottom:-13px;
+			top:-8px;
 			margin-left:-6px;
-			background:url(../img/range-arr.png) no-repeat 0 0;
+			@include s(rangetoparr);
 			position:absolute;
 			}	
 .globalTimeline__zoom{
@@ -613,14 +620,30 @@ $bottom: 272px;
 	position:relative;
 	top:-4px;
 	z-index:1000;
+	white-space: nowrap;
 	}
 .globalTimeline__zoomicon{
-	width:8px;
-	height:8px;
 	vertical-align:middle;
 	display:inline-block;
-	background:url(../img/zoom.png) no-repeat 0 0;
+	@include s(zoom);
 	}
+.globalTimeline__zoomicon1{
+	@include s(zoombig);
+	display: inline-block;
+	vertical-align: middle;
+}
+.globalTimeline__zoomaction{
+	text-align: right;
+	display: block;
+	padding-right: 20px;
+
+	span{
+		border-bottom: 1px dotted #999;
+		font-size: 11px;
+		color: #999999;
+		cursor: pointer;
+	}
+}
 input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	position: relative;
@@ -637,7 +660,8 @@ input[type="range"]::-webkit-slider-thumb {
 ---------------------------------------- */
 .localTimeline{
 	display:block;
-	width:100%;
+	width:auto;
+	margin: 0 10px;
 	position:relative;
 	overflow: hidden;
 	}
@@ -658,9 +682,20 @@ input[type="range"]::-webkit-slider-thumb {
 		z-index:1000;
 		cursor:move;
 		}
+.localTimeline__waveform{
+	position: absolute;
+	bottom: 0;
+	z-index: 10;
+	width: 100%;
+	bottom: 0;
+}
 .wraptimecodes{
 	position: relative;
 	padding-top: 9px;
+	.globalTimeline__zoom{
+		float: right;
+		padding-top: 5px;
+	}
 }
 
 

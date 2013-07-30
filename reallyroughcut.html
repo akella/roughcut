@@ -183,9 +183,25 @@
 	</div>
 	<!-- END rough__right-->
 	
-	<!-- BEGIN  rough__bottom-->
 	<!-- filmstrip timeline goes here -->
 	<div class="rough__bottom">
+		
+		<!-- BEGIN local timeline -->
+		<div class="localTimeline">
+			<div class="localTimeline__theredthing"></div>
+			<div class="localTimeline__filmstrip">
+				<img src="img/filmstriplocal.jpg" style="height:80px" alt="" />
+			</div>
+			<div class="localTimeline__waveform">
+				<img src="img/waves.png" alt="">
+			</div>
+			<!-- <div class="localTimeline__audio">
+				<img src="img/audio.jpg" style="height:40px" alt="" />
+			</div> -->
+			
+		</div>
+		<!-- END local timeline -->
+		
 		<!-- BEGIN GLobal timeline -->
 		<div class="globalTimeline">
 			<div class="globalTimeline__track">
@@ -197,55 +213,52 @@
 			<div class="globalTimeline__filmstrip">
 				<img src="img/filmstrip2.jpg" height="28" alt="" />
 			</div>
-			<div class="globalTimeline__zoom">
-				<div class="globalTimeline__zoomicon"></div>
-				<input type="range" min="100" max="200" id="range" />
-			</div>
 		</div>
 		<!-- END global timeline -->
-		<!-- BEGIN local timeline -->
-		<div class="localTimeline">
-			<div class="localTimeline__theredthing"></div>
-			<div class="localTimeline__filmstrip">
-				<img src="img/filmstriplocal.jpg" style="height:80px" alt="" />
-			</div>
-			<div class="localTimeline__audio">
-				<img src="img/audio.jpg" style="height:40px" alt="" />
-			</div>
-			
-		</div>
-		<!-- END local timeline -->
 		
 		<div class="wraptimecodes">
 		
-		<div class="timecode timecode_standard">
-			<div class="timecode__label">standard timecode</div>
-			<div class="timecode__value">04:01:32.140</div>
-		</div>
-		<div class="timecode timecode_tape">
-			<div class="timecode__label">Tape  timecode</div>
-			<div class="timecode__value">04:01:32.140</div>
-		</div>
-		<div class="timecode timecode__frame">
-			<div class="timecode__label">Frame Number</div>
-			<div class="timecode__value">4235</div>
-		</div>
+			<div class="globalTimeline__zoom">
+				<div class="globalTimeline__zoomicon"></div>
+				<input type="range" min="100" max="200" id="range" />
+				<div class="globalTimeline__zoomicon1"></div>
+				<div class="globalTimeline__zoomaction"><span>Zoom to Range</span></div>
+			</div>
 		<div class="controls">
 			<div class="controls__back"><i></i></div>
 			<div class="controls__play controls__pause"><i></i></div>
 			<div class="controls__pause"><i></i></div>
 			<div class="controls__forw"><i></i></div>
-			<div class="controls__range"><i></i>Range</div>
-			<div class="controls__addtocutlist"><i></i>Add to the Cut list</div>
+			
 			<div class="controls__looprange">
 				<label for="asd"><input type="checkbox" name="" id="asd">Loop range</label>
 			</div>
+			
+			<div class="volume">
+				<!-- <div class="volume__label">Volume</div> -->
+				<div class="volume__less"></div>
+				<input type="range" name="" class="volume__range" id="">
+				<div class="volume__more"></div>
+			</div>
+			
+			<div class="controls__rangeback"><i></i></div><div class="controls__range is-pressed"><i></i>Select range</div><div class="controls__rangeforw"><i></i></div>
+			<div class="controls__addtocutlist"><i></i>Add to the Cut list</div>
+			
 		</div>
-		<div class="volume">
-			<div class="volume__label">Volume</div>
-			<div class="volume__less"></div>
-			<input type="range" name="" class="volume__range" id="">
-			<div class="volume__more"></div>
+		
+		<div class="timecodes">
+			<div class="timecode timecode_standard">
+				<div class="timecode__label">standard timecode</div>
+				<div class="timecode__value">04:01:32.140</div>
+			</div>
+			<div class="timecode timecode_tape">
+				<div class="timecode__label">Tape  timecode</div>
+				<div class="timecode__value">04:01:32.140</div>
+			</div>
+			<div class="timecode timecode__frame">
+				<div class="timecode__label">Frame Number</div>
+				<div class="timecode__value">4235</div>
+			</div>
 		</div>
 		
 		</div>
