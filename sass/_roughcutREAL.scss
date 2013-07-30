@@ -140,6 +140,7 @@ $bottom: 222px;
 			right: 0;
 			width: 100%;
 			@include transition(all .3s ease-in);
+			z-index: 100;
 		}
 		.rough__bottom{
 			@include transform(translate(0, $bottom));
@@ -283,6 +284,7 @@ $bottom: 222px;
 			&.is-videofile{
 				.rfile__pic{
 					@include s(rvideo);
+					-webkit-mask-box-image:none;
 				}
 				&:hover{
 					.rfile__pic{
@@ -293,6 +295,7 @@ $bottom: 222px;
 			&.is-audiofile{
 				.rfile__pic{
 					@include s(raudio);
+					-webkit-mask-box-image:none;
 				}
 				&:hover{
 					.rfile__pic{
@@ -307,15 +310,53 @@ $bottom: 222px;
 	border-bottom: 1px solid #424242;
 	padding-bottom: 13px;
 	margin-top: 13px;
-	
 	.rfile__pic{
 		margin-bottom: 6px;
+		position: relative;
+		display: inline-block;
+		&:before{
+			content: ' ';
+			-webkit-mask-box-image: url(../img/mask2.png) 0 3 0 3 repeat;
+			position: absolute;
+
+			top: -1px;
+			right: -1px;
+			left: -1px;
+			display: block;
+			height: 100%;
+			width: 100%;
+			padding: 1px;
+			background: rgba(#fff, .2);
+			z-index: 2;
+			
+		}
+		&:after{
+			content: ' ';
+			box-shadow:0 0 20px  rgba(#000, 1);
+			display: block;
+			position: absolute;
+			z-index: 1;
+			background: transparent;
+			top: 0px;
+			left: 4px;
+			bottom: 0px;
+			right: 4px;
+		}
 
 		img{
+			position: relative;
+			z-index: 3;
 			display: block;
-			-webkit-mask-image: url('../img/mask.png');
-			-webkit-mask-repeat: no-repeat;
-			
+			border: none;
+			outline:none;
+			-webkit-mask-box-image: url(../img/mask2.png) 0 3 0 3 repeat;
+		}
+	}
+	&.is-active{
+		.rfile__pic{
+			&:before{
+				background: yellow;
+			}
 		}
 	}
 	.rfile__title, .rfile__filename{
@@ -374,7 +415,7 @@ $bottom: 222px;
 			img{
 				box-shadow:0 0 4px rgba(#000, .3);
 				display: block;
-				width: 100%;
+				//width: 100%;
 			}
 		}
 	}
