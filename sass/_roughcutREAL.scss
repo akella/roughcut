@@ -335,7 +335,6 @@ $bottom: 222px;
 			padding: 1px;
 			background: rgba(#fff, .2);
 			z-index: 2;
-			
 		}
 		&:after{
 			content: ' ';
@@ -388,6 +387,9 @@ $bottom: 222px;
 		float: right;
 		font-size: 11px;
 		color: #cccccc;
+// 		float: none;
+// 		text-align: right;
+// 		margin-bottom: -14px;
 	}
 	.rfile__meta{
 		font-size: 11px;
