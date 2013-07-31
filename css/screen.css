@@ -450,6 +450,7 @@ html, body { height: 100%; position: relative; }
 .rough.is-toggledcontrols .rough__togglevideocontrols { -webkit-transition-delay: 0.4s; -moz-transition-delay: 0.4s; -ms-transition-delay: 0.4s; -o-transition-delay: 0.4s; transition-delay: 0.4s; -webkit-transform: translate(0, -222px); -moz-transform: translate(0, -222px); -ms-transform: translate(0, -222px); -o-transform: translate(0, -222px); transform: translate(0, -222px); }
 .rough.is-videopreview .rough__contentv1 { position: absolute; top: 300px; left: 300px; box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.8); position: absolute; z-index: 10000; cursor: move; width: 250px; }
 .rough.is-videopreview .rough__contentv1 * { margin: 0; padding: 0; }
+.rough.is-videopreview .rough__content { overflow: visible; }
 
 .rough__content img { display: block; width: 100%; margin-top: 20px; }
 
@@ -641,6 +642,26 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; position: 
 
 .wraptimecodes { position: relative; padding-top: 9px; }
 .wraptimecodes .globalTimeline__zoom { float: right; padding-top: 5px; }
+
+.clip.rfile.current { opacity: 1; }
+
+#cutlistName { text-transform: none; width: 100%; height: 28px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0px 8px 0 8px; color: #777; border: 1px solid #444; background: #363636; box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3); overflow: hidden; font-size: 16px; font-weight: normal; color: #ffffff; text-shadow: 0 1px 0 black; -webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.4) 70%); }
+
+.cutlist_actions a { text-decoration: none; font-weight: normal; color: #ffffff; text-shadow: 0 1px 0 black; -webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.4) 70%); }
+
+.cutlist_actions { width: 96%; padding: 5px; margin-bottom: 5px; }
+
+video.player { height: 100%; display: none; }
+
+video.is-current { display: block!important; }
+
+.localTimeline { height: 80px; }
+
+.localTimeline img { width: 100%; }
+
+.localTimeline__filmstrip { height: 80px; width: 100%; }
+
+.localTimeline__waveform { height: 45px; opacity: 0.7; }
 
 .metadata { box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.7); background: url(../img/noisedark.png) repeat 0 0; height: 100%; position: absolute; top: 33px; left: 0; right: 0; bottom: 0; }
 .metadata .metadata__nav { position: absolute; left: 0; top: 0; width: 213px; height: 100%; padding: 10px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; background: url(../img/noisedark.png); box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.7); border-right: 3px solid #000000; position: absolute; }
