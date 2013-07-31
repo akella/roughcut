@@ -135,6 +135,9 @@ $bottom: 222px;
 			top: -1px;
 		}
 	}
+	&.is-toggledcontrols .rough__togglevideocontrols i{
+		@include transform(rotate(180deg));
+	}
 	&.is-fullscreencutlist{
 		.rough__right{
 			bottom: 0;
@@ -154,6 +157,17 @@ $bottom: 222px;
 			@include transform(translate(0, 0));
 		}
 	}
+	&.is-toggledcontrols{
+		.rough__bottom{
+			@include transform(translate(0, 0));
+			@include transition(all .3s ease-in-out);
+			z-index: 500;
+		}
+		.rough__togglevideocontrols{
+			@include transition-delay(.4s);
+			@include transform(translate(0, -($bottom)));
+		}
+	}
 
 }
 
@@ -164,7 +178,17 @@ $bottom: 222px;
 	width: 100%;
 	margin-top: 20px;
 }
-
+.rough__videopreview{
+	box-shadow:0 0 20px rgba(#000, .8);
+	position: absolute;
+	right: 250px;
+	top: 160px;
+	z-index: 1000;
+	cursor: move;
+	img{
+		display: block;
+	}
+}
 
 // files
 // ===========================
