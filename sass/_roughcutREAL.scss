@@ -159,6 +159,9 @@ $bottom: 222px;
 			opacity: 1;
 			@include transform(translate(0, 0));
 		}
+		.videopreview{
+			display: block;
+		}
 	}
 	&.is-toggledcontrols{
 		.rough__bottom{
@@ -333,7 +336,7 @@ $bottom: 222px;
 						display: none;
 					}
 				}
-				&:hover{
+				&:hover, &.is-active{
 					.rfile__pic{
 						@include s(rvideoh);
 					}
@@ -347,7 +350,7 @@ $bottom: 222px;
 						display: none;
 					}
 				}
-				&:hover{
+				&:hover, &.is-active{
 					.rfile__pic{
 						@include s(raudioh);
 					}
@@ -379,6 +382,7 @@ $bottom: 222px;
 		font-size: 11px; 
 		white-space:nowrap;
 	}
+
 	input.rfile__title{
 		background: transparent;
 		box-shadow: inset -2px 2px 3px rgba(#000, .2);
@@ -388,6 +392,34 @@ $bottom: 222px;
 		position: relative;
 		left: -3px;
 		-webkit-appearance:none;
+	}
+	.rfile__actions{
+		float: right;
+		color: #999;
+		font-size: 11px;
+		text-shadow: 0 -1px 2px rgba(#000, .2);
+		width: 200px;
+		text-align: right;
+		&>div{
+			margin-left: 10px;
+			display: inline-block;
+			cursor: pointer;
+		}
+		&>div:before{
+			margin-right: 3px;
+			display: inline-block;
+			content: ' ';
+		}
+		.rfile__delete{
+			&:before{
+				@include s(rfiledelete);
+			}
+		}
+		.rfile__rename{
+			&:before{
+				@include s(rfilerename);
+			}
+		}
 	}
 	.rfile__length{
 		float: right;
@@ -443,7 +475,7 @@ $bottom: 222px;
 		margin-right: 10px;
 		cursor: pointer;
 		position: relative;
-		.rfile__title, .rfile__length, .rfile__meta, .rfile__filename{
+		.rfile__title, .rfile__length, .rfile__meta, .rfile__filename, .rfile__actions{
 			display: none;
 		}
 		.rfile__pic{
@@ -478,6 +510,7 @@ $bottom: 222px;
 	margin-bottom: 10px;
 	.videopreview{
 		float: right;
+		display: none;
 	}
 	.cutnav__back{
 		i{
