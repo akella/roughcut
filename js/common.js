@@ -8,6 +8,9 @@ $(document).ready(function() {
 	$('.rough__togglevideocontrols').click(function (e) {
 		$('.rough').toggleClass('is-toggledcontrols')
 	});
+	$('.videopreview').click(function (e) {
+		$(this).toggleClass('is-off');
+	});
 	$('.waveform__video').click(function (e) {
 		$('body').toggleClass('is-visiblevideo')
 	});

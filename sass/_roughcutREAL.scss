@@ -493,6 +493,9 @@ $bottom: 222px;
 	margin: 0 -10px;
 	padding: 0 10px;
 	margin-bottom: 10px;
+	.videopreview{
+		float: right;
+	}
 	.cutnav__back{
 		i{
 			@include s(back);
@@ -622,6 +625,30 @@ $bottom: 222px;
 			margin-left: 10px;
 			position: relative;
 			top: -1px;
+		}
+	}
+}
+.videopreview{
+	cursor: pointer;
+	i{
+		@include s(videopreview);
+		margin-right: 5px;
+		display: inline-block;
+		position: relative;
+		top: 2px;
+	}
+	span{
+		font-size: 11px;
+		color: #999999;
+		border-bottom: 1px dotted #999999;
+		&:active{
+			color: #eee;
+		}
+	}
+	&.is-off{
+		i{
+			@include s(videopreviewoff);
+			top: 4px;
 		}
 	}
 }

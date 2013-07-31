@@ -1032,6 +1032,7 @@
 		vertical-align: middle;
 		position: relative;
 		top: -1px;
+		margin: 0 1px;
 		i{
 			@include sized-sprite($icons, rangeicon); 
 			display: inline-block;
