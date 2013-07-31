@@ -10,6 +10,7 @@ $(document).ready(function() {
 	});
 	$('.videopreview').click(function (e) {
 		$(this).toggleClass('is-off');
+		$('.rough').toggleClass('is-videopreview');
 	});
 	$('.waveform__video').click(function (e) {
 		$('body').toggleClass('is-visiblevideo')

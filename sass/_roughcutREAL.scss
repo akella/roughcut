@@ -168,6 +168,24 @@ $bottom: 222px;
 			@include transform(translate(0, -($bottom)));
 		}
 	}
+	&.is-videopreview{
+		.rough__contentv1{
+			position: absolute;
+			top: 300px;
+			left: 300px;
+			box-shadow:0 0 20px 6px rgba(#000, .8);
+			position: absolute;
+			right: 250px;
+			top: 160px;
+			z-index: 10000;
+			cursor: move;
+			width: 250px;
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
 
 }
 
@@ -179,7 +197,7 @@ $bottom: 222px;
 	margin-top: 20px;
 }
 .rough__videopreview{
-	box-shadow:0 0 20px rgba(#000, .8);
+	box-shadow:0 0 20px 6px rgba(#000, .8);
 	position: absolute;
 	right: 250px;
 	top: 160px;

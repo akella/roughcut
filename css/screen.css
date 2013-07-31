@@ -441,10 +441,12 @@ html, body { height: 100%; position: relative; }
 .rough.is-fullscreencutlist .rough__togglevideocontrols { -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; -webkit-transition-delay: 0.4s; -moz-transition-delay: 0.4s; -ms-transition-delay: 0.4s; -o-transition-delay: 0.4s; transition-delay: 0.4s; opacity: 1; -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); -ms-transform: translate(0, 0); -o-transform: translate(0, 0); transform: translate(0, 0); }
 .rough.is-toggledcontrols .rough__bottom { -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); -ms-transform: translate(0, 0); -o-transform: translate(0, 0); transform: translate(0, 0); -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; z-index: 500; }
 .rough.is-toggledcontrols .rough__togglevideocontrols { -webkit-transition-delay: 0.4s; -moz-transition-delay: 0.4s; -ms-transition-delay: 0.4s; -o-transition-delay: 0.4s; transition-delay: 0.4s; -webkit-transform: translate(0, -222px); -moz-transform: translate(0, -222px); -ms-transform: translate(0, -222px); -o-transform: translate(0, -222px); transform: translate(0, -222px); }
+.rough.is-videopreview .rough__contentv1 { position: absolute; top: 300px; left: 300px; box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.8); position: absolute; right: 250px; top: 160px; z-index: 10000; cursor: move; width: 250px; }
+.rough.is-videopreview .rough__contentv1 * { margin: 0; padding: 0; }
 
 .rough__content img { display: block; width: 100%; margin-top: 20px; }
 
-.rough__videopreview { box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); position: absolute; right: 250px; top: 160px; z-index: 1000; cursor: move; }
+.rough__videopreview { box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.8); position: absolute; right: 250px; top: 160px; z-index: 1000; cursor: move; }
 .rough__videopreview img { display: block; }
 
 .rough__left { padding: 10px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
