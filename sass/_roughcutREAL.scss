@@ -146,6 +146,9 @@ $bottom: 222px;
 			@include transition(all .3s ease-in);
 			z-index: 100;
 		}
+		.rough__left{
+			@include transform(translate(-350px, 0));
+		}
 		.rough__bottom{
 			@include transform(translate(0, $bottom));
 			@include transition(all .3s ease-in-out);
@@ -175,8 +178,6 @@ $bottom: 222px;
 			left: 300px;
 			box-shadow:0 0 20px 6px rgba(#000, .8);
 			position: absolute;
-			right: 250px;
-			top: 160px;
 			z-index: 10000;
 			cursor: move;
 			width: 250px;
