@@ -21,11 +21,20 @@ line_comments = false
 preferred_syntax = :scss
 
 # this one for switching between production and dev versions of the website
-module Sass::Script::Functions
-  def image_path(string)
-    assert_type string, :String
-    Sass::Script::String.new("../img/#{string.value}")
+# Make a copy of sprites with a name that has no uniqueness of the hash.
+on_sprite_saved do |filename|
+  if File.exists?(filename)
+    FileUtils.cp filename, filename.gsub(%r{-s[a-z0-9]{10}\.png$}, '.png')
   end
-  alias_method :"image-path",:image_path 
-  declare :"image-path", :args => [:string]
+end
+
+# Replace in stylesheets generated references to sprites
+# by their counterparts without the hash uniqueness.
+on_stylesheet_saved do |filename|
+  if File.exists?(filename)
+    css = File.read filename
+    File.open(filename, 'w+') do |f|
+      f << css.gsub(%r{-s[a-z0-9]{10}\.png}, '.png')
+    end
+  end
 end
