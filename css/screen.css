@@ -47,7 +47,7 @@ input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 10p
 .conversation-meta:before, .conversation-meta .conversation-meta__drop-item:before, .comments .comments__meta:before, .comment .comment__content:before, .metaform .metaform__field:before, .conversation-meta:after, .conversation-meta .conversation-meta__drop-item:after, .comments .comments__meta:after, .comment .comment__content:after, .metaform .metaform__field:after { content: " "; display: table; }
 .conversation-meta:after, .conversation-meta .conversation-meta__drop-item:after, .comments .comments__meta:after, .comment .comment__content:after, .metaform .metaform__field:after { clear: both; }
 
-.topper { overflow: hidden; width: 100%; background-color: #212121; border-bottom: 1px solid #000; height: 40px; line-height: 40px; color: #777; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3); position: relative; z-index: 10; }
+.topper { overflow: hidden; width: 100%; background-color: #212121; border-bottom: 1px solid #000; height: 40px; line-height: 40px; color: #777; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3); position: relative; z-index: 10000; }
 .topper a { text-decoration: none; text-shadow: 0 1px 0 #000; color: #777; }
 .topper a:hover { color: #2f669f; }
 .topper.topper_withlogo { height: 33px; line-height: 33px; border-style: none; }
