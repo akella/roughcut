@@ -138,6 +138,45 @@ a{
 		}
 	}
 }
+%teeth{
+	display: inline-block;
+	position: relative;
+	&:before{
+		content: ' ';
+		-webkit-mask-box-image: url(../img/mask5.png) 0 3 0 3 repeat;
+		position: absolute;
+		top: -1px;
+		right: -1px;
+		left: -1px;
+		display: block;
+		height: 100%;
+		width: 100%;
+		padding: 1px;
+		background: rgba(#fff, .2);
+		z-index: 2;
+	}
+	&:after{
+		content: ' ';
+		box-shadow:0 0 20px  rgba(#000, 1);
+		display: block;
+		position: absolute;
+		z-index: 1;
+		background: transparent;
+		top: 0px;
+		left: 4px;
+		bottom: 0px;
+		right: 4px;
+	}
+
+	img{
+		position: relative;
+		z-index: 3;
+		display: block;
+		border: none;
+		outline:none;
+		-webkit-mask-box-image: url(../img/mask5.png) 0 3 0 3 repeat;
+	}
+}
 .icon-online{
 	height: 8px;
 	width: 8px;
