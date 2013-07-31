@@ -686,7 +686,7 @@ $bottom: 222px;
 	}
 	.cutlist__nav{
 		border-bottom: 1px solid #474747;
-		padding-bottom: 4px;
+		padding-bottom: 7px;
 		margin-bottom: 8px;
 		font-size: 11px;
 	}
@@ -720,7 +720,7 @@ $bottom: 222px;
 				display: inline-block;
 				content: ' ';
 				vertical-align: middle;
-				margin-right: 3px;
+				margin-right: 6px;
 				position: relative;
 				top: -1px;
 			}
@@ -731,6 +731,7 @@ $bottom: 222px;
 			}
 		}
 	}
+	
 }
 .cut{
 	margin-bottom: 18px;
@@ -744,10 +745,10 @@ $bottom: 222px;
 	}
 	.cut__pics{
 		position: relative;
-		height: 73px;
+		height: 83px;
 		margin-right: -10px;
 		&.cut__pics_small{
-			height: 43px;
+			height: 53px;
 		}
 		div{
 			@extend %teeth;
@@ -790,6 +791,20 @@ $bottom: 222px;
 		display: block;
 		span{
 			display: block;
+		}
+	}
+	&.is-selected{
+		.cut__pics{
+			div:first-child{
+				&:before{
+					@include background-image(linear-gradient(top, #FEFF63 0%, #FFBA48 100%));
+					display: block;
+				}
+			}
+		}
+		.cut__title{
+			color: #EFECAF;
+			-webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.7) 70%)
 		}
 	}
 }

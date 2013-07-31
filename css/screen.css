@@ -543,21 +543,21 @@ html, body { height: 100%; position: relative; }
 .cutlist .cutlist__toggle { position: absolute; top: 0; right: 0; display: inline-block; background: url('../img/icons.png') 0 -3296px no-repeat; width: 9px; height: 3px; top: 5px; cursor: pointer; opacity: .5; margin-top: 3px; }
 .cutlist .cutlist__toggle.is-active { background: url('../img/icons.png') 0 -3234px no-repeat; width: 9px; height: 9px; margin-top: 0; }
 .cutlist .cutlist__toggle:hover { opacity: 1; }
-.cutlist .cutlist__nav { border-bottom: 1px solid #474747; padding-bottom: 4px; margin-bottom: 8px; font-size: 11px; }
+.cutlist .cutlist__nav { border-bottom: 1px solid #474747; padding-bottom: 7px; margin-bottom: 8px; font-size: 11px; }
 .cutlist .cutlist__createnew { color: #999; text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.5); cursor: pointer; }
 .cutlist .cutlist__createnew i { display: inline-block; background: url('../img/icons.png') 0 -2875px no-repeat; width: 16px; height: 13px; margin-right: 5px; vertical-align: middle; position: relative; top: -1px; }
 .cutlist .cutlist__navother { float: right; text-align: right; }
 .cutlist .cutlist__navother a { opacity: .5; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -ms-transition: all 0.1s linear; -o-transition: all 0.1s linear; transition: all 0.1s linear; color: #999; text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.5); text-decoration: none; margin-left: 10px; }
 .cutlist .cutlist__navother a:hover { opacity: 1; }
-.cutlist .cutlist__navother a:before { display: inline-block; content: ' '; vertical-align: middle; margin-right: 3px; position: relative; top: -1px; }
+.cutlist .cutlist__navother a:before { display: inline-block; content: ' '; vertical-align: middle; margin-right: 6px; position: relative; top: -1px; }
 .cutlist .cutlist__navother .cutlist__clone:before { background: url('../img/icons.png') 0 -3120px no-repeat; width: 14px; height: 12px; }
 .cutlist .cutlist__navother .cutlist__merge:before { background: url('../img/icons.png') 0 -3059px no-repeat; width: 14px; height: 12px; }
 .cutlist .cutlist__navother .cutlist__delete:before { background: url('../img/icons.png') 0 -3040px no-repeat; width: 9px; height: 9px; }
 
 .cut { margin-bottom: 18px; }
 .cut .cut__title { font-size: 16px; font-weight: normal; color: #ffffff; margin-bottom: 15px; text-shadow: 0 1px 0 black; -webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.4) 70%); }
-.cut .cut__pics { position: relative; height: 73px; margin-right: -10px; }
-.cut .cut__pics.cut__pics_small { height: 43px; }
+.cut .cut__pics { position: relative; height: 83px; margin-right: -10px; }
+.cut .cut__pics.cut__pics_small { height: 53px; }
 .cut .cut__pics div { position: absolute; left: 0; top: 0; display: block; z-index: 10; }
 .cut .cut__pics div:before { display: none; }
 .cut .cut__pics div + div { -webkit-transform: rotate(3deg); -moz-transform: rotate(3deg); -ms-transform: rotate(3deg); -o-transform: rotate(3deg); transform: rotate(3deg); z-index: 9; }
@@ -566,6 +566,8 @@ html, body { height: 100%; position: relative; }
 .cut .cut__meta b { display: block; color: #ccc; font-weight: normal; }
 .cut .cut__created { text-align: left; color: #999; font-size: 11px; display: block; }
 .cut .cut__created span { display: block; }
+.cut.is-selected .cut__pics div:first-child:before { background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #feff63), color-stop(100%, #ffba48)); background-image: -webkit-linear-gradient(top, #feff63 0%, #ffba48 100%); background-image: -moz-linear-gradient(top, #feff63 0%, #ffba48 100%); background-image: -o-linear-gradient(top, #feff63 0%, #ffba48 100%); background-image: -ms-linear-gradient(top, #feff63 0%, #ffba48 100%); background-image: linear-gradient(top, #feff63 0%, #ffba48 100%); display: block; }
+.cut.is-selected .cut__title { color: #EFECAF; -webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.7) 70%); }
 
 .cut__icons { font-size: 11px; color: #acacac; text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4); margin: -10px 0 20px; }
 .cut__icons div { display: inline-block; cursor: pointer; margin-right: 14px; }
