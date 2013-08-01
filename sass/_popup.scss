@@ -67,6 +67,26 @@
 			border-top: 2px solid #FFC98B;
 		}
 	}
+	&.is-error{
+		left: 400px;
+		header{
+			border-top-color: #FF6360;
+			&:before{
+				display: none;
+			}
+		}
+		.popup__content{
+			position: relative;
+			&:before{
+				position: absolute;
+				top: 100%;
+				left: 30px;
+				content: ' ';
+				display: inline-block;
+				@include s(popuparrowbot);
+			}
+		}
+	}
 	.popup__content{
 		padding: 10px;
 	}
@@ -89,6 +109,32 @@
 			font-size: 13px;
 		}
 	}
+	.popup__select{
+		margin-bottom: 7px;
+		border: 1px solid #CCCCCC;
+		font-size: 13px;
+		color: #434343;
+		background: #EAEAEA;
+		cursor: pointer;
+		padding: 5px 10px;
+		box-shadow:inset 0 3px 3px rgba(#fff, .3);
+		position: relative;
+		.popup__selectarrow{
+			position: absolute;
+			right: 10px;
+			top: 12px;
+			@include s(selectarr);
+			display: inline-block;
+		}
+	}
+	.icon-newcutlist{
+		display: inline-block;
+		@include s(createnew1);
+		margin-right: 3px;
+		vertical-align: middle;
+		position: relative;
+		top: -1px;
+	}
 	.createnewcutlist{
 		@extend %button;
 		border-radius: 4px;
@@ -97,6 +143,8 @@
 			@include s(createnew);
 			margin-right: 5px;
 			vertical-align: middle;
+			position: relative;
+			top: -1px;
 		}
 	}
 }
