@@ -366,6 +366,7 @@ $bottom: 222px;
 	border-bottom: 1px solid #424242;
 	padding-bottom: 13px;
 	margin-top: 13px;
+	position: relative;
 	.rfile__pic{
 		margin-bottom: 6px;
 		
@@ -499,6 +500,85 @@ $bottom: 222px;
 					display: inline-block;
 					content: ' ';
 				}
+			}
+		}
+	}
+	&.is-more{
+		.rfile__more{
+			display: block;
+		}
+	}
+	.rfile__more{
+		display: none;
+		margin: 0 -10px;
+		padding: 0 10px;
+		background: #202023;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		z-index: 200;
+		top:38px;
+		opacity: 1;
+		.rfile__meta{
+			margin-bottom: 6px;
+		}
+		.rfile__moredescr{
+			padding: 4px 0;
+			font-size: 13px;
+			color: #aaaaaa;
+		}
+		.rfile__moremeta{
+			margin-top: 6px;
+			background: #EAEAEA;
+			box-shadow:inset 0 0 10px rgba(#000, .3), 0 0 10px rgba(#000, .5);
+			margin: 0 -10px;
+			padding: 4px 10px;
+			@include background-image(linear-gradient(top, #FAFAFA 0%, #ECECEC 15%, #ECECEC 85%,  #CFCFCF 100%)); 
+			
+		}
+		.rfile__camera{
+			display: inline-block;
+			vertical-align: top;
+			span{
+				display: block;
+				text-transform: uppercase;
+				font-size: 9px;
+				color: #444;
+				padding-bottom: 4px;
+			}
+			b{
+				font-family: "cpmono", monospace;
+				font-size: 18px;
+				font-weight: normal;
+			}
+		}
+		.rfile__model{
+			@extend .rfile__camera;
+			margin-left: 10px;
+		}
+		.rfile__lens{
+			@extend .rfile__camera;
+			float: right;
+		}
+		.rfile__moremetabot{
+			border-top: 1px solid #D2D2D2;
+			padding-top: 5px;
+			font-size: 11px;
+			color: #444444;
+			span{
+				display: inline-block;
+				margin-left: 10px;
+			}
+			strong{
+				font-size: 14px;
+				font-weight: normal;
+				color: #e2e2e2;
+				display: inline-block;
+				line-height: 1;
+				padding: 2px 6px;
+				background: #434343;
+				font-family: "cpmono", monospace;
+				border-radius: 4px;
 			}
 		}
 	}
