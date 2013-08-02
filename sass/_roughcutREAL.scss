@@ -79,6 +79,7 @@ $bottom: 222px;
 		overflow: auto;
 	}
 	.rough__right{
+		@extend %scroll;
 		position: absolute;
 		right: -($width);
 		width: $width;
@@ -91,6 +92,7 @@ $bottom: 222px;
 		overflow: auto;
 	}
 	.rough__content{
+		@extend %scroll;
 		position: absolute;
 		bottom: $bottom;
 		top: 0;
