@@ -12,8 +12,8 @@ $bottom: 222px;
 }
 %scroll{
 	overflow: hidden;
-	overflow-x: hidden;
-	overflow-y: auto;
+	overflow-y: scroll;
+  	overflow-x: hidden;
 	/* Let's get this party started */
 	&::-webkit-scrollbar {
 	    width: 6px;
