@@ -2,6 +2,9 @@
 
 
 $(document).ready(function() {
+	$('.popup__select').click(function(event) {
+		$(this).toggleClass("is-expanded");
+	});
 	$('.timeline__comment').click(function (e) {
 		$(this).children('.timeline__commenttext').toggleClass('is-visible');
 	});

@@ -119,6 +119,11 @@
 		padding: 5px 10px;
 		box-shadow:inset 0 3px 3px rgba(#fff, .3);
 		position: relative;
+		&.is-expanded{
+			.popup__selectdrop{
+				display: block;
+			}
+		}
 		.popup__selectarrow{
 			position: absolute;
 			right: 10px;
@@ -145,6 +150,34 @@
 			vertical-align: middle;
 			position: relative;
 			top: -1px;
+		}
+	}
+	.popup__selectdrop{
+		position: absolute;
+		bottom: -1px;
+		background: #EAEAEA;
+		left: -1px;
+		width: 100%;
+		padding: 1px;
+		border: 1px solid #CCCCCC;
+		display: none;
+		.popup__selecttitle{
+			padding: 8px 0;
+			border-top: 1px solid #CFCFCF;
+			margin: 0 10px;
+		}
+		ul{
+			list-style: none;
+			font-size: 13px;
+			a{
+				color: #444;
+				text-decoration: none;
+				display: block;
+				padding: 5px 10px;
+				&:hover{
+					background: #D6D6D6;
+				}
+			}
 		}
 	}
 }
