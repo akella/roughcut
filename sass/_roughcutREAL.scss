@@ -88,7 +88,6 @@ $bottom: 222px;
 		@include transition(all .3s ease-in-out);
 		border-left: 1px solid #464646;
 		box-shadow: -10px 0 10px rgba(#000, .2);
-		overflow: auto;
 	}
 	.rough__content{
 		@extend %scroll;
