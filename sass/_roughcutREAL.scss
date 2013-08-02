@@ -859,7 +859,7 @@ $bottom: 222px;
 			text-shadow: 0 -1px 2px rgba(#000, .5);
 			text-decoration: none;
 			margin-left: 10px;
-			&:hover{
+			&:hover, &.is-active{
 				opacity: 1;
 			}
 			&:before{
