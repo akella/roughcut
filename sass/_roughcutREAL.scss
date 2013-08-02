@@ -507,36 +507,46 @@ $bottom: 222px;
 		margin-right: 10px;
 		cursor: pointer;
 		position: relative;
-		.rfile__title, .rfile__length, .rfile__meta, .rfile__filename, .rfile__actions{
+		.rfile__title, .rfile__length, .rfile__meta,.rfile__rename, .rfile__filename, .rfile__actions{
 			display: none;
+		}
+		.rfile__actions{
+			display: block;
+			position: absolute;
+			bottom: -11px;
+			right: 10px;
+			@include transition(all .2s linear);
+			opacity: 0;
 		}
 		.rfile__pic{
 			box-shadow:0 0 6px rgba(#000, 1);
 		}
+		.rfile__length{
+			display: block;
+			position: absolute;
+			bottom: -13px;
+			left: 0;
+			padding-left: 19px;
+			opacity: 0;
+			left: 10px;
+			@include transition(all .2s linear);
+			&:before{
+				@include s(infoicon);
+				position: absolute;
+				left: 0;
+				top: 1px;
+				display: inline-block;
+				content: ' ';
+			}
+		}
 		&:hover{
 			.rfile__length{
-				display: block;
-				position: absolute;
-				bottom: -13px;
 				left: 0;
-				padding-left: 19px;
-				&:before{
-					@include s(infoicon);
-					position: absolute;
-					left: 0;
-					top: 1px;
-					display: inline-block;
-					content: ' ';
-				}
+				opacity: 1;
 			}
 			.rfile__actions{
-				display: block;
-				position: absolute;
-				bottom: -11px;
 				right: 0;
-			}
-			.rfile__rename{
-				display: none;
+				opacity: 1;
 			}
 		}
 	}
