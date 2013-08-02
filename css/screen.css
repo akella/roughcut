@@ -431,7 +431,7 @@ html, body { height: 100%; position: relative; background: #333; }
 .rough .rough__full .rough__fullicon { display: inline-block; background: url('../img/icons.png') 0 -2588px no-repeat; width: 17px; height: 18px; margin-right: 14px; cursor: pointer; vertical-align: middle; }
 .rough .rough__full i { background: url('../img/icons.png') 0 -3205px no-repeat; width: 14px; height: 18px; display: inline-block; vertical-align: middle; cursor: pointer; }
 .rough .rough__full i.is-active { -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ms-transform: rotate(180deg); -o-transform: rotate(180deg); transform: rotate(180deg); }
-.rough .rough__left { position: absolute; left: -322px; top: 0; bottom: 222px; width: 322px; background: #333333; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; border-right: 1px solid #464646; box-shadow: 10px 0 10px rgba(0, 0, 0, 0.2); overflow: auto; }
+.rough .rough__left { position: absolute; left: -322px; top: 0; bottom: 222px; width: 322px; background: #333333; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; border-right: 1px solid #464646; box-shadow: 10px 0 10px rgba(0, 0, 0, 0.2); }
 .rough .rough__right { position: absolute; right: -322px; width: 322px; bottom: 222px; top: 0; background: #333333; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; border-left: 1px solid #464646; box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2); overflow: auto; }
 .rough .rough__content { position: absolute; bottom: 222px; top: 0; left: 0; right: 0; overflow: hidden; background: #212121; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
 .rough .rough__content .rough__contentv { height: 100%; width: 100%; display: table; }
@@ -513,6 +513,8 @@ html, body { height: 100%; position: relative; background: #333; }
 .is-fullscreencutlist .rfile .rfile__pic { box-shadow: 0 0 6px black; }
 .is-fullscreencutlist .rfile:hover .rfile__length { display: block; position: absolute; bottom: -13px; left: 0; padding-left: 19px; }
 .is-fullscreencutlist .rfile:hover .rfile__length:before { background: url('../img/icons.png') 0 -2616px no-repeat; width: 13px; height: 13px; position: absolute; left: 0; top: 1px; display: inline-block; content: ' '; }
+.is-fullscreencutlist .rfile:hover .rfile__actions { display: block; position: absolute; bottom: -11px; right: 0; }
+.is-fullscreencutlist .rfile:hover .rfile__rename { display: none; }
 .rfile.is-more .rfile__more { display: block; }
 .rfile .rfile__more { display: none; margin: 0 -10px; padding: 0 10px; background: #202023; position: absolute; left: 0px; right: 0px; z-index: 200; top: 38px; opacity: 1; }
 .rfile .rfile__more .rfile__meta { margin-bottom: 6px; }

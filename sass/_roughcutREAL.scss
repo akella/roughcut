@@ -76,7 +76,6 @@ $bottom: 222px;
 		@include transition(all .3s ease-in-out);
 		border-right: 1px solid #464646;
 		box-shadow: 10px 0 10px rgba(#000, .2);
-		overflow: auto;
 	}
 	.rough__right{
 		@extend %scroll;
@@ -529,6 +528,15 @@ $bottom: 222px;
 					display: inline-block;
 					content: ' ';
 				}
+			}
+			.rfile__actions{
+				display: block;
+				position: absolute;
+				bottom: -11px;
+				right: 0;
+			}
+			.rfile__rename{
+				display: none;
 			}
 		}
 	}
