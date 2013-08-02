@@ -1,6 +1,7 @@
 html,body{
 	height: 100%;
 	position: relative;
+	background: #333;
 }
 $width: 322px;
 $bottom: 222px;
@@ -10,6 +11,7 @@ $bottom: 222px;
 	display: inline-block;
 }
 %scroll{
+	overflow: hidden;
 	overflow-x: hidden;
 	overflow-y: auto;
 	/* Let's get this party started */
