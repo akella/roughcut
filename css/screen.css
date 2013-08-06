@@ -421,10 +421,10 @@ html, body { height: 100%; position: relative; background: #333; }
 
 .icon-info { background: url('../img/icons.png') 0 -2616px no-repeat; width: 13px; height: 13px; display: inline-block; }
 
-.rough .rough__left, .rough .rough__right, .rough .rough__content { overflow: hidden; overflow-y: scroll; overflow-x: hidden; /* Let's get this party started */ /* Track */ /* Handle */ }
-.rough .rough__left::-webkit-scrollbar, .rough .rough__right::-webkit-scrollbar, .rough .rough__content::-webkit-scrollbar { width: 6px; }
-.rough .rough__left::-webkit-scrollbar-thumb, .rough .rough__right::-webkit-scrollbar-thumb, .rough .rough__content::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; border-radius: 10px; background: #2B2B2B; -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
-.rough .rough__left::-webkit-scrollbar-thumb:window-inactive, .rough .rough__right::-webkit-scrollbar-thumb:window-inactive, .rough .rough__content::-webkit-scrollbar-thumb:window-inactive { background: #2B2B2B; }
+.rough .rough__content, .roughcontent { overflow: hidden; overflow-y: scroll; overflow-x: hidden; /* Let's get this party started */ /* Track */ /* Handle */ }
+.rough .rough__content::-webkit-scrollbar, .roughcontent::-webkit-scrollbar { width: 6px; }
+.rough .rough__content::-webkit-scrollbar-thumb, .roughcontent::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; border-radius: 10px; background: #2B2B2B; -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
+.rough .rough__content::-webkit-scrollbar-thumb:window-inactive, .roughcontent::-webkit-scrollbar-thumb:window-inactive { background: #2B2B2B; }
 
 .rough { position: absolute; bottom: 0; top: 33px; left: 0; right: 0; overflow: hidden; background: #212121; }
 .rough .rough__full { right: 0; position: absolute; top: 9px; text-align: right; }
@@ -432,7 +432,7 @@ html, body { height: 100%; position: relative; background: #333; }
 .rough .rough__full i { background: url('../img/icons.png') 0 -3205px no-repeat; width: 14px; height: 18px; display: inline-block; vertical-align: middle; cursor: pointer; }
 .rough .rough__full i.is-active { -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ms-transform: rotate(180deg); -o-transform: rotate(180deg); transform: rotate(180deg); }
 .rough .rough__left { position: absolute; left: -322px; top: 0; bottom: 222px; width: 322px; background: #333333; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; border-right: 1px solid #464646; box-shadow: 10px 0 10px rgba(0, 0, 0, 0.2); }
-.rough .rough__right { position: absolute; right: -322px; width: 322px; bottom: 222px; top: 0; background: #333333; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; border-left: 1px solid #464646; box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2); }
+.rough .rough__right { padding-top: 10px; position: absolute; right: -322px; width: 322px; bottom: 222px; top: 0; background: #333333; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; border-left: 1px solid #464646; box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2); }
 .rough .rough__content { position: absolute; bottom: 222px; top: 0; left: 0; right: 0; overflow: hidden; background: #212121; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
 .rough .rough__content .rough__contentv { height: 100%; width: 100%; display: table; }
 .rough .rough__content .rough__contentv1 { display: table-cell; text-align: center; vertical-align: middle; }
@@ -467,17 +467,34 @@ html, body { height: 100%; position: relative; background: #333; }
 .searchbox { padding: 0 0 15px 0; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .searchbox input { width: 100%; display: block; box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.6); border: 1px solid #000; padding: 4px; border-radius: 10px; }
 
-.rfiles .rfiles__head { font-size: 11px; text-transform: uppercase; color: #aaaaaa; font-weight: normal; margin-bottom: 10px; }
-.rfiles .rfiles__head i { background: url('../img/icons.png') 0 -3091px no-repeat; width: 11px; height: 14px; vertical-align: middle; margin-right: 6px; display: inline-block; position: relative; top: -2px; }
-.rfiles .rfiles__nav { float: right; width: 190px; text-align: right; position: relative; top: -3px; }
-.rfiles .rfiles__nav a { color: #777777; font-size: 12px; text-decoration: underline; margin-right: 6px; vertical-align: middle; }
-.rfiles .rfiles__nav .rfiles__viewlist, .rfiles .rfiles__nav .rfiles__viewgrid { display: inline-block; border: 1px solid #202020; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #484848), color-stop(100%, #2e2e2e)); background-image: -webkit-linear-gradient(#484848, #2e2e2e); background-image: -moz-linear-gradient(#484848, #2e2e2e); background-image: -o-linear-gradient(#484848, #2e2e2e); background-image: -ms-linear-gradient(#484848, #2e2e2e); background-image: linear-gradient(#484848, #2e2e2e); vertical-align: middle; width: 33px; height: 16px; padding-top: 2px; text-align: center; cursor: pointer; }
-.rfiles .rfiles__nav .rfiles__viewlist.is-active, .rfiles .rfiles__nav .rfiles__viewlist:hover, .rfiles .rfiles__nav .rfiles__viewgrid.is-active, .rfiles .rfiles__nav .rfiles__viewgrid:hover { background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2e2e2e), color-stop(100%, #484848)); background-image: -webkit-linear-gradient(#2e2e2e, #484848); background-image: -moz-linear-gradient(#2e2e2e, #484848); background-image: -o-linear-gradient(#2e2e2e, #484848); background-image: -ms-linear-gradient(#2e2e2e, #484848); background-image: linear-gradient(#2e2e2e, #484848); }
-.rfiles .rfiles__nav .rfiles__viewlist i, .rfiles .rfiles__nav .rfiles__viewgrid i { display: inline-block; }
-.rfiles .rfiles__nav .rfiles__viewgrid { border-left: none; border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
-.rfiles .rfiles__nav .rfiles__viewgrid i { background: url('../img/icons.png') 0 -3292px no-repeat; width: 19px; height: 9px; position: relative; top: -1px; }
-.rfiles .rfiles__nav .rfiles__viewlist { border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
-.rfiles .rfiles__nav .rfiles__viewlist i { background: url('../img/icons.png') 0 -3481px no-repeat; width: 14px; height: 11px; }
+.roughnav { height: 50px; position: absolute; padding: 10px; top: 0; right: 0; left: 0; background: #333; box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3); }
+.roughnav .roughnav__head { font-size: 11px; text-transform: uppercase; color: #aaaaaa; font-weight: normal; margin-bottom: 10px; }
+.roughnav .roughnav__head i { background: url('../img/icons.png') 0 -3091px no-repeat; width: 11px; height: 14px; vertical-align: middle; margin-right: 6px; display: inline-block; position: relative; top: -2px; }
+.roughnav .roughnav__nav { float: right; width: 190px; text-align: right; position: relative; top: -3px; }
+.roughnav .roughnav__nav a { color: #777777; font-size: 12px; text-decoration: underline; margin-right: 6px; vertical-align: middle; }
+.roughnav .roughnav__nav .roughnav__viewlist, .roughnav .roughnav__nav .roughnav__viewgrid { display: inline-block; border: 1px solid #202020; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #484848), color-stop(100%, #2e2e2e)); background-image: -webkit-linear-gradient(#484848, #2e2e2e); background-image: -moz-linear-gradient(#484848, #2e2e2e); background-image: -o-linear-gradient(#484848, #2e2e2e); background-image: -ms-linear-gradient(#484848, #2e2e2e); background-image: linear-gradient(#484848, #2e2e2e); vertical-align: middle; width: 33px; height: 16px; padding-top: 2px; text-align: center; cursor: pointer; }
+.roughnav .roughnav__nav .roughnav__viewlist.is-active, .roughnav .roughnav__nav .roughnav__viewlist:hover, .roughnav .roughnav__nav .roughnav__viewgrid.is-active, .roughnav .roughnav__nav .roughnav__viewgrid:hover { background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2e2e2e), color-stop(100%, #484848)); background-image: -webkit-linear-gradient(#2e2e2e, #484848); background-image: -moz-linear-gradient(#2e2e2e, #484848); background-image: -o-linear-gradient(#2e2e2e, #484848); background-image: -ms-linear-gradient(#2e2e2e, #484848); background-image: linear-gradient(#2e2e2e, #484848); }
+.roughnav .roughnav__nav .roughnav__viewlist i, .roughnav .roughnav__nav .roughnav__viewgrid i { display: inline-block; }
+.roughnav .roughnav__nav .roughnav__viewgrid { border-left: none; border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
+.roughnav .roughnav__nav .roughnav__viewgrid i { background: url('../img/icons.png') 0 -3292px no-repeat; width: 19px; height: 9px; position: relative; top: -1px; }
+.roughnav .roughnav__nav .roughnav__viewlist { border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
+.roughnav .roughnav__nav .roughnav__viewlist i { background: url('../img/icons.png') 0 -3481px no-repeat; width: 14px; height: 11px; }
+
+.roughcontent { position: absolute; top: 70px; bottom: 0; left: 0; right: 0; padding: 3px 10px 10px 10px; }
+
+.rfiles__head { font-size: 11px; text-transform: uppercase; color: #aaaaaa; font-weight: normal; margin-bottom: 10px; }
+.rfiles__head i { background: url('../img/icons.png') 0 -3091px no-repeat; width: 11px; height: 14px; vertical-align: middle; margin-right: 6px; display: inline-block; position: relative; top: -2px; }
+
+.rfiles__nav { float: right; width: 190px; text-align: right; position: relative; top: -3px; }
+.rfiles__nav a { color: #777777; font-size: 12px; text-decoration: underline; margin-right: 6px; vertical-align: middle; }
+.rfiles__nav .rfiles__viewlist, .rfiles__nav .rfiles__viewgrid { display: inline-block; border: 1px solid #202020; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #484848), color-stop(100%, #2e2e2e)); background-image: -webkit-linear-gradient(#484848, #2e2e2e); background-image: -moz-linear-gradient(#484848, #2e2e2e); background-image: -o-linear-gradient(#484848, #2e2e2e); background-image: -ms-linear-gradient(#484848, #2e2e2e); background-image: linear-gradient(#484848, #2e2e2e); vertical-align: middle; width: 33px; height: 16px; padding-top: 2px; text-align: center; cursor: pointer; }
+.rfiles__nav .rfiles__viewlist.is-active, .rfiles__nav .rfiles__viewlist:hover, .rfiles__nav .rfiles__viewgrid.is-active, .rfiles__nav .rfiles__viewgrid:hover { background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2e2e2e), color-stop(100%, #484848)); background-image: -webkit-linear-gradient(#2e2e2e, #484848); background-image: -moz-linear-gradient(#2e2e2e, #484848); background-image: -o-linear-gradient(#2e2e2e, #484848); background-image: -ms-linear-gradient(#2e2e2e, #484848); background-image: linear-gradient(#2e2e2e, #484848); }
+.rfiles__nav .rfiles__viewlist i, .rfiles__nav .rfiles__viewgrid i { display: inline-block; }
+.rfiles__nav .rfiles__viewgrid { border-left: none; border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
+.rfiles__nav .rfiles__viewgrid i { background: url('../img/icons.png') 0 -3292px no-repeat; width: 19px; height: 9px; position: relative; top: -1px; }
+.rfiles__nav .rfiles__viewlist { border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
+.rfiles__nav .rfiles__viewlist i { background: url('../img/icons.png') 0 -3481px no-repeat; width: 14px; height: 11px; }
+
 .rfiles.is-fileview .rfile { display: inline-block; vertical-align: top; width: 31%; text-align: center; border-style: none; padding-bottom: 14px; padding-right: 2%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .rfiles.is-fileview .rfile .rfile__pic img, .rfiles.is-fileview .rfile .rfile__meta { display: none; }
 .rfiles.is-fileview .rfile .rfile__title { -ms-word-break: break-all; word-break: break-all; word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; max-height: 3em; overflow: hidden; white-space: normal; text-align: left; }

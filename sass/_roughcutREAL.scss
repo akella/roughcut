@@ -5,6 +5,7 @@ html,body{
 }
 $width: 322px;
 $bottom: 222px;
+$subnavheight: 70px;
 // layout
 .icon-info{
 	@include s(infoicon);
@@ -66,7 +67,7 @@ $bottom: 222px;
 		}
 	}
 	.rough__left{
-		@extend %scroll;
+		//@extend %scroll;
 		position: absolute;
 		left: -($width);
 		top: 0;
@@ -78,7 +79,8 @@ $bottom: 222px;
 		box-shadow: 10px 0 10px rgba(#000, .2);
 	}
 	.rough__right{
-		@extend %scroll;
+		padding-top: 10px;
+		//@extend %scroll;
 		position: absolute;
 		right: -($width);
 		width: $width;
@@ -261,9 +263,16 @@ $bottom: 222px;
 		border-radius: 10px;
 	}
 }
-
-.rfiles{
-	.rfiles__head{
+.roughnav{
+	height: $subnavheight - 20px;
+	position: absolute;
+	padding: 10px;
+	top: 0;
+	right: 0;
+	left: 0;
+	background: #333;
+	box-shadow:0 10px 10px rgba(#000, .3);
+	.roughnav__head{
 		font-size: 11px;
 		text-transform: uppercase;
 		color: #aaaaaa;
@@ -278,7 +287,7 @@ $bottom: 222px;
 			top: -2px;
 		}
 	}
-	.rfiles__nav{
+	.roughnav__nav{
 		float: right;
 		width: 190px;
 		text-align: right;
@@ -291,7 +300,7 @@ $bottom: 222px;
 			margin-right: 6px;
 			vertical-align: middle;
 		}
-		.rfiles__viewlist, .rfiles__viewgrid{
+		.roughnav__viewlist, .roughnav__viewgrid{
 			display: inline-block;
 			border: 1px solid #202020;
 			@include background-image(linear-gradient( #484848, #2E2E2E));
@@ -308,7 +317,7 @@ $bottom: 222px;
 				display: inline-block;
 			}
 		}
-		.rfiles__viewgrid{
+		.roughnav__viewgrid{
 			border-left: none;
 			border-top-right-radius: 3px;
 			border-bottom-right-radius: 3px;
@@ -318,7 +327,7 @@ $bottom: 222px;
 				top: -1px;
 			}
 		}
-		.rfiles__viewlist{
+		.roughnav__viewlist{
 			border-top-left-radius: 3px;
 			border-bottom-left-radius: 3px;
 			i{
@@ -326,6 +335,80 @@ $bottom: 222px;
 			}
 		}
 	}
+}
+.roughcontent{
+	position: absolute;
+	top: $subnavheight;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 3px 10px 10px 10px;
+	@extend %scroll;
+}
+.rfiles__head{
+	font-size: 11px;
+	text-transform: uppercase;
+	color: #aaaaaa;
+	font-weight: normal;
+	margin-bottom: 10px;
+	i{
+		@include s(fileicon);
+		vertical-align: middle;
+		margin-right: 6px;
+		display: inline-block;
+		position: relative;
+		top: -2px;
+	}
+}
+.rfiles__nav{
+	float: right;
+	width: 190px;
+	text-align: right;
+	position: relative;
+	top: -3px;
+	a{
+		color: #777777;
+		font-size: 12px;
+		text-decoration: underline;
+		margin-right: 6px;
+		vertical-align: middle;
+	}
+	.rfiles__viewlist, .rfiles__viewgrid{
+		display: inline-block;
+		border: 1px solid #202020;
+		@include background-image(linear-gradient( #484848, #2E2E2E));
+		vertical-align: middle;
+		width: 33px;
+		height: 16px;
+		padding-top: 2px;
+		text-align: center;
+		cursor: pointer;
+		&.is-active, &:hover{
+			@include background-image(linear-gradient( #2E2E2E, #484848));
+		}
+		i{
+			display: inline-block;
+		}
+	}
+	.rfiles__viewgrid{
+		border-left: none;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+		i{
+			@include s(viewgrid);
+			position: relative;
+			top: -1px;
+		}
+	}
+	.rfiles__viewlist{
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+		i{
+			@include s(viewlist);
+		}
+	}
+}
+.rfiles{
 	&.is-fileview{
 		.rfile{
 			display: inline-block;
