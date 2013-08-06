@@ -5,7 +5,7 @@ html,body{
 }
 $width: 322px;
 $bottom: 222px;
-$subnavheight: 70px;
+$subnavheight: 85px;
 // layout
 .icon-info{
 	@include s(infoicon);
@@ -272,6 +272,15 @@ $subnavheight: 70px;
 	left: 0;
 	background: #333;
 	box-shadow:0 10px 10px rgba(#000, .3);
+	.searchbox{
+		padding-bottom: 4px;
+	}
+	.cutnav__back{
+		margin-top: -10px;
+	}
+	.cutnav{
+		margin-bottom: 5px;
+	}
 	.roughnav__head{
 		font-size: 11px;
 		text-transform: uppercase;
@@ -791,16 +800,17 @@ $subnavheight: 70px;
 		}
 	}
 }
+.sublist__title{
+	font-size: 16px;
+	font-weight: normal;
+	color: #ffffff;
+	margin-bottom: 15px;
+	text-shadow: 0 1px 0 black;
+	-webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.4) 70%)
+}
 .sublist{
 	padding-bottom: 10px;
-	.sublist__title{
-		font-size: 16px;
-		font-weight: normal;
-		color: #ffffff;
-		margin-bottom: 15px;
-		text-shadow: 0 1px 0 black;
-		-webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.4) 70%)
-	}
+	
 	&.is-active{
 		.sublist__title{
 			color: #EFEBAC;
@@ -905,79 +915,77 @@ $subnavheight: 70px;
 	border-bottom: 2px solid #484848;
 	margin-bottom: 7px;
 	position: relative;
-	.cutlist__header{
-		font-size: 11px;
-		color: #aaa;
-		font-weight: normal;
-		text-transform: uppercase;
-		margin-bottom: 8px;
+}
+.cutlist__header{
+	font-size: 11px;
+	color: #aaa;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+}
+.cutlist__toggle{
+	position: absolute;
+	right: 15px;
+	display: inline-block;
+	@include s(cutmin);
+	top: 12px;
+	cursor: pointer;
+	opacity: .5;
+	margin-top: 3px;
+	&.is-active{
+		@include s(cutplus);
+		margin-top: 0;
 	}
-	.cutlist__toggle{
-		position: absolute;
-		top: 0;
-		right: 0;
+	&:hover{
+		opacity: 1;
+	}
+}
+.cutlist__nav{
+	padding-bottom: 7px;
+	margin-bottom: 8px;
+	font-size: 11px;
+	padding-top: 2px;
+}
+.cutlist__createnew{
+	color: #999;
+	text-shadow: 0 -1px 2px rgba(#000, .5);
+	cursor: pointer;
+	i{
 		display: inline-block;
-		@include s(cutmin);
-		top: 5px;
-		cursor: pointer;
+		@include s(createnew);
+		margin-right: 5px;
+		vertical-align: middle;
+		position: relative;
+		top: -1px;
+	}
+}
+.cutlist__navother{
+	float: right;
+	text-align: right;
+	a{
 		opacity: .5;
-		margin-top: 3px;
-		&.is-active{
-			@include s(cutplus);
-			margin-top: 0;
-		}
-		&:hover{
-			opacity: 1;
-		}
-	}
-	.cutlist__nav{
-		border-bottom: 1px solid #474747;
-		padding-bottom: 7px;
-		margin-bottom: 8px;
-		font-size: 11px;
-	}
-	.cutlist__createnew{
+		@include transition(all .1s linear);
 		color: #999;
 		text-shadow: 0 -1px 2px rgba(#000, .5);
-		cursor: pointer;
-		i{
+		text-decoration: none;
+		margin-left: 10px;
+		&:hover, &.is-active{
+			opacity: 1;
+		}
+		&:before{
 			display: inline-block;
-			@include s(createnew);
-			margin-right: 5px;
+			content: ' ';
 			vertical-align: middle;
+			margin-right: 6px;
 			position: relative;
 			top: -1px;
 		}
 	}
-	.cutlist__navother{
-		float: right;
-		text-align: right;
-		a{
-			opacity: .5;
-			@include transition(all .1s linear);
-			color: #999;
-			text-shadow: 0 -1px 2px rgba(#000, .5);
-			text-decoration: none;
-			margin-left: 10px;
-			&:hover, &.is-active{
-				opacity: 1;
-			}
-			&:before{
-				display: inline-block;
-				content: ' ';
-				vertical-align: middle;
-				margin-right: 6px;
-				position: relative;
-				top: -1px;
-			}
-		}
-		@each $s in clone, merge, delete{
-			.cutlist__#{$s}:before{
-				@include s(cutlist#{$s});
-			}
+	@each $s in clone, merge, delete{
+		.cutlist__#{$s}:before{
+			@include s(cutlist#{$s});
 		}
 	}
-	
 }
 .cut{
 	margin-bottom: 18px;
@@ -1298,9 +1306,42 @@ input[type="range"]::-webkit-slider-thumb {
 		padding-top: 5px;
 	}
 }
+.sortby{
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	.sortby__value{
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 11px;
+		color: #727272;
+	}
+	i{
+		display: inline-block;
+		@include s(arr-down);
+		vertical-align: middle;
+		opacity: .6;
+		margin-left: 3px;
+	}
+	select{
+		-webkit-appearance: none;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    bottom: 0;
+	    right: 0;
+	    opacity: 0;
+	}
+}
 
 
-// update
+
+
+
+
+
+
+// update CSS FROM OLES
 .clip.rfile.current{
     opacity:1;
 }

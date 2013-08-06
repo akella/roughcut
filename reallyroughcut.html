@@ -50,6 +50,10 @@
 				<div class="searchbox">
 					<input type="search" name="whatever" id="whatever">
 				</div>
+				<div class="sortby">
+					<div class="sortby__value">Sort by length</div> <i></i>
+					<select name="" id=""><option value="s">sortby what</option><option value="s">sortby what</option></select>
+				</div>
 			</div>
 			<!-- END roughnav -->
 			<div class="roughcontent">
@@ -167,23 +171,13 @@
 	<div class="rough__right">
 			<!-- BEGIN roughnav -->
 			<div class="roughnav">
-				<div class="rfiles__nav">
-					<a href="#" class="rfiles__more">Load more files</a>
-					<div class="rfiles__viewlist is-active"><i></i></div><div class="rfiles__viewgrid"><i></i></div>
-				</div>
-				<h3 class="rfiles__head"><i></i>Files</h3>
+				<div class="cutlist__toggle"></div>
+				<h3 class="cutlist__header"><i class="icon-mycut"></i>My Cut Lists</h3>
+				
 
 				<div class="searchbox">
 					<input type="search" name="whatever" id="whatever">
 				</div>
-			</div>
-			<!-- END roughnav -->
-		<!-- begin rough content -->
-		<div class="roughcontent">
-			<!-- BEGIN  cutlist-->
-			<div class="cutlist ">
-				<div class="cutlist__toggle"></div>
-				<h3 class="cutlist__header"><i class="icon-mycut"></i>My Cut Lists</h3>
 				<div class="cutlist__nav">
 					<div class="cutlist__navother">
 						<a href="#" class="cutlist__clone is-active">Clone</a>
@@ -192,6 +186,13 @@
 					</div>
 					<div class="cutlist__createnew"><i></i>Create New</div>
 				</div>
+			</div>
+			<!-- END roughnav -->
+		<!-- begin rough content -->
+		<div class="roughcontent">
+			<!-- BEGIN  cutlist-->
+			<div class="cutlist ">
+				
 				<div class="cut is-selected">
 					<h4 class="cut__title">Breaking Bad Intro</h4>
 					<div class="cut__icons">
