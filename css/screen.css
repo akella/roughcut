@@ -532,9 +532,9 @@ html, body { height: 100%; position: relative; background: #333; }
 .is-fullscreencutlist .rfile .rfile__title, .is-fullscreencutlist .rfile .rfile__length, .is-fullscreencutlist .rfile .rfile__meta, .is-fullscreencutlist .rfile .rfile__rename, .is-fullscreencutlist .rfile .rfile__filename, .is-fullscreencutlist .rfile .rfile__actions { display: none; }
 .is-fullscreencutlist .rfile .rfile__actions { display: block; position: absolute; bottom: -11px; right: 10px; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -ms-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; opacity: 0; }
 .is-fullscreencutlist .rfile .rfile__pic { box-shadow: 0 0 6px black; }
-.is-fullscreencutlist .rfile .rfile__length { display: block; position: absolute; bottom: -13px; left: 0; padding-left: 19px; opacity: 0; left: 10px; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -ms-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; }
+.is-fullscreencutlist .rfile .rfile__length { display: block; position: absolute; bottom: -13px; left: 0; padding-left: 19px; opacity: 0; left: 10px; height: 16px; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -ms-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; }
 .is-fullscreencutlist .rfile .rfile__length:before { background: url('../img/icons.png') 0 -2616px no-repeat; width: 13px; height: 13px; position: absolute; left: 0; top: 1px; display: inline-block; content: ' '; }
-.is-fullscreencutlist .rfile:hover .rfile__length { left: 0; opacity: 1; }
+.is-fullscreencutlist .rfile:hover .rfile__length { left: 0; opacity: 1; bottom: -13px; }
 .is-fullscreencutlist .rfile:hover .rfile__actions { right: 0; opacity: 1; }
 .rfile.is-more .rfile__more { display: block; }
 .rfile .rfile__more { display: none; margin: 0 -10px; padding: 0 10px; background: #202023; position: absolute; left: 0px; right: 0px; z-index: 200; top: 38px; opacity: 1; }

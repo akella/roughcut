@@ -620,6 +620,7 @@ $subnavheight: 85px;
 			padding-left: 19px;
 			opacity: 0;
 			left: 10px;
+			height: 16px;
 			@include transition(all .2s linear);
 			&:before{
 				@include s(infoicon);
@@ -634,6 +635,7 @@ $subnavheight: 85px;
 			.rfile__length{
 				left: 0;
 				opacity: 1;
+				bottom: -13px;
 			}
 			.rfile__actions{
 				right: 0;
