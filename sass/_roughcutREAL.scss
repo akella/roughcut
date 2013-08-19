@@ -508,8 +508,8 @@ $subnavheight: 85px;
 	&.is-active{
 		.rfile__pic{
 			box-shadow: 0 0 10px rgba(#000, .9);
-			&:before{
-				content: ' ';
+			&:after{
+				content: ' '; 
 				position: absolute;
 				top: 0;
 				bottom: 0;
@@ -640,16 +640,25 @@ $subnavheight: 85px;
 		}
 		.rfile__pic{
 			box-shadow:0 0 6px rgba(#000, 1);
+			margin: 0;
+			float: none;
+			width: auto;
+			height: auto;
+			&:after{
+				display: none;
+			}
 		}
 		.rfile__length{
 			display: block;
 			position: absolute;
-			bottom: -13px;
+			bottom: 3px;
 			left: 0;
 			padding-left: 19px;
 			opacity: 0;
 			left: 10px;
 			height: 16px;
+			z-index: 200;
+			text-shadow:0 0 2px rgba(#000,1);
 			@include transition(all .2s linear);
 			&:before{
 				@include s(infoicon);
@@ -662,9 +671,9 @@ $subnavheight: 85px;
 		}
 		&:hover{
 			.rfile__length{
-				left: 0;
+				left: 4px;
 				opacity: 1;
-				bottom: -13px;
+				bottom: 3px;
 			}
 			.rfile__actions{
 				right: 0;
@@ -1453,6 +1462,19 @@ video.is-current {display:block!important;}
 .localTimeline img { width: 100%;  }
 .localTimeline__filmstrip { height:80px; width: 100%; }
 .localTimeline__waveform {  height: 45px;  opacity: 0.7;}
+
+.cutseparator{
+	@include s(cutseparator);
+	display: inline-block;
+	position: absolute;
+	top: 0;
+}
+.cutseparatorsmall{
+	@include s(cutseparatorsmall);
+	display: inline-block;
+	position: absolute;
+	top: 0;
+}
 
 
 
