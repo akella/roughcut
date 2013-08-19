@@ -639,13 +639,15 @@ $subnavheight: 85px;
 			opacity: 0;
 		}
 		.rfile__pic{
-			box-shadow:0 0 6px rgba(#000, 1);
+			//box-shadow:0 0 6px rgba(#000, 1);
 			margin: 0;
 			float: none;
 			width: auto;
 			height: auto;
 			&:after{
-				display: none;
+				border-style: none;
+				left: 4px;
+				right: 4px;
 			}
 		}
 		.rfile__length{
