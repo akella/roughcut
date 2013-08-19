@@ -497,14 +497,28 @@ $subnavheight: 85px;
 	margin-top: 13px;
 	position: relative;
 	.rfile__pic{
-		margin-bottom: 6px;
-		
+		margin-top: 3px;
+		float: left;
+		margin-right: 10px;
+		width: 72px;
+		height: 28px; 
+		overflow: hidden;
+		position: relative;
 	}
 	&.is-active{
 		.rfile__pic{
+			box-shadow: 0 0 10px rgba(#000, .9);
 			&:before{
-				background: yellow;
+				content: ' ';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				border: 1px solid #999837;
+				border-radius: 2px;
 			}
+			
 		}
 	}
 	.rfile__title, .rfile__filename{
@@ -555,7 +569,11 @@ $subnavheight: 85px;
 		}
 	}
 	.rfile__length{
+		//position: absolute;
+		//bottom: 13px;
+		right: 0;
 		float: right;
+		margin-top: 17px;
 		font-size: 11px;
 		color: #cccccc;
 // 		float: none;
@@ -568,6 +586,7 @@ $subnavheight: 85px;
 		color: #999;
 		padding-left: 19px;
 		position: relative;
+		display:table;
 		&:before{
 			content: ' ';
 			@include s(infoicon);
@@ -1167,6 +1186,7 @@ $subnavheight: 85px;
 	right: 0;
 	left: 0;
 	width: 100%; 
+	@include transition(all .3s ease-in-out);
 }
 .panel_navigation{
 	overflow:hidden;
