@@ -512,10 +512,11 @@ html, body { height: 100%; position: relative; background: #333; }
 .rfiles.is-fileview .rfile.is-audiofile .rfile__pic:before, .rfiles.is-fileview .rfile.is-audiofile .rfile__pic:after { display: none; }
 .rfiles.is-fileview .rfile.is-audiofile:hover .rfile__pic, .rfiles.is-fileview .rfile.is-audiofile.is-active .rfile__pic { background: url('../img/icons.png') 0 -64px no-repeat; width: 47px; height: 58px; }
 
-.rfile { border-bottom: 1px solid #424242; padding-bottom: 13px; margin-top: 13px; position: relative; }
-.rfile .rfile__pic { margin-top: 3px; float: left; margin-right: 10px; width: 72px; height: 28px; overflow: hidden; position: relative; }
-.rfile.is-active .rfile__pic { box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); }
-.rfile.is-active .rfile__pic:after { content: ' '; position: absolute; top: 0; bottom: 0; right: 0; left: 0; border: 1px solid #999837; border-radius: 2px; }
+.rfile { border-bottom: 1px solid #424242; padding-bottom: 13px; margin-top: 13px; position: relative; vertical-align: top; }
+.rfile .rfile__pic { margin-top: 3px; position: relative; }
+.rfile.rfile_plain .rfile__pic { float: left; margin-right: 10px; width: 72px; height: 28px; }
+.rfile.rfile_plain .rfile__pic img { width: 72px; display: block; }
+.rfile.rfile_plain.is-active .rfile__pic { box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); outline: 1px solid #999837; border-radius: 2px; }
 .rfile .rfile__title, .rfile .rfile__filename { overflow: hidden; -ms-text-overflow: ellipsis; text-overflow: ellipsis; color: #fbfbfb; font-size: 11px; white-space: nowrap; }
 .rfile input.rfile__title { background: transparent; box-shadow: inset -2px 2px 3px rgba(0, 0, 0, 0.2); color: #ffffff; border: 1px solid #444444; padding: 2px; position: relative; left: -3px; -webkit-appearance: none; }
 .rfile .rfile__actions { float: right; color: #999; font-size: 11px; text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2); width: 200px; text-align: right; }

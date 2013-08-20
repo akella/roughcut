@@ -496,29 +496,30 @@ $subnavheight: 85px;
 	padding-bottom: 13px;
 	margin-top: 13px;
 	position: relative;
+	vertical-align: top;
 	.rfile__pic{
 		margin-top: 3px;
-		float: left;
-		margin-right: 10px;
-		width: 72px;
-		height: 28px; 
-		overflow: hidden;
 		position: relative;
+		
 	}
-	&.is-active{
+	
+	&.rfile_plain{
 		.rfile__pic{
-			box-shadow: 0 0 10px rgba(#000, .9);
-			&:after{
-				content: ' '; 
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				right: 0;
-				left: 0;
-				border: 1px solid #999837;
+			float: left;
+			margin-right: 10px;
+			width: 72px;
+			height: 28px; 
+			img{
+				width: 72px;
+				display: block;
+			}
+		}
+		&.is-active{
+			.rfile__pic{
+				box-shadow: 0 0 10px rgba(#000, .9);
+				outline: 1px solid #999837;
 				border-radius: 2px;
 			}
-			
 		}
 	}
 	.rfile__title, .rfile__filename{
