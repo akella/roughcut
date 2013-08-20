@@ -613,18 +613,28 @@ $subnavheight: 85px;
 			//margin-right: -10px;
 			height: 40px;
 			@extend %teeth;
+			
 // 			img{
 // 				box-shadow:0 0 4px rgba(#000, .3);
 // 				display: block;
 // 				//width: 100%;
 // 			}
 		}
+		&.is-active{
+			.rfile__pic:before{
+				@include background-image(linear-gradient(#FFFD56, #FFB940));
+			}
+		}
+	}
+
+	.rfile__started, .rfile__finished{
+		display: none;
 	}
 	.is-fullscreencutlist &{
 		display: inline-block;
 		padding: 0;
 		border-style: none;
-		margin-bottom: 8px;
+		margin-top: 30px;
 		margin-right: 10px;
 		cursor: pointer;
 		position: relative;
@@ -638,6 +648,27 @@ $subnavheight: 85px;
 			right: 10px;
 			@include transition(all .2s linear);
 			opacity: 0;
+		}
+		.rfile__started, .rfile__finished{
+			display: block;
+			position: absolute;
+			top: -16px;
+			font-size: 9px;
+			color: #363636;
+			display: inline-block;
+			font-family: Tahoma,sans-serif;
+			@include box-sizing(border-box);
+			padding: 0 3px;
+			line-height: 11px;
+		}
+		.rfile__started{
+			@include s(rfilestart);
+			left: 0;	
+		}
+		.rfile__finished{
+			@include s(rfilefinish);
+			right: 0;	
+			text-align: right;
 		}
 		.rfile__pic{
 			//box-shadow:0 0 6px rgba(#000, 1);
