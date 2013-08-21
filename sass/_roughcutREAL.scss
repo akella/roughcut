@@ -167,6 +167,16 @@ $subnavheight: 85px;
 	&.is-toggledcontrols .rough__togglevideocontrols i{
 		@include transform(rotate(180deg));
 	}
+	&.is-hiddenbottom{
+		.rough__bottom{
+			height: 170px !important;
+			@include transition(all .3s ease-in-out);
+			z-index: 100000;
+		}
+		.rough__left,.rough__right,.rough__content{
+			bottom: 170px;
+		}
+	}
 	&.is-fullscreencutlist{
 		.rough__right{
 			bottom: 0;
@@ -191,6 +201,9 @@ $subnavheight: 85px;
 		.videopreview{
 			display: block;
 		}
+		.is-hiddenbottom{
+			
+		}
 	}
 	&.is-toggledcontrols{
 		.rough__bottom{
@@ -202,17 +215,13 @@ $subnavheight: 85px;
 			@include transition-delay(.4s);
 			@include transform(translate(0, -($bottom)));
 		}
-	}
-	&.is-hiddenbottom{
-		.rough__bottom{
-			height: 170px !important;
-			@include transition(all .3s ease-in-out);
-			z-index: 100000;
-		}
-		.rough__left,.rough__right,.rough__content{
-			bottom: 170px;
+		&.is-hiddenbottom{
+			.rough__togglevideocontrols{
+				@include transform(translate(0, -170px));
+			}
 		}
 	}
+	
 	&.is-videopreview{
 		.rough__contentv1{
 			position: absolute;
