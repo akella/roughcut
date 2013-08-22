@@ -363,6 +363,11 @@ $subnavheight: 85px;
 			}
 		}
 	}
+	.is-fullscreencutlist &{
+		box-shadow:none;
+		height: auto;
+		border-bottom: 1px solid #464646;
+	}
 }
 .roughcontent{
 	position: absolute;
@@ -889,7 +894,11 @@ $subnavheight: 85px;
 	color: #ffffff;
 	margin-bottom: 15px;
 	text-shadow: 0 1px 0 black;
-	-webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.4) 70%)
+	-webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.4) 70%);
+	.is-fullscreencutlist &{
+		width: auto;
+		display: inline-block;
+	}
 }
 .sublist{
 	padding-bottom: 10px;
@@ -943,10 +952,25 @@ $subnavheight: 85px;
 		}
 		.cut__icons{
 			display: inline-block;
-			margin-left: 10px;
+			margin: 0;
+		
+			
 			position: relative;
 			top: -1px;
 		}
+	}
+} 
+.is-fullscreencutlist{
+	.cut__icons{
+		display: inline-block;
+		margin-left: 10px;
+		margin-bottom: 0;
+		position: relative;
+		top: -1px;
+	}
+	.sublist__title{
+		display: inline-block;
+		margin-bottom: 0;
 	}
 }
 .videopreview{

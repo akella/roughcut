@@ -486,6 +486,7 @@ html, body { height: 100%; position: relative; background: #333; }
 .roughnav .roughnav__nav .roughnav__viewgrid i { background: url('../img/icons.png') 0 -3552px no-repeat; width: 19px; height: 9px; position: relative; top: -1px; }
 .roughnav .roughnav__nav .roughnav__viewlist { border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
 .roughnav .roughnav__nav .roughnav__viewlist i { background: url('../img/icons.png') 0 -3741px no-repeat; width: 14px; height: 11px; }
+.is-fullscreencutlist .roughnav { box-shadow: none; height: auto; border-bottom: 1px solid #464646; }
 
 .roughcontent { position: absolute; top: 85px; bottom: 0; left: 0; right: 0; padding: 3px 10px 10px 10px; }
 
@@ -576,6 +577,7 @@ html, body { height: 100%; position: relative; background: #333; }
 .cutnav .cutnav__nav .cutnav__viewlist i { background: url('../img/icons.png') 0 -3776px no-repeat; width: 14px; height: 12px; position: relative; top: -4px; }
 
 .sublist__title { font-size: 16px; font-weight: normal; color: #ffffff; margin-bottom: 15px; text-shadow: 0 1px 0 black; -webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.4) 70%); }
+.is-fullscreencutlist .sublist__title { width: auto; display: inline-block; }
 
 .sublist { padding-bottom: 10px; }
 .sublist.is-active .sublist__title { color: #EFEBAC; -webkit-mask-image: -webkit-linear-gradient(black 40%, rgba(60, 60, 60, 0.7) 70%); }
@@ -586,7 +588,10 @@ html, body { height: 100%; position: relative; background: #333; }
 .sublist .cut__icons { margin-bottom: 0; }
 .is-fullscreencutlist .sublist .sublist__title { display: inline-block; margin-bottom: 0; }
 .is-fullscreencutlist .sublist .sublist__header { padding-bottom: 3px; border-bottom: 1px solid #484848; }
-.is-fullscreencutlist .sublist .cut__icons { display: inline-block; margin-left: 10px; position: relative; top: -1px; }
+.is-fullscreencutlist .sublist .cut__icons { display: inline-block; margin: 0; position: relative; top: -1px; }
+
+.is-fullscreencutlist .cut__icons { display: inline-block; margin-left: 10px; margin-bottom: 0; position: relative; top: -1px; }
+.is-fullscreencutlist .sublist__title { display: inline-block; margin-bottom: 0; }
 
 .videopreview { cursor: pointer; }
 .videopreview i { background: url('../img/icons.png') 0 -2827px no-repeat; width: 22px; height: 11px; margin-right: 5px; display: inline-block; position: relative; top: 2px; }
