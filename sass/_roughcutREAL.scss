@@ -52,19 +52,23 @@ $subnavheight: 85px;
 		.rough__fullicon{
 			display: inline-block;
 			@include s(fullscreen);
-			margin-right: 14px;
 			cursor: pointer;
 			vertical-align: middle;
+			position: absolute;
+			right: 10px;
+			top: 28px;
 		}
-		i{
-			@include s(rr);
-			display: inline-block;
-			vertical-align: middle;
-			cursor: pointer;
-			&.is-active{
-				@include transform(rotate(180deg));
-			}
-		}
+		// i{
+		// 	@include s(rr);
+		// 	display: inline-block;
+		// 	vertical-align: middle;
+		// 	cursor: pointer;
+		// 	&.is-active{
+		// 		@include transform(rotate(180deg));
+		// 	}
+		// }
+	}
+	.labellink{
 	}
 	.rough__left{
 		//@extend %scroll;
@@ -86,10 +90,13 @@ $subnavheight: 85px;
 		width: $width;
 		bottom: $bottom;
 		top: 0;
-		background: #333333;
+		background: #1D1E1E;
 		@include transition(all .3s ease-in-out);
-		border-left: 1px solid #464646;
+		border-left: 1px solid #212222;
 		box-shadow: -10px 0 10px rgba(#000, .2);
+		.roughnav{
+			background: #1D1E1E;
+		}
 	}
 	.rough__content{
 		@extend %scroll;
@@ -280,6 +287,7 @@ $subnavheight: 85px;
 		border: 1px solid #000;
 		padding: 4px;
 		border-radius: 10px;
+		background: #8E8F8E;
 	}
 }
 .roughnav{
@@ -291,6 +299,9 @@ $subnavheight: 85px;
 	left: 0;
 	background: #333;
 	box-shadow:0 10px 10px rgba(#000, .3);
+	.is-bigsubnav &{
+		height: $subnavheight + 10px;
+	}
 	.searchbox{
 		padding-bottom: 4px;
 	}
@@ -377,6 +388,9 @@ $subnavheight: 85px;
 	right: 0;
 	padding: 3px 10px 10px 10px;
 	@extend %scroll;
+	.is-bigsubnav &{
+		top: $subnavheight + 30px;
+	}
 }
 .rfiles__head{
 	font-size: 11px;
@@ -562,6 +576,7 @@ $subnavheight: 85px;
 		text-shadow: 0 -1px 2px rgba(#000, .2);
 		width: 200px;
 		text-align: right;
+		margin-right: -8px;
 		&>div{
 			margin-left: 10px;
 			display: inline-block;
@@ -588,7 +603,7 @@ $subnavheight: 85px;
 		//bottom: 13px;
 		right: 0;
 		float: right;
-		margin-top: 17px;
+		margin-top: 0px;
 		font-size: 11px;
 		color: #cccccc;
 // 		float: none;
@@ -1199,6 +1214,14 @@ $subnavheight: 85px;
 		@include s(cutexport);
 	}
 }
+.cut__edit{
+	float: right;
+	margin-right: 0;
+	i{
+		@include s(edit);
+		opacity: .3;
+	}
+}
 
 // outside of columns stuff
 // ===========================
@@ -1234,6 +1257,26 @@ $subnavheight: 85px;
 		}
 	}
 
+}
+.labellink{
+	font-size: 11px;
+	text-transform: uppercase;
+	color: #777;
+	background: #000000;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	line-height: 1;
+	display: inline-block;
+	padding: 3px 3px 4px 5px;
+	cursor: pointer;
+	i{
+		@include s(filenamei);
+		display: inline-block;
+		margin-left: 3px;
+		&.is-active{
+			@include transform(rotate(180deg));
+		}
+	}
 }
 
 
@@ -1333,7 +1376,7 @@ $subnavheight: 85px;
 			position:absolute;
 			}	
 .globalTimeline__zoom{
-	margin-left:10px;
+	margin-right:10px;
 	position:relative;
 	top:-4px;
 	z-index:1000;
@@ -1361,6 +1404,10 @@ $subnavheight: 85px;
 		cursor: pointer;
 	}
 }
+input[type="range"]{
+	background: #000;
+	border: 1px solid #3A3B3C;
+}
 input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	position: relative;
@@ -1369,8 +1416,8 @@ input[type="range"]::-webkit-slider-thumb {
 	width: 11px;
 	height: 11px;
 	border-radius: 40px;
-	border:1px solid #838383;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#525252), color-stop(100%,#000000));
+	border:1px solid #171817;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4C4D4D), color-stop(100%,#222222));
 	}
 
 /* localTimeline
