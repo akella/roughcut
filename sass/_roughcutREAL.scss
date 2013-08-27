@@ -1594,7 +1594,7 @@ video.is-current {display:block!important;}
 .localTimeline__waveform {  height: 45px;  opacity: 0.7;}
 
 .cutseparator{
-	@include s(cutseparator1);
+	@include s(cutseparator2);
 	display: inline-block;
 	position: absolute;
 	top: 0;
