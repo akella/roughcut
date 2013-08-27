@@ -1522,8 +1522,24 @@ input[type="range"]::-webkit-slider-thumb {
 
 
 
+@include keyframes(rotate) {
+	from {
+		@include rotate(0);
+	}
+	to {
+		@include rotate(360);
+	}
+}
 
-
+.loader{
+	width: 51px;
+	height: 51px;
+	border-radius:48px;
+	background: url(../img/loader.png) no-repeat 0 0;
+	display: inline-block;
+	margin: 0 auto;
+	@include animation(rotate 3s linear infinite);
+}
 
 
 // update CSS FROM OLES
@@ -1590,5 +1606,9 @@ video.is-current {display:block!important;}
 	top: 0;
 }
 
+.rough .rough__content .rough__contentv1 { display: table-cell; }
+.rough.is-videopreview .rough__contentv1 { position: absolute; height: 180px; top: 300px; left: 300px; box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.8); position: absolute; z-index: 10000; cursor: move; width: 250px; }
+video.player {position:absolute;  height:100%; width:100%; opacity:0; -webkit-transition: opacity .3s; }
+video.is-current {opacity:1;}
 
 
