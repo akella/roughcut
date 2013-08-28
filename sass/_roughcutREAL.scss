@@ -1535,10 +1535,12 @@ input[type="range"]::-webkit-slider-thumb {
 	width: 51px;
 	height: 51px;
 	border-radius:48px;
-	background: url(../img/loader.png) no-repeat 0 0;
+	background: url(../img/loader.gif) no-repeat 0 0;
 	display: inline-block;
 	margin: 0 auto;
-	@include animation(rotate 3s linear infinite);
+	//@include animation(rotate 3s linear infinite);
+	width: 32px;
+	height: 32px;
 }
 
 

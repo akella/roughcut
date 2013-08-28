@@ -741,7 +741,7 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; position: 
 @keyframes rotate { from { -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg); filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand'); zoom: 1; }
   to { -moz-transform: rotate(360deg); -o-transform: rotate(360deg); -webkit-transform: rotate(360deg); -ms-transform: rotate(360deg); transform: rotate(360deg); filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand'); zoom: 1; } }
 
-.loader { width: 51px; height: 51px; border-radius: 48px; background: url(../img/loader.png) no-repeat 0 0; display: inline-block; margin: 0 auto; -webkit-animation: rotate 3s linear infinite; -moz-animation: rotate 3s linear infinite; -ms-animation: rotate 3s linear infinite; -o-animation: rotate 3s linear infinite; animation: rotate 3s linear infinite; }
+.loader { width: 51px; height: 51px; border-radius: 48px; background: url(../img/loader.gif) no-repeat 0 0; display: inline-block; margin: 0 auto; width: 32px; height: 32px; }
 
 .clip.rfile.current { opacity: 1; }
 
