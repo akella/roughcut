@@ -11,6 +11,9 @@ $subnavheight: 85px;
 	@include s(infoicon);
 	display: inline-block;
 }
+.smallcontrols{
+	display: none;
+}
 %scroll{
 	overflow: hidden;
 	overflow-y: scroll;
@@ -238,10 +241,19 @@ $subnavheight: 85px;
 			position: absolute;
 			z-index: 10000;
 			cursor: move;
-			width: 250px;
+			 
 			*{
 				margin: 0;
 				padding: 0;
+			}
+			.smallcontrols{
+				display: block;
+				position: absolute;
+				bottom: -28px;
+				left: 0;
+				.button{
+					@extend %button; 
+				}
 			}
 		}
 		.rough__content{
