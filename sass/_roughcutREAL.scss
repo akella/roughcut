@@ -248,11 +248,23 @@ $subnavheight: 85px;
 			}
 			.smallcontrols{
 				display: block;
-				position: absolute;
-				bottom: -28px;
-				left: 0;
-				.button{
-					@extend %button; 
+				height: 19px;
+				padding-top: 6px;
+				padding-right: 6px;
+				text-align: right;
+				font-size: 0;
+				&>*{
+					display: inline-block;
+					margin-left: 3px;
+				}
+				.videosmall{
+					@include s(videosmall)
+				}
+				.videomiddle{
+					@include s(videomiddle)
+				}
+				.videobig{
+					@include s(videobig)
 				}
 			}
 		}
