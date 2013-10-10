@@ -1069,10 +1069,36 @@ $subnavheight: 85px;
 	font-weight: normal;
 	text-transform: uppercase;
 	margin-bottom: 8px;
+	display: inline-block;
+}
+.cutlist__sortby{
+	font-size: 10px;
+	color: #999999;
+	display: inline-block;
+	margin-left: 15px;
+	position: relative;
+	i{
+		display: inline-block;
+		margin-left: 4px;
+		@include s(arr-down);
+		vertical-align: middle;
+		position: relative;
+		top: -2px;
+		opacity: .7;
+	}
+	select{
+		-webkit-appearance:none;
+	    position: absolute;
+	    width: 100%;
+	    top: 0;
+	    left: 0;
+	    z-index: 1;
+	    opacity: 0;
+	}
+
 }
 .cutlist__toggle{
-	position: absolute;
-	right: 15px;
+	float: right;
 	display: inline-block;
 	@include s(cutmin);
 	top: 12px;

@@ -615,9 +615,13 @@ html, body { height: 100%; position: relative; background: #333; }
 
 .cutlist { border-bottom: 2px solid #484848; margin-bottom: 7px; position: relative; }
 
-.cutlist__header { font-size: 11px; color: #aaa; font-weight: normal; text-transform: uppercase; margin-bottom: 8px; }
+.cutlist__header { font-size: 11px; color: #aaa; font-weight: normal; text-transform: uppercase; margin-bottom: 8px; display: inline-block; }
 
-.cutlist__toggle { position: absolute; right: 15px; display: inline-block; background: url('../img/icons.png') 0 -3948px no-repeat; width: 9px; height: 3px; top: 12px; cursor: pointer; opacity: .5; margin-top: 3px; }
+.cutlist__sortby { font-size: 10px; color: #999999; display: inline-block; margin-left: 15px; position: relative; }
+.cutlist__sortby i { display: inline-block; margin-left: 4px; background: url('../img/icons.png') 0 -2835px no-repeat; width: 8px; height: 4px; vertical-align: middle; position: relative; top: -2px; opacity: .7; }
+.cutlist__sortby select { -webkit-appearance: none; position: absolute; width: 100%; top: 0; left: 0; z-index: 1; opacity: 0; }
+
+.cutlist__toggle { float: right; display: inline-block; background: url('../img/icons.png') 0 -3948px no-repeat; width: 9px; height: 3px; top: 12px; cursor: pointer; opacity: .5; margin-top: 3px; }
 .cutlist__toggle.is-active { background: url('../img/icons.png') 0 -3872px no-repeat; width: 9px; height: 9px; margin-top: 0; }
 .cutlist__toggle:hover { opacity: 1; }
 
