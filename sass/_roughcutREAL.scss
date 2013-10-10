@@ -314,6 +314,33 @@ $subnavheight: 85px;
 		border-radius: 10px;
 		background: #8E8F8E;
 	}
+	&.searchbox_detailed{
+		input{
+			width: 65%;
+		}
+	}
+	.searchbox__detailed{
+		color: #999999;
+		font-size: 11px;
+		
+		opacity: .7;
+		cursor: pointer;
+		position: absolute;
+		left: 65%;
+		width: 30%;
+		top: 14px;
+		padding-right: 3px;
+		white-space:nowrap;
+		text-align: right;
+		i{
+			display: inline-block;
+			@include s(arr-down);
+			position: relative;
+			top: -1px;
+			height: 5px;
+			vertical-align: middle;
+		}
+	}
 }
 .roughnav{
 	height: $subnavheight - 20px;
