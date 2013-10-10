@@ -1,0 +1,53 @@
+.is-fullscreencutlist{
+	.rfile__more {
+		position: absolute;
+		display: block;
+		left: 0;
+		top: 57px;
+		z-index: 1000;
+		box-shadow: 0 0 10px rgba(0,0,0,.6);
+		min-width: 300px;
+		padding-top: 6px;
+		padding: 0 7px;
+		margin: 0 -7px;
+		*{
+			@include transform(translate3d(0,0,0));
+		}
+		.rfile__moremeta{
+			@include transform(translate3d(0,0,0));
+			padding: 4px 7px;
+			margin: 0 -7px;
+			span{
+				margin-bottom: 0;
+				font-size: 9px;
+			}
+			b{
+				color: #444444;
+				line-height: 1;
+				padding-bottom: 4px;
+			}
+		}
+		.rfile__title{
+			display: block !important;
+			padding-left: 19px;
+			position: relative;
+			&:before{
+				content: ' ';
+				position: absolute;
+				left: 0;
+				top: -1px;
+				@include s(infoicon);
+			}
+			
+		}
+		.rfile__meta{
+			display: block !important;
+			padding-left: 0;
+			
+			&:before{
+				display: none;
+			}
+		}
+	}
+	
+}
