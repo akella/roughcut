@@ -9,7 +9,7 @@
 		<script src="js/jquery.js"></script>
 		<script src="js/common.js"></script>
 </head>
-<body class="is-timecode_tape ">
+<body class="is-timecode_tape">
 <!-- BEGIN topper -->
 <div class="topper topper_withlogo">
 	<h1 class="topper__logo">Sony</h1>
@@ -33,6 +33,27 @@
 	<!-- END profile -->
 </div>
 <!-- END topper -->
+
+
+<!-- BEGIN  popup-->
+<div class="popup">
+	<div class="popup__close"></div>
+	<header class="popup__header">
+		New Cutlist
+	</header>
+	<div class="popup__content">
+		<div class="popup__field">
+			<div class="popup__label">To create new Cutlist please name it.</div>
+			<div class="popup__input"><input type="text" name="" value="New Untitled Cutlist" id=""></div>
+		</div>
+		<div class="popup__bottom">
+			<div class="createnewcutlist"><i></i>Create New Cutlist</div>
+		</div>
+	</div>
+</div>
+<!-- END popup -->
+
+
 <!-- BEGIN  popup-->
 <div class="popup">
 	<div class="popup__close"></div>
@@ -143,12 +164,71 @@
 <!-- END popup -->
 
 
+<!-- BEGIN  popup-->
+<div class="popup popup_session" style="position:absolute;z-index: 11000;top:270px;left:300px">
+	<div class="popup__close"></div>
+	<header class="popup__header">
+		Session Name here!
+		<div class="popup__headersearch"><input type="text" placeholder="Search…"></div>
+	</header>
+	<div class="popup__content">
+		<table class="sessiontable">
+			<thead>
+				<tr>
+					<th>&nbsp;</th>
+					<th class="tosort is-up">Name<i></i></th>
+					<th class="tosort">Date joined<i></i></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>
+						<img src="img/av.png" alt="">
+					</th>
+					<td class="sessiontable__name">
+						user1@sony.com
+					</td>
+					<td class="sessiontable__date">
+						May 12 2013<br>6:22:15AM
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<img src="img/av.png" alt="">
+					</th>
+					<td class="sessiontable__name">
+						user1@sony.com
+					</td>
+					<td class="sessiontable__date">
+						May 12 2013<br>6:22:15AM
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<img src="img/av.png" alt="">
+					</th>
+					<td class="sessiontable__name">
+						user1@sony.com
+					</td>
+					<td class="sessiontable__date">
+						May 12 2013<br>6:22:15AM
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="popup__sessionbot">Session started on 11/1/2013 at 6:47:13 AM</div>
+	</div>
+</div>
+<!-- END popup -->
+
+
 
 <!-- BEGIN  popup-->
 <div class="popup is-error">
 	<div class="popup__close"></div>
 	<header class="popup__header">
 		No cutlist selected
+
 	</header>
 	<div class="popup__content">
 		<div class="popup__field">

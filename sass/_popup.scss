@@ -43,6 +43,7 @@
 		right: 10px;
 		@include s(popupclose);
 		cursor: pointer;
+		z-index: 100;
 	}
 	header{
 		background: #454545;
@@ -59,7 +60,6 @@
 			left: 30px;
 			@include s(yellowtop);
 			content: ' ';
-			
 		}
 	}
 	&.is-yellow, &.popup_new{
@@ -89,6 +89,19 @@
 				top: -19px;
 				left: 30px;
 				@include s(bluetop);
+				content: ' ';
+			}
+		}	
+	}
+	&.popup_session{
+		header{
+			border-top-color: #4FB4B7;
+			&:before{
+				position: absolute;
+				top: -19px;
+				right: 30px;
+				left: auto;
+				@include s(sessiontop);
 				content: ' ';
 			}
 		}	
@@ -274,6 +287,108 @@
 		}
 		span{
 			vertical-align: middle;
+		}
+	}
+	.popup__header{
+		position: relative;
+	}
+	.popup__headersearch{
+		position: absolute;
+		top: 7px;
+		right: 40px;
+		input{
+			@include box-shadow(inset -3px 2px 3px rgba(0,0,0,.48));
+			border: 1px solid #363636;
+			padding: 4px 10px;
+			width: 115px;
+			background: #949494;
+			border-radius: 20px;
+			color: #444444;
+			@include placeholder-color(#444444);
+			&:focus{
+				outline: none;
+				box-shadow: none;
+			}
+		}
+	}
+	&.popup_session{
+		width: 440px;
+		.popup__content{
+			padding: 0;
+		}
+		.popup__sessionbot{
+			font-size: 13px;
+			display: block;
+			padding: 10px;
+			color: #444444;
+		}
+	}
+	.sessiontable{
+		border-spacing: 0;
+		border-collapse: collapse;
+		width: 100%;
+		thead{
+			
+			th{
+				padding: 7px 0;
+				background: #C8C8C8;
+				font-weight: normal;
+				text-transform: uppercase;
+				color: #444;
+				text-align: left;
+				font-size: 11px;
+				cursor: pointer;
+				i{
+					display: inline-block;
+					vertical-align: middle;
+					position: relative;
+					top: -1px;
+					margin-left: 5px;
+				}
+
+			}
+			.is-up,.is-down{
+				font-weight: bold;
+			}
+			.is-up i{
+				@include s(is-up)
+			}
+			.is-down i{
+				@include s(is-down)
+			}
+		}
+		tbody{
+			tr:hover{
+				td,th{
+					background: rgba(#000, .1);
+				}
+			}
+			td,th{
+				border-bottom: 1px solid #C8C8C8;
+				padding: 5px;
+				color: #444;
+				font-size: 12px;
+			}
+			th{
+				text-align: center;
+				font-weight: normal;
+				width: 32px;
+				padding-right: 5px;
+				img{
+					@include box-shadow(1px 1px 5px rgba(0,0,0,.75));
+					display: inline-block;
+					display: block;
+				}
+			}
+		}
+		.sessiontable__date{
+			color: #777777;
+			font-size: 12px;
+			text-align: left;
+			width: 100px;
+		}
+		.sessiontable__name{
+			padding-left: 0;
 		}
 	}
 }
