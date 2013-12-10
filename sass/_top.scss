@@ -8,7 +8,7 @@
 	height: 40px;
 	line-height: 40px;
 	color: #777;
-	box-shadow:0 4px 4px rgba(#000, .3);
+	box-shadow:0 4px 4px rgba(#000, .1);
 	position: relative;
 	z-index: 10000;
 	a{
@@ -27,10 +27,10 @@
 	.topper__logo{
 		float: left;
 		@extend %hide-text;
-		@include sized-sprite($q, sony);
+		@include s(ci);
 		margin-left: 10px;
 		margin-top: 6px;
-		margin-right: 29px;
+		margin-right: 10px;
 		cursor: pointer;
 	}
 }
@@ -47,11 +47,19 @@
 }
 //profile
 .profile{
-	float: right;
-	margin-right: 17px;
+	position: absolute;
+	right: 16px;
+	text-align: right;
 	.profile__user,
-	.profile__logout{
+	.profile__logout,
+	.profile__sessions,
+	.profile__hotkeys,
+	.profile__version,
+	.profile__feedback{
 		display: inline-block;
+		text-shadow: 0 1px 0 #000;
+		color: #777;
+		margin-left: 10px;
 	}
 	.profile__user{
 		font-family: 'LucidaSans-Demi', Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
@@ -61,6 +69,28 @@
 			&:hover{
 				color: #2f669f;
 			}
+		}
+	}
+	.profile__version{
+		opacity: 0;
+		@include transition(all .1s linear);
+	}
+	&:hover{
+		.profile__version{
+			opacity: 1;
+		}
+	}
+	.profile__sessions{
+		display: inline-block;
+		i{
+			@include s(sessions);
+			vertical-align: middle;
+			display: inline-block;
+			margin-right: 6px;
+		}
+		span{
+			font-size: 11px;
+			color: #4FB4B7;
 		}
 	}
 }
