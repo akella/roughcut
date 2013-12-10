@@ -74,9 +74,7 @@
 	.profile__version{
 		opacity: 0;
 		@include transition(all .1s linear);
-	}
-	&:hover{
-		.profile__version{
+		&:hover{
 			opacity: 1;
 		}
 	}

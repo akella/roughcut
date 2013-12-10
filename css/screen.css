@@ -63,7 +63,7 @@ input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 10p
 .profile .profile__user a { color: #fff; }
 .profile .profile__user a:hover { color: #2f669f; }
 .profile .profile__version { opacity: 0; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; transition: all 0.1s linear; }
-.profile:hover .profile__version { opacity: 1; }
+.profile .profile__version:hover { opacity: 1; }
 .profile .profile__sessions { display: inline-block; }
 .profile .profile__sessions i { background: url('../img/icons.png') 0 -794px no-repeat; width: 20px; height: 14px; vertical-align: middle; display: inline-block; margin-right: 6px; }
 .profile .profile__sessions span { font-size: 11px; color: #4FB4B7; }
