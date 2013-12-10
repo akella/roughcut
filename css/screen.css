@@ -52,7 +52,7 @@ input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 10p
 .topper a { text-decoration: none; text-shadow: 0 1px 0 #000; color: #777; }
 .topper a:hover { color: #2f669f; }
 .topper.topper_withlogo { height: 33px; line-height: 33px; border-style: none; }
-.topper .topper__logo { float: left; background: url('../img/icons.png') 0 -379px no-repeat; width: 23px; height: 23px; margin-left: 10px; margin-top: 6px; margin-right: 10px; cursor: pointer; }
+.topper .topper__logo { float: left; background: url('../img/icons.png') 0 -379px no-repeat; width: 23px; height: 23px; margin-left: 10px; margin-top: 5px; margin-right: 10px; cursor: pointer; }
 
 .topper__nav { float: left; margin-left: 15px; }
 .topper__nav li { display: inline; margin-right: 8px; }
